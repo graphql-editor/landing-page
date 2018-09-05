@@ -1,0 +1,328 @@
+/*=========================================
+=            Light Color Style            =
+=========================================*/
+/**
+	Navigation File
+
+	1. index-light.html
+	2. service-page-light.html
+	3. about-light.html
+	4. contact-light.html
+	5. order-light.html
+	6. blog-list-light.html
+	7. user-interface-light.html
+	8. login-page-light.html
+	9. 404-light.html
+	10. Mobile Menu
+
+ */
+/* 01. Home
+   ==================================== */
+header .menu a {
+  color: #7782aa;
+}
+header .menu li:before {
+  background-color: rgba(119, 130, 170, 0.2);
+}
+header .button-header .custom-btn {
+  background: #0479ec none;
+  border-radius: 7px;
+  box-shadow: 1px 1px 11px rgba(98, 129, 157, 0.4);
+}
+header .button-header .custom-btn.login {
+  color: #7782aa;
+  box-shadow: none;
+  background-color: transparent;
+}
+header .button-header .custom-btn.login:hover {
+  color: #7782aa;
+  background-color: transparent;
+}
+.base-slider {
+  padding-bottom: 0;
+}
+.base-slider h2,
+.base-slider p {
+  color: #2f395d;
+  letter-spacing: 1px;
+}
+.base-slider .custom-btn {
+  color: #fff;
+  background-color: #0479ec;
+}
+.base-slider .inside {
+  top: 39%;
+}
+.partner {
+  padding: 44px 0 50px 0;
+  border: none;
+  margin-bottom: 0;
+  background-color: #f1f6fb;
+}
+.partner h5 {
+  color: #7c8ca4;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+}
+.bg-gray {
+  background: transparent linear-gradient(to top, #ffffff 0%, #ffffff 1%, #f5fafd 80%, #f5fafd 100%);
+}
+.why-choose {
+  margin-bottom: 112px;
+  padding-top: 74px;
+}
+.pricing-table {
+  background: #f1f6fb;
+  margin-bottom: 80px;
+  padding: 80px 0 70px 0;
+}
+.pricing-table .title-head {
+  color: #39335b;
+}
+.pricing-table p {
+  margin-bottom: 50px;
+  color: rgba(119, 130, 170, 0.8);
+}
+.pricing-table .pricing-list {
+  margin-bottom: 60px;
+}
+.pricing-table .security {
+  display: flex;
+  margin-left: 26px;
+  align-items: flex-start;
+}
+.pricing-table .security p {
+  text-align: left;
+  margin-bottom: 0;
+}
+.pricing-table .security h4 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #39335b;
+  line-height: normal;
+  margin-bottom: 13px;
+  font-family: "HelveticaNeue-Bold", serif;
+}
+.pricing-table .security img {
+  margin-right: 30px;
+  width: 40px;
+}
+.info-pricing {
+  margin-bottom: 100px;
+  background-color: #f4f8fc;
+}
+.user-slider {
+  margin-bottom: 106px;
+}
+.user-slider .owl-item .inside .icon {
+  width: 35px;
+}
+.search-domain {
+  padding: 48px 0 38px 0;
+  background-color: #f4f8fc;
+}
+.search-domain h3 {
+  color: #585373;
+}
+.search-domain form .custom-btn {
+  background: #0479ec none;
+}
+.search-domain form .custom-btn:hover {
+  background: rgba(4, 121, 236, 0.9) none;
+}
+footer {
+  padding-top: 85px;
+  background-color: #fbfcfe;
+}
+.widget-footer {
+  margin-bottom: 112px;
+}
+.widget-footer h4 {
+  color: #39335b;
+}
+.widget-footer ul li a {
+  color: #7782aa;
+}
+.widget-footer p {
+  color: #7782aa;
+}
+.copyright {
+  border-color: rgba(119, 130, 170, 0.1);
+}
+.copyright p {
+  color: rgba(119, 130, 170, 0.6);
+}
+.social-icon li a:hover {
+  color: rgba(119, 130, 170, 0.8);
+}
+.social-icon i {
+  color: rgba(119, 130, 170, 0.8);
+  font-size: 18px;
+}
+/* 02. Service page
+   ==================================== */
+.choice-plan {
+  padding: 170px 0 0;
+  background: #f7fbfd;
+}
+.choice-plan h2 {
+  color: #2f395d;
+}
+.choice-plan .nav-tabs li {
+  border-color: #adc0d3;
+}
+.choice-plan .nav-tabs li.active {
+  background-color: #0479ec;
+  border-color: #0479ec;
+}
+.choice-plan .nav-tabs li.active a {
+  color: #fff;
+}
+.choice-plan .nav-tabs li.active a:hover,
+.choice-plan .nav-tabs li.active a:focus {
+  color: #fff;
+}
+.choice-plan .nav-tabs li a {
+  color: #7681a5;
+}
+.bottom-info-plans {
+  margin-top: -170px;
+  position: relative;
+  padding: 187px 0 60px 0;
+  background: #298bf0;
+  margin-bottom: 144px;
+}
+.bottom-info-plans:before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 150px;
+  transform: skew(0deg, -4deg) translate3d(0, 0, 0);
+  background: #298bf0;
+  position: absolute;
+  top: -70px;
+}
+/* 03. About
+   ==================================== */
+.breadcrumbs {
+  padding: 240px 0 206px 0;
+  background: #fff;
+}
+.breadcrumbs h1 {
+  color: #2f395d;
+  margin-bottom: 15px;
+}
+.breadcrumbs p {
+  color: rgba(57, 51, 91, 0.7);
+}
+.about-block {
+  padding-top: 0;
+  background: #f7fbfd;
+}
+.about-block .our-team {
+  margin-top: -265px;
+}
+.about-block .our-team .title-head {
+  margin-bottom: 46px;
+}
+.bg-gray .hosting-software {
+  padding: 0;
+  background-color: transparent;
+}
+.hosting-software {
+  padding: 65px 0 275px;
+  background-color: #2e8ff3;
+}
+/* 04. Contact
+   ==================================== */
+.form-contact {
+  margin: -150px auto 140px;
+}
+.form-contact h3 {
+  color: #2f395d;
+}
+.contact .bg-form {
+  background: #f7fbfd;
+}
+.contact h2 {
+  color: #2f395d;
+}
+.contact p {
+  color: #7782aa;
+}
+.contact .inside h4 {
+  color: #2f395d;
+}
+.contact .inside a,
+.contact .inside span {
+  color: #2f395d;
+}
+.contact .inside .social-icon i {
+  color: rgba(31, 127, 226, 0.8);
+}
+.contact .inside .images {
+  box-shadow: none;
+  background-color: #dfecfa;
+}
+.contact .inside .images img {
+  width: 45px;
+}
+.contact footer p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: none;
+}
+.info-block-contact:after,
+.info-block-contact:before {
+  background-color: rgba(119, 130, 170, 0.1);
+}
+/* 05. Order
+   ==================================== */
+.order-page .breadcrumbs {
+  background: #fff;
+  padding: 170px 0 34px;
+}
+/* 06. Blog List
+   ==================================== */
+header {
+  background-color: #fff;
+}
+.custom-btn.order {
+  margin-bottom: 155px;
+}
+/* 07. User Interface
+   ==================================== */
+.top-panel {
+  border-top: 2px solid #f8fafb;
+  box-shadow: 1px 10px 19px rgba(28, 61, 94, 0.17);
+}
+.my-account {
+  background-image: linear-gradient(to top, #ffffff 0%, #ffffff 1%, #f5fafd 80%, #f5fafd 100%);
+}
+.my-account footer {
+  background-color: #f8fbfd;
+}
+/* 08. Login page
+   ==================================== */
+.login-page header {
+  background-color: #f6fafd;
+}
+/* 09. 404 page
+   ==================================== */
+.error-page {
+  background: #f6fafd linear-gradient(to top, #ffffff 0%, #ffffff 1%, #f5fafd 80%, #f5fafd 100%);
+}
+.error-page .inside {
+  padding-bottom: 234px;
+}
+.error-page .inside h2,
+.error-page .inside h4,
+.error-page .inside p {
+  color: #2f395d;
+}
+/* 10. Mobile Menu
+   ==================================== */
+.mobile-menu .menu a {
+  color: #fff;
+}
+/*=====  End of Light Color Style  ======*/
