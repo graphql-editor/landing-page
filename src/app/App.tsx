@@ -9,12 +9,13 @@ import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import { NotFound } from "./NotFound";
 import { Board } from "./Board";
+import Service from './Service';
 
 class AppContainer extends React.Component<any, any> {
   render() {
     return (
-      <div>
-        <Header />
+      <div className="wrapper">
+        <Header props={this.props} />
         <Switch>
           <Route component={Home} exact path="/" />
           <Route component={Board} exact path="/board" />
@@ -22,6 +23,7 @@ class AppContainer extends React.Component<any, any> {
           <Route component={Login} exact path="/login" />
           <Route component={SignUp} exact path="/sign-up" />
           <Route component={AboutUs} exact path="/about-us" />
+          <Route component={Service} exact path="/service" />
           <Route component={NotFound} exact path="*" />
         </Switch>
         <Footer />

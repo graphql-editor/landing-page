@@ -47,6 +47,7 @@ module.exports = {
             loader: 'css-loader',
             query: {
               modules: true,
+              url: false,
               sourceMap: !isProduction,
               importLoaders: 1,
               localIdentName: '[local]__[hash:base64:5]'
@@ -58,9 +59,9 @@ module.exports = {
         ]
       },
       { test: /\.html$/, use: 'html-loader' },
-      // { test: /\.(png|svg)$/, use: 'url-loader?limit=10000' },  
-      {test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,loader: 'url-loader?limit=100000'}, // url-loader?limit=100000
-      // { test: /\.(jpg|gif)$/, use: 'file-loader' },
+      { test: /\.(png|svg)$/, use: 'url-loader?limit=10000' },  
+      //{test: /\.(woff|woff2|eot|ttf|svg)$/,loader: 'url-loader?limit=100000'}, // url-loader?limit=100000
+      { test: /\.(jpg|gif)$/, use: 'file-loader' },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{

@@ -3,21 +3,25 @@ import * as React from "react";
 import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import Root from "./app/Root";
-import "./vars.css"
-import "./assets/assets/js/lib/jquery.js";
-import "./assets/assets/js/lib/bootstrap.min.js"
-import "./assets/assets/js/lib/owl.carousel.min.js"
-import "./assets/assets/js/lib/css3-animate-it.js"
-import "./assets/assets/js/lib/counter.js"
-import "./assets/assets/js/main.js";
-// import "./assets/assets/css/style.css"
-
+import { Provider } from "unstated";
+import "./vars.css";
+import "./assets/js/lib/jquery.js";
+import "./assets/js/lib/bootstrap.min.js";
+import "./assets/js/lib/owl.carousel.min.js";
+import "./assets/js/lib/css3-animate-it.js";
+import "./assets/js/lib/counter.js";
+import "./assets/js/main.js";
+import "./assets/css/style.css"
+import "./assets/css/responsive.css"
+import "./assets/css/lib/animations.min.css"
 
 const renderFunc = (Component: React.ComponentType<any>) =>
   render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
+    <Provider>
+      <AppContainer>
+        <Component />
+      </AppContainer>
+    </Provider>,
     document.getElementById("root")
   );
 

@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class Root extends React.Component {
   render() {
-   // console.log(boostrap)
     return (
       <Router>
         <div id="routing">

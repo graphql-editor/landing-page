@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import * as styles from './style'
+
 class Login extends React.Component {
   render() {
     return (
-      <div className="login-bg animatedParent">
-      <form className="animated growIn">
+      <div className={`${styles.LoginBg} login-bg animatedParent`}>
+      <form className={styles.LoginContactForm}>
         <h2>Login</h2>
         <div className="form-group">
           <input type="text" placeholder="Email Address" />

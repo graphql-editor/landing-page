@@ -1,5 +1,5 @@
 import { style, classes } from "typestyle";
-import * as vars from "./vars";
+import * as vars from "../../style/vars";
 export const Button = style({
   boxShadow: "1px 1px 22px rgba(14, 21, 34, 0.19)",
   borderRadius: 5,

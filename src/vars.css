@@ -19,8 +19,25 @@
     --menu-settings:#041922;
 }
 
-body {
-    /* background: red !important; */
+a {
+    display: block;
+    transition: 0.2s linear;
+    text-decoration: none !important; 
+    color: #337ab7;
 }
 
-/* @import "./assets/assets/css/lib/owl.carousel.min.css" */
+ol, ul {
+    list-style: none;
+}
+
+ol li, ul li {
+    color: #7782aa;
+    font-size: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

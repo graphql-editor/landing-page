@@ -1,20 +1,34 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-class Header extends React.Component {
+import * as styles from "./style";
+import { Col, Row } from "reactstrap";
+
+class Header extends React.Component<any, any> {
   render() {
+    const {
+      props: {
+        location: { pathname }
+      }
+    } = this.props;
     return (
-      <header>
+      <header
+        className={`transparent ${
+          pathname == "/login" || pathname == "/sign-up"
+            ? styles.LoggingHeader
+            : styles.Header
+        }`}
+      >
         <div className="container">
-          <div className="row">
-            <div className="col-md-2">
+          <Row>
+            <Col md={2}>
               <div className="logo">
-                <a href="index.html">
+                <Link to="/">
                   <img src="assets/images/logo.svg" alt="logo" />
-                </a>
+                </Link>
               </div>
-            </div>
-            <div className="col-md-7">
-              <ul className="menu">
+            </Col>
+            <Col md={7}>
+              <ul className={styles.HeaderMenu}>
                 <li>
                   <Link to="/">Home</Link>
                 </li>
@@ -22,7 +36,7 @@ class Header extends React.Component {
                   <Link to="/about-us">About</Link>
                 </li>
                 <li className="children">
-                  <a href="#">Hosting</a>
+                  <Link to="/service">Hosting</Link>
                   <ul className="sub-menu">
                     <li>
                       <a href="service-page.html">Service page 1</a>
@@ -59,23 +73,24 @@ class Header extends React.Component {
                   <Link to="/contact">Contact Us</Link>
                 </li>
               </ul>
-            </div>
-            <div className="col-md-3">
-              <div className="button-header">
+            </Col>
+            <Col md={3}>
+              <div className={styles.HeaderButton}>
                 <Link to="/login" className="custom-btn login">
                   Login
                 </Link>
-                <Link to="/login" className="custom-btn">
+                <Link to="/sign-up" className="custom-btn">
                   Sign Up
                 </Link>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
-        <div className="mobile-block">
+        {/* -------------------- MOBILE -------------------- */}
+        <div className="mobile-block" style={{ display: "none" }}>
           <div className="logo-mobile">
             <a href="index.html">
-              <img src="assets/images/logo.svg" alt="logo" />
+              <img src="./assets/images/logo.svg" alt="logo" />
             </a>
           </div>
           <a href="#" className="mobile-menu-btn">
@@ -156,8 +171,12 @@ class Header extends React.Component {
                 </li>
               </ul>
               <div className="button-header">
-                <Link to="/login" className="custom-btn login">Login</Link>
-                <Link to="/sign-up" className="custom-btn">Sign Up</Link>
+                <Link to="/login" className="custom-btn login">
+                  Login
+                </Link>
+                <Link to="/sign-up" className="custom-btn">
+                  Sign Up
+                </Link>
               </div>
             </div>
           </div>

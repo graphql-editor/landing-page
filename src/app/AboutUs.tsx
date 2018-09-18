@@ -1,17 +1,29 @@
 import * as React from "react";
+import SearchDomain from "./SearchDomain";
+import * as styles from "./style";
+import { RecommendsSlider } from "./Components/";
+import { Row, Col } from "reactstrap";
+import { ourTeam } from "./text_data";
 
 class AboutUs extends React.Component {
   render() {
+    //from [e,e,e,e,e] to [[e,e,e,e],[e]]
+    const foldm = (r, j) =>
+      r.reduce(
+        (a, b, i, g) => (!(i % j) ? a.concat([g.slice(i, i + j)]) : a),
+        []
+      );
+    let team = foldm(ourTeam, 4);
     return (
       <React.Fragment>
-        <div className="breadcrumbs">
-          <div className="container">
+        <div className={styles.Breadcrumbs}>
+          <div className={`${styles.Container} container`}>
             <h1>About Us</h1>
             <p>moving hosting solutions to the next level</p>
           </div>
         </div>
-        <div className="info-block">
-          <div className="container">
+        <div className={styles.InfoBlock}>
+          <div className={`${styles.Container} container`}>
             <p>
               Many desktop publishing packages and web page editors now use
               Lorem Ipsum as their default model text, and a search for 'lorem
@@ -19,9 +31,9 @@ class AboutUs extends React.Component {
             </p>
           </div>
         </div>
-        <div className="team-block animatedParent">
-          <div className="row">
-            <div className="col-md-6 col-6 animated bounceInRight">
+        <div className={`${styles.TeamBlock} animatedParent`}>
+          <Row>
+            <Col md={6} className="animated bounceInRight col-6">
               <h3>Great Team for You</h3>
               <p>
                 There are many variations of passages of Lorem Ipsum available,
@@ -44,21 +56,21 @@ class AboutUs extends React.Component {
                 </li>
               </ul>
               <span>
-                <img src="../assets/assets/images/php-logo.png" alt="php" />
-                <img src="../assets/assets/images/ibm.png" alt="ibm" />
+                <img src="./assets/images/php-logo.png" alt="php" />
+                <img src="./assets/images/ibm.png" alt="ibm" />
               </span>
-            </div>
-            <div className="col-md-6 images animated bounceInLeft">
-              <img src="../assets/assets/images/image.png" alt="image" />
-            </div>
-          </div>
+            </Col>
+            <Col md={6} className="images animated bounceInLeft">
+              <img src="./assets/images/image.png" alt="image" />
+            </Col>
+          </Row>
         </div>
-        <div className="team-block reverse animatedParent">
-          <div className="row">
-            <div className="col-md-6 images animated bounceInRight">
-              <img src="../assets/assets/images/image.png" alt="image" />
-            </div>
-            <div className="col-md-6 col-6 animated bounceInLeft">
+        <div className={`${styles.TeamBlock} reverse animatedParent`}>
+          <Row>
+            <Col md={6} className="images animated bounceInRight">
+              <img src="./assets/images/image.png" alt="image" />
+            </Col>
+            <Col md={6} className="col-6 animated bounceInLeft">
               <h3>We take care of Upgrades, Maintenance and Security</h3>
               <p>
                 The point of using Lorem Ipsum is that it has a more-or-less
@@ -74,20 +86,20 @@ class AboutUs extends React.Component {
                 Various versions have evolved over the years, sometimes by
                 accident, sometimes on purpose (injected humour and the like).
               </p>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
-        <div className="images-bg animatedParent">
+        <div className={`${styles.ImagesBg} animatedParent`}>
           <img
             className="animated growIn"
-            src="../assets/assets/images/image2.jpg"
+            src="./assets/images/image2.jpg"
             alt="image2"
           />
         </div>
-        <section className="about-block">
-          <div className="container small">
+        <section className={styles.AboutBlock}>
+          <div className={`${styles.Container} container small`}>
             <div className="hosting-software white">
-              <h2 className="title-head">Powerful Hosting Software</h2>
+              <h2 className={`${styles.TitleHead} title-head`}>Powerful Hosting Software</h2>
               <ul id="counter">
                 <li>
                   <b className="count" data-count="244">
@@ -112,197 +124,30 @@ class AboutUs extends React.Component {
                 </li>
               </ul>
             </div>
-            <div className="our-team animatedParent">
-              <h2 className="title-head">Our Team</h2>
-              <ul>
-                <li className="animated bounceInUp delay-250">
-                  <img
-                    src="../assets/assets/images/team-img.png"
-                    alt="team-img"
-                  />
-                  <div className="inside">
-                    <a href="#" className="name">
-                      John Packet
-                    </a>
-                    <span>CEO</span>
-                  </div>
-                </li>
-                <li className="animated bounceInUp delay-550">
-                  <img
-                    src="../assets/assets/images/team-img.png"
-                    alt="team-img"
-                  />
-                  <div className="inside">
-                    <a href="#" className="name">
-                      Mike Schillig
-                    </a>
-                    <span>Head Developer</span>
-                  </div>
-                </li>
-                <li className="animated bounceInUp delay-750">
-                  <img
-                    src="../assets/assets/images/team-img.png"
-                    alt="team-img"
-                  />
-                  <div className="inside">
-                    <a href="#" className="name">
-                      Lizy Dabars
-                    </a>
-                    <span>Manager</span>
-                  </div>
-                </li>
-                <li className="animated bounceInUp delay-1000">
-                  <img
-                    src="../assets/assets/images/team-img.png"
-                    alt="team-img"
-                  />
-                  <div className="inside">
-                    <a href="#" className="name">
-                      Ann Lecar
-                    </a>
-                    <span>CEO</span>
-                  </div>
-                </li>
-              </ul>
-              <ul>
-                <li className="animated bounceInUp delay-1000">
-                  <img
-                    src="../assets/assets/images/team-img.png"
-                    alt="team-img"
-                  />
-                  <div className="inside">
-                    <a href="#" className="name">
-                      John Packet
-                    </a>
-                    <span>CEO</span>
-                  </div>
-                </li>
-                <li className="animated bounceInUp delay-1250">
-                  <img
-                    src="../assets/assets/images/team-img.png"
-                    alt="team-img"
-                  />
-                  <div className="inside">
-                    <a href="#" className="name">
-                      Mike Schillig
-                    </a>
-                    <span>Head Developer</span>
-                  </div>
-                </li>
-                <li className="animated bounceInUp delay-1500">
-                  <img
-                    src="../assets/assets/images/team-img.png"
-                    alt="team-img"
-                  />
-                  <div className="inside">
-                    <a href="#" className="name">
-                      Lizy Dabars
-                    </a>
-                    <span>Manager</span>
-                  </div>
-                </li>
-                <li className="animated bounceInUp delay-1750">
-                  <img
-                    src="../assets/assets/images/team-img.png"
-                    alt="team-img"
-                  />
-                  <div className="inside">
-                    <a href="#" className="name">
-                      Ann Lecar
-                    </a>
-                    <span>CEO</span>
-                  </div>
-                </li>
-              </ul>
+            <div className={styles.OurTeam}>
+              <h2 className={`${styles.TitleHead} title-head`}>Our Team</h2>
+              {team.map((el, i) => (
+                <ul key={i}>
+                  {el.map((e, ind) => (
+                    <li className="animated bounceInUp delay-250" key={ind}>
+                      <img src={e.imgSrc} alt="team-img" />
+                      <div className="inside">
+                        <a href="#" className="name">
+                          {e.name}
+                        </a>
+                        <span>{e.position}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              ))}
             </div>
           </div>
         </section>
         <div className="user-slider">
-          <div className="container">
-            <div className="slider owl-carousel owl-theme">
-              <div className="item">
-                <div className="inside">
-                  <img
-                    src="../assets/assets/images/icon.svg"
-                    className="icon"
-                    alt="icon"
-                  />
-                  <img
-                    src="../assets/assets/images/brand.png"
-                    alt="logo-tesla"
-                  />
-                  <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters.
-                  </p>
-                  <div className="user">
-                    <a href="#">
-                      <img src="../assets/assets/images/user.png" alt="user" />
-                      Oliver Mitchell
-                      <span>Manager at Lorem Ipsum</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="inside">
-                  <img
-                    src="../assets/assets/images/icon.svg"
-                    className="icon"
-                    alt="icon"
-                  />
-                  <img
-                    src="../assets/assets/images/brand.png"
-                    alt="logo-tesla"
-                  />
-                  <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters.
-                  </p>
-                  <div className="user">
-                    <a href="#">
-                      <img src="../assets/assets/images/user.png" alt="user" />
-                      Oliver Mitchell
-                      <span>Manager at Lorem Ipsum</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <RecommendsSlider />
         </div>
-        <div className="pre-footer">
-          <img
-            src="../assets/assets/images/line-prefoter.svg"
-            alt="bg-prefooter"
-          />
-        </div>
-        <div className="search-domain animatedParent">
-          <div className="container animated fadeInUpShort">
-            <div className="row">
-              <div className="col-md-4 col-xs-12">
-                <h3>Search Your Domain</h3>
-              </div>
-              <div className="col-md-8 col-xs-12">
-                <form>
-                  <div className="form-group">
-                    <input type="text" placeholder="Domain Name" />
-                    <select>
-                      <option value=".com">.com</option>
-                      <option value=".ua">.ua</option>
-                      <option value=".nu">.nu</option>
-                    </select>
-                  </div>
-                  <button className="custom-btn green">Search</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SearchDomain />
       </React.Fragment>
     );
   }
