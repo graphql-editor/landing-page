@@ -1,5 +1,5 @@
-import { style, classes } from "typestyle"
-import { colors } from "./vars"
+import { style, classes } from "typestyle";
+import { colors } from "./vars";
 
 export const Container = style({
   width: "100%",
@@ -22,154 +22,109 @@ export const Container = style({
       width: 1140
     }
   }
-})
+});
 
-export const GreySection = style({
-  background: colors.grey
-})
-
-export const HomeFirstSlider = style({
-  background: colors.grey,
+export const GifBackground = style({
   position: "relative",
-  cursor: "all-scroll",
   display: "block",
   paddingBottom: 10,
   width: "100%",
   zIndex: 1,
-  // overflow: "hidden",
+  background: "url('../assets/images/diagram.gif')",
+  //backgroundImage: "",
+  backgroundSize: "cover",
+  height: 650,
 
   $nest: {
-    '.owl-stage-outer': {
-      position: "relative",
-      overflow: "hidden",
-      "-webkit-transform": "translate3d(0,0,0)",
+    "&::before": {
+      content: "''",
+      position: "absolute",
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      backgroundImage: `linear-gradient(0deg,#192d7288,${colors.main})`,
+      backgroundSize: "cover",
+      opacity: 0.6
+      //opacity: "0.6"
+    },
 
+    ".item": {
       $nest: {
-        '.owl-stage': {
-          display: "block",
-          float: "left",
+        ".inside": {
+          width: "100%",
+          top: "44%",
+          left: "50%",
+          "-ms-transform": "translate(-50%, -50%)",
+          transform: "translate(-50%, -50%)",
+          position: "absolute",
+          textAlign: "center",
+          //padding: "200px 20px",
 
           $nest: {
-            "&::after": {
-              content: `"."`,
-              display: "block",
-              clear: "both",
-              visibility: "hidden",
-              lineHeight: 0,
-              height: 0
-            }
-          }
-        },
+            "h1, h2": {
+              fontSize: 46,
+              color: colors.white,
+              letterSpacing: "4px",
+              margin: "23px 0",
+              textTransform: "uppercase",
+              fontWeight: 600
+            },
 
-        '.owl-item': {
-          "-webkit-user-select": "none",
-          "-moz-user-select": "none",
-          "-ms-user-select": "none",
-          "user-select": "none",
-          minHeight: 1,
-          float: "left",
-          position: "relative",
-          "-webkit-backface-visibility": "hidden",
-          "-webkit-touch-callout": "none",
+            p: {
+              color: colors.whiteDark,
+              fontSize: 15,
+              textTransform: "uppercase",
+              letterSpacing: "1px",
+              marginBottom: 20
+            },
 
-          $nest: {
-            '.item':{
+            input: {
+              width: 320,
+              border: "none",
+              height: 45,
+              padding: "0 90px 0 24px",
+              lineHeight: "45px",
+              boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.15)",
+              borderRadius: 7,
+              backgroundColor: colors.white,
+              color: colors.textLight,
+              fontSize: 14,
+              marginRight: 15,
+            },
+
+            "@media screen and (max-width: 480px)": {
+              top: "50%"
+            },
+
+
+            "@media screen and (max-width: 768px)": {
+              width: "100%",
+
               $nest: {
-                img: {
-                  display: "block",
-                  width: "100%"
-                },
-                '.inside': {
-                  width: "100%",
-                  top: "44%",
-                  left: "50%",
-                  "-ms-transform": "translate(-50%, -50%)",
-                  transform: "translate(-50%, -50%)",
-                  position: "absolute",
-                  textAlign: "center",
-
-                  $nest: {
-                    h2: {
-                      fontSize: 46,
-                      color: colors.white,
-                      letterSpacing: "2px",
-                      marginBottom: 13,
-                      textTransform: "capitalize",
-                      fontWeight: 300
-                    },
-                    p: {
-                      color: "#c0dbf4",
-                      fontSize: 15,
-                      textTransform: "uppercase",
-                      letterSpacing: "1px",
-                      marginBottom: 20
-                    },
-                    ".custom-btn": {
-                      fontSize: 14,
-                      color: "#2378ec",
-                      padding: "14px 33px",
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
-                      boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",
-                      borderRadius: 7,
-                      backgroundColor: colors.white,
-                      display: "inline-block"
-                    }
-                  }
+                input: {
+                  maxWidth: "90%",
+                  marginBottom: 15
                 }
+              }
+            },
+
+            "@media screen and (max-width: 991px)": {
+              $nest: {
+                h2: { fontSize: 18 }
               }
             }
           }
         }
-
-      }
-    },
-    ".owl-nav": {
-      position: "static",
-    
-      $nest: {
-        ".owl-next, .owl-prev": {
-          cursor: "pointer",
-          top: "50%",
-          fontSize: 0,
-          marginTop: "-20px",
-          "-ms-transform": "translateY(-50%)",
-          transform: "translateY(-50%)",
-          position: "absolute"
-        },
-    
-        ".owl-prev": {
-          left: 50
-        },
-    
-        ".owl-next": {
-          right: 50
-        },
-    
-        img: {
-          maxWidth: "100%",
-          height: "auto"
-        }
       }
     }
   }
-})
-
+});
 
 export const PartnersSlider = style({
   display: "block",
 
   $nest: {
-    "@media screen and (max-width: 480px)": {
-      paddingBottom: 20,
-      marginBottom: 30,
-    },
-
-    "@media screen and (max-width: 768px)": {
-      paddingBottom: 40,
-      marginBottom: 0,
-    },
-
     ".owl-stage-outer": {
       position: "relative",
       overflow: "hidden",
@@ -183,15 +138,28 @@ export const PartnersSlider = style({
               float: "left",
 
               $nest: {
-                img: { width: 140 }
+                img: {
+                  // width: 140,
+                  height: 70,
+                  borderRadius: 6
+                }
               }
             }
           }
         }
       }
+    },
+    "@media screen and (max-width: 480px)": {
+      paddingBottom: 20,
+      marginBottom: 30
+    },
+
+    "@media screen and (max-width: 768px)": {
+      paddingBottom: 40,
+      marginBottom: 0
     }
   }
-})
+});
 
 export const PartnersSection = style({
   textAlign: "center",
@@ -206,20 +174,20 @@ export const PartnersSection = style({
     },
 
     h5: {
+      margin: "40px 0 20px",
       fontSize: 15,
       marginBottom: 45,
       letterSpacing: 1,
       textTransform: "uppercase"
     }
   }
-})
+});
 
-export const WhyUsSection = classes(
-  GreySection,
-  style({
+export const WhyUsSection = style({
+    background: colors.grey,
     display: "flex"
   })
-)
+
 
 export const HostingSoftware = style({
   marginBottom: 113,
@@ -227,9 +195,43 @@ export const HostingSoftware = style({
   $nest: {
     h2: {
       marginBottom: 71
+    },
+
+    "@media screen and (max-width: 768px)": {
+      marginBottom: 80,
+
+      h2: {
+        fontSize: 24,
+        lineHeight: "normal"
+      },
+
+      "ul li": {
+        width: "50%",
+        float: "left",
+        marginRight: "0 !important",
+        paddingRight: "0 !important",
+        marginBottom: 30,
+
+        "&:nth-child(2)": {
+          border: "none"
+        }
+      }
+    },
+
+    "@media screen and (max-width: 991px)": {
+      marginBottom: 80,
+
+      h2: {
+        lineHeight: "normal"
+      },
+
+      "ul li": {
+        marginRight: 35,
+        paddingRight: 35
+      }
     }
   }
-})
+});
 
 export const TitleHead = style({
   textAlign: "center",
@@ -237,7 +239,7 @@ export const TitleHead = style({
   color: colors.text,
   marginBottom: 60,
   letterSpacing: 3
-})
+});
 
 export const Counter = style({
   textAlign: "center",
@@ -272,12 +274,12 @@ export const Counter = style({
       }
     }
   }
-})
+});
 
 export const WhyChoose = style({
   marginBottom: 88,
   overflow: "hidden"
-})
+});
 
 export const WhyChooseInside = style({
   padding: "70px 39px 38px 39px",
@@ -338,22 +340,38 @@ export const WhyChooseInside = style({
           marginBottom: 0
         }
       }
+    },
+
+    "@media screen and (max-width: 991px)": {
+      marginBottom: 40
+    },
+
+    "@media screen and (min-width: 991px) and (max-width: 1200px)": {
+      $nest: {
+        "a:first-of-type": {
+          margin: "0 -10px 12px"
+        }
+      }
     }
   }
-})
+});
 
 // ************************ Pricing ************************
 
 export const PricingTable = style({
-  padding: "80px 0 30px 0",
-  background: "url(assets/images/bg-blue.png) no-repeat center",
-  backgroundSize: "cover",
-  marginBottom: 130,
+  padding: "80px 0",
+  background: colors.main, // "url(assets/images/bg-blue.png) no-repeat center",
+  // backgroundSize: "cover",
+  // marginBottom: 130,
 
   $nest: {
+    ".container:last-of-type": {
+      marginTop: 0,
+    },
+
     h2: {
       color: "white",
-      marginBottom: "8px"
+      marginBottom: "28px"
     },
 
     p: {
@@ -361,11 +379,19 @@ export const PricingTable = style({
       marginBottom: 62,
       letterSpacing: 1,
       color: "rgba(205, 220, 236, 0.8)"
-    }
-  }
-})
+    },
 
-export const PricingList = style({
+    ".feature-box": {
+      minHeight: "401.5px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-around",
+      alignItems: "center"
+    },
+  }
+});
+
+export const FeatureList = style({
   marginBottom: 45,
   width: "100%",
   clear: "both",
@@ -413,10 +439,11 @@ export const PricingList = style({
         p: {
           color: colors.textLight,
           lineHeight: "22px",
-          marginBottom: 18
+          marginBottom: 18,
+          minHeight: 160
         },
 
-        "> span": {
+        '.line': {
           color: colors.text,
           display: "block",
           position: "relative",
@@ -468,12 +495,57 @@ export const PricingList = style({
           borderRadius: 7,
           display: "inline-block",
           textTransform: "uppercase",
-          backgroundColor: colors.main
+          backgroundColor: colors.main,
+          width: "100%"
+        },
+
+        "@media screen and (max-width: 768px)": {
+          $nest: {
+            p: {
+              minHeight: "auto"
+            }
+          }
+        }
+      }
+    },
+
+    "@media screen and (max-width: 768px)": {
+      $nest: {
+        li: {
+          width: "100%",
+          marginRight: 0,
+          marginBottom: 25
+        }
+      }
+    },
+
+    "@media screen and (min-width: 768px) and (max-width: 991px)": {
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+
+      $nest: {
+        li: {
+          width: "48%",
+          marginBottom: 15
+        }
+      }
+    },
+
+    "@media screen and (min-width: 992px) and (max-width: 1200px)": {
+      display: "flex",
+      flexDirection: "row",
+
+      li: {
+        width: "24%",
+
+        ".custom-btn": {
+          fontSize: 12
         }
       }
     }
   }
-})
+});
 
 export const InfoPricing = style({
   padding: "50px 52px 20px 52px",
@@ -506,7 +578,7 @@ export const InfoPricing = style({
           textAlign: "left",
           display: "inline-block",
           marginBottom: 34,
-          background: "url(../assets/images/check.svg) no-repeat",
+          background: `url(../assets/images/check.svg) no-repeat`,
           paddingLeft: 32,
 
           $nest: {
@@ -540,15 +612,50 @@ export const InfoPricing = style({
                   color: "white"
                 }
               }
+            },
+
+            "@media screen and (max-width: 768px)": {
+              $nest: {
+                ".buton": {
+                  background: "red"
+                }
+              }
             }
           }
         }
       }
+    },
+    "@media screen and (max-width: 480px)": {
+      $nest: {
+        ul: {
+          width: "100%",
+          float: "none",
+
+          "&.right": {
+            paddingLeft: 0
+          }
+        },
+
+        li: {
+          backgroundSize: "8%"
+        }
+      }
+    },
+
+    "@media screen and (max-width: 768px)": {
+      padding: "53px 30px 22px 30px",
+
+      $nest: {
+        "ul .custom-btn": {
+          padding: "10px 15px !important",
+          fontSize: "12px !important"
+        }
+      }
     }
   }
-})
+});
 
-// ************************ Second Slider ************************
+// ************************ Recommendations Slider ************************
 
 export const UserSlider = style({
   marginBottom: 95,
@@ -557,14 +664,10 @@ export const UserSlider = style({
   //overflow: "hidden",
 
   $nest: {
-    "@media screen and (min-width: 991px) and (max-width: 1200px)": {
-      paddingBottom: 100
-    },
-
-    '.owl-stage-outer': {
+    ".owl-stage-outer": {
       position: "relative",
       overflow: "hidden",
-      "-webkit-transform": "translate3d(0,0,0)",
+      "-webkit-transform": "translate3d(0,0,0)"
     },
 
     ".owl-stage": {
@@ -667,11 +770,13 @@ export const UserSlider = style({
           }
         }
       }
+    },
+
+    "@media screen and (min-width: 991px) and (max-width: 1200px)": {
+      paddingBottom: 100
     }
   }
-})
-
-
+});
 
 export const CustomBtn = style({
   padding: "14px 15px",
@@ -681,9 +786,14 @@ export const CustomBtn = style({
   borderRadius: 7,
   display: "inline-block",
   textTransform: "uppercase",
-  backgroundColor: colors.main
-})
+  backgroundColor: colors.main,
+  cursor: "pointer"
+});
 
-export const CustomBtnGreen = classes(CustomBtn, style({
-  background: "#0479ec linear-gradient(69deg, #37ddcb 0%, #42cbd1 80%, #42cbd1 100%)"
-}))
+export const CustomBtnGreen = classes(
+  CustomBtn,
+  style({
+    background:
+      "#0479ec linear-gradient(69deg, #37ddcb 0%, #42cbd1 80%, #42cbd1 100%)"
+  })
+);

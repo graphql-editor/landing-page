@@ -2,10 +2,10 @@ import { style } from "typestyle"
 import { colors } from "./vars"
 
 export const LoginBg = style({
-  paddingBottom: 150,
+  paddingBottom: 10,
   background:
     "#f6fafd linear-gradient(to top, #ffffff 0%, #ffffff 1%, #f5fafd 80%, #f5fafd 100%)",
-  paddingTop: 115,
+  paddingTop: 10,
 
   $nest: {
     ".create": {
@@ -13,6 +13,7 @@ export const LoginBg = style({
       color: colors.grey2,
       letterSpacing: "1px",
       textAlign: "center",
+      marginBottom: 15,
 
       $nest: {
         a: {
@@ -24,139 +25,149 @@ export const LoginBg = style({
   }
 })
 
-export const LoginContactForm = style({
+export const FormH2 = style({
+  color: colors.text,
+  fontSize: 38,
+  letterSpacing: "1px",
+  marginBottom: 50
+})
+
+export const FormBackground = style({
     width: 540,
-    margin: "115px auto 37px",
+    margin: "50px auto 50px",
     padding: "41px 60px 40px 65px",
     boxShadow: "1px 1px 44px rgba(38, 63, 90, 0.09)",
     borderRadius: 5,
     backgroundColor: colors.white,
+})
 
-    $nest: {
-      h2: {
-        color: colors.text,
-        fontSize: 38,
-        letterSpacing: "1px",
-        marginBottom: 50
-      },
+export const FormContent = style({
+  marginTop: 35,
 
-      button: {
-        padding: "15px 42px",
-        fontSize: 15,
-        color: colors.white,
-        borderRadius: 7,
-        textTransform: "uppercase",
-        border: "none",
-        transition: "0.2s linear",
-        backgroundColor: colors.main,
-        cursor: "pointer",
-        lineHeight: "inherit",
-      },
+  $nest: {
+    // h2: {
+    //   color: colors.text,
+    //   fontSize: 38,
+    //   letterSpacing: "1px",
+    //   marginBottom: 50
+    // },
 
-      ".form-group": {
-        marginBottom: 51,
+    button: {
+      padding: "15px 42px",
+      fontSize: 15,
+      color: colors.white,
+      borderRadius: 7,
+      textTransform: "uppercase",
+      border: "none",
+      transition: "0.2s linear",
+      backgroundColor: colors.main,
+      cursor: "pointer",
+      lineHeight: "inherit",
+    },
 
-        $nest: {
-          input: {
-            width: "100%",
-            fontSize: 15,
-            color: colors.text,
-            paddingBottom: 18,
-            border: "none",
-            borderBottom: "2px solid #dee6eb",
-            letterSpacing: "1px"
-          },
+    div: {
+      marginBottom: 51,
 
-          label: {
-            fontSize: 15,
-            color: colors.grey2,
-            display: "block",
-          },
+      $nest: {
+        input: {
+          width: "100%",
+          fontSize: 15,
+          color: colors.text,
+          paddingBottom: 18,
+          border: "none",
+          borderBottom: "2px solid #dee6eb",
+          letterSpacing: "1px"
+        },
 
-          textarea: {
-            width: "100%",
-            color: colors.grey2,
-            height: 183,
-            border: "2px solid #dee6eb",
-            marginTop: 22
-          },
+        label: {
+          fontSize: 15,
+          color: colors.grey2,
+          display: "block",
+        },
 
-          button: {
-            float: "right"
-          },
+        textarea: {
+          width: "100%",
+          color: colors.grey2,
+          height: 183,
+          border: "2px solid #dee6eb",
+          marginTop: 22
+        },
 
-          "&:last-child": {
-            //float: "right",
-            marginTop: "-13px",
-            marginBottom: 0,
-            boxSizing: "border-box",
-            height: 45
-          },
+        button: {
+          float: "right"
+        },
 
-          "&:last-child a": {
-            float: "left",
-            paddingTop: 12,
-            display: "inline-block"
-          },
+        "&:last-child": {
+          //float: "right",
+          marginTop: "-13px",
+          marginBottom: 0,
+          boxSizing: "border-box",
+          height: 45
+        },
 
-          ".select": {
-            fontSize: 15,
-            color: colors.grey2,
-            letterSpacing: "1px",
-            width: "100%",
-            paddingBottom: 22,
-            borderBottom: "2px solid #dee6eb",
-            background: "url(../images/down-select.png) no-repeat 97% 50%",
-            position: "relative",
+        "&:last-child a": {
+          float: "left",
+          paddingTop: 12,
+          display: "inline-block"
+        },
 
-            $nest: {
-              ".select-hidden": {
-                display: "none",
-                visibility: "hidden",
-                paddingRight: 10
-              },
+        ".select": {
+          fontSize: 15,
+          color: colors.grey2,
+          letterSpacing: "1px",
+          width: "100%",
+          paddingBottom: 22,
+          borderBottom: "2px solid #dee6eb",
+          background: "url(../images/down-select.png) no-repeat 97% 50%",
+          position: "relative",
 
-              ".select-options": {
-                display: "none",
-                position: "absolute",
-                top: "100%",
-                right: 0,
-                left: 0,
-                zIndex: 999,
-                margin: 0,
-                padding: 0,
-                width: 195,
-                borderRadius: 5,
-                listStyle: "none",
-                boxShadow: "1px 2px 40px rgba(28, 30, 32, 0.14)",
-                backgroundColor: colors.white,
+          $nest: {
+            ".select-hidden": {
+              display: "none",
+              visibility: "hidden",
+              paddingRight: 10
+            },
 
-                $nest: {
-                  "&::before": {
-                    left: "15%",
-                    content: '""',
-                    top: "-7px",
-                    "-ms-transform": "translateX(-50%)",
-                    transform: "translateX(-50%)",
-                    display: "inline-block",
-                    borderLeft: " 8px solid transparent",
-                    borderRight: "8px solid transparent",
-                    borderBottom: "7px solid #fff",
-                    position: "absolute"
-                  },
+            ".select-options": {
+              display: "none",
+              position: "absolute",
+              top: "100%",
+              right: 0,
+              left: 0,
+              zIndex: 999,
+              margin: 0,
+              padding: 0,
+              width: 195,
+              borderRadius: 5,
+              listStyle: "none",
+              boxShadow: "1px 2px 40px rgba(28, 30, 32, 0.14)",
+              backgroundColor: colors.white,
 
-                  li: {
-                    textTransform: "capitalize",
-                    fontSize: 16,
-                    margin: 0,
-                    padding: "14px 30px",
-                    color: "rgba(35, 120, 236, 0.9)",
+              $nest: {
+                "&::before": {
+                  left: "15%",
+                  content: '""',
+                  top: "-7px",
+                  "-ms-transform": "translateX(-50%)",
+                  transform: "translateX(-50%)",
+                  display: "inline-block",
+                  borderLeft: " 8px solid transparent",
+                  borderRight: "8px solid transparent",
+                  borderBottom: "7px solid #fff",
+                  position: "absolute"
+                },
 
-                    $nest: {
-                      "&:first-child": {
-                        borderTopRightRadius: 5,
-                        borderTopLeftRadius: 5
-                      }
+                li: {
+                  textTransform: "capitalize",
+                  fontSize: 16,
+                  margin: 0,
+                  padding: "14px 30px",
+                  color: "rgba(35, 120, 236, 0.9)",
+
+                  $nest: {
+                    "&:first-child": {
+                      borderTopRightRadius: 5,
+                      borderTopLeftRadius: 5
                     }
                   }
                 }
@@ -165,5 +176,6 @@ export const LoginContactForm = style({
           }
         }
       }
-    },
+    }
+  },
 })

@@ -1,9 +1,10 @@
 export * from './Header';
 export * from "./Home";
 export * from "./Footer";
-export * from "./SearchDomain";
-export * from './AboutUs';
+export * from "./CreateAccount";
+export * from './About';
 export * from './NotFound';
 export * from './LoginSignUp';
-export * from './Contact';
-export * from './Service';
+export * from './Prices';
+export * from './UserInterface';
+

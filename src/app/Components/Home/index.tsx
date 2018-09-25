@@ -1,3 +1,2 @@
-export * from './PriceBox';
+export * from './FeatureBox';
 export * from './WhyChooseUs';
-export * from "./MainSlider";

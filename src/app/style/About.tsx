@@ -1,27 +1,7 @@
 import { style } from "typestyle"
 import { colors } from "./vars"
 
-export const Breadcrumbs = style({
-  background: "url(../assets/images/breadcrumbs.jpg) no-repeat center",
-  backgroundSize: "cover",
-  textAlign: "center",
-  padding: "234px 0 195px 0",
 
-  $nest: {
-    h1: {
-      fontSize: 46,
-      color: colors.white,
-      letterSpacing: "2px",
-      marginBottom: 18,
-      fontWeight: 400
-    },
-    p: {
-      color: colors.whiteDark,
-      letterSpacing: "2px",
-      textTransform: "uppercase"
-    }
-  }
-})
 
 export const InfoBlock = style({
   padding: "80px 0",
@@ -135,6 +115,7 @@ export const TeamBlock = style({
         h3: {
           fontSize: 31,
           lineHeight: "45px",
+          
           marginTop: 28
         },
         p: {
@@ -148,9 +129,10 @@ export const TeamBlock = style({
 
 export const AboutBlock = style({
   marginTop: "-3px",
-  paddingTop: 65,
-  backgroundSize: "cover",
-  background: "url(../assets/images/bg-team.png) no-repeat",
+  padding: "65px 0 40px",
+  //paddingTop: 65,
+  //backgroundSize: "cover",
+  background: colors.main, //"url(../assets/images/bg-team.png) no-repeat",
 
   $nest: {
     '.hosting-software': {
@@ -216,7 +198,8 @@ export const AboutBlock = style({
 export const ImagesBg = style({
   $nest: {
     img: {
-      width: "100%"
+      width: "50%",
+      margin: "0 25% 150px"
     }
   }
 })

@@ -1,22 +1,19 @@
 import * as React from "react";
 import { Col } from "reactstrap";
 import * as styles from "../../style";
+import { Link } from "react-router-dom";
 
 export const WhyChooseUs: React.StatelessComponent<{
   imgSrc: string;
   imgAlt: string;
-  address: string;
   title: string;
   description: string;
-}> = ({ address, imgSrc, imgAlt, title, description }) => (
-  <Col md={4} xs={12}>
+}> = ({ imgSrc, imgAlt, title, description }) => (
+  <Col lg="4" md="12">
     <div className={styles.WhyChooseInside}>
       <img src={imgSrc} alt={imgAlt} />
-      <a href={address}>{title}</a>
+      <Link to="/prices">{title}</Link>
       <p>{description}</p>
-      <a className="read-more" href={address}>
-        Learn more <img src="../assets/images/right.png" alt=">" />
-      </a>
     </div>
   </Col>
 );

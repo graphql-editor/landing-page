@@ -1,12 +1,12 @@
-import { style, classes } from "typestyle";
-import { colors } from "./vars";
+import { style, classes } from "typestyle"
+import { colors } from "./vars"
 
 export const Header = style({
   top: 0,
   left: 0,
   width: "100%",
   zIndex: 999999,
-  padding: "50px 0",
+  padding: "40px 0",
   position: "absolute",
   marginBottom: 0,
   backgroundColor: "transparent",
@@ -23,27 +23,6 @@ export const Header = style({
       boxSizing: "border-box"
     },
 
-    "@media screen and (min-width: 900px) and (max-width:1200px)": {
-      padding: "20px 0 0"
-    },
-
-    ".container": {
-      $nest: {
-        "@media only screen and (min-width: 576px)": {
-          width: 540
-        },
-        "@media only screen and (min-width: 768px)": {
-          width: 750
-        },
-        "@media only screen and (min-width: 992px)": {
-          width: 970
-        },
-        "@media only screen and (min-width: 1200px)": {
-          width: 1140
-        }
-      }
-    },
-
     ".logo": {
       $nest: {
         img: {
@@ -53,132 +32,119 @@ export const Header = style({
       }
     },
 
-    ".row": {
+    ".list ul": {
       display: "flex",
       flexDirection: "row",
       alignItems: "center"
-    }
-  }
-});
+    },
 
-export const HeaderMenu = style({
-  textAlign: "right",
-  marginRight: 24,
-  marginBottom: 0,
+    "@media screen and (min-width: 900px) and (max-width:1200px)": {
+      padding: "20px 0 10px"
+    },
+  }
+})
+
+export const NavContent = style({
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
 
   $nest: {
-    li: {
-      position: "relative",
-      display: "inline-block",
-      marginRight: 41,
-      marginBottom: 0,
+    div: {
+      display: "flex",
+      flexDirection: "row"
+    },
+
+    '.nav-item': {
+      margin: "0 10px",
+      fontSize: 18,
+      
 
       $nest: {
-        "@media only screen and (min-width: 1200px) and (max-width: 1330px)": {
-          marginRight: 20
+        a: {
+          color: colors.white,
+        }
+      }
+    },
+
+    "@media screen and (max-width: 480px)": {
+     //flexWrap: "wrap",
+
+      $nest: {
+        "> li": {
+          marginBottom: 20
         },
 
-        "&::before": {
-          content: "",
-          position: "absolute",
-          bottom: "-12px",
-          left: "50%",
-          width: 24,
-          height: "2px",
-          opacity: 0,
-          transition: "0.2s linear",
-          "-ms-transform": "translateX(-50%)",
-          transform: "translateX(-50%)",
-          display: "inline-block",
-          backgroundColor: "rgba(255, 255, 255, 0.2)"
-        },
-
-        "&.children": {
-          $nest: {
-            "&::after": {
-              content: "",
-              width: 130,
-              height: 18,
-              bottom: "-17px",
-              "-ms-transform": "translateX(-50%)",
-              transform: "translateX(-50%)",
-              left: "50%",
-              backgroundColor: "transparent",
-              position: "absolute"
-            }
-          }
-        },
-
-        ".sub-menu": {
-          top: 40,
-          left: "50%",
-          "-ms-transform": "translateX(-50%)",
-          transform: "translateX(-50%)",
-          position: "absolute",
-          textAlign: "left",
-          width: 195,
-          zIndex: 9,
-          opacity: 0,
-          visibility: "hidden",
-          borderRadius: 5,
-          boxShadow: "1px 2px 40px rgba(28, 30, 32, 0.14)",
-          backgroundColor: colors.white,
-          transition: "0.3s linear",
+        '.list ul': {
+          flexWrap: "wrap",
+          justifyContent: "center",
+          
 
           $nest: {
-            "&::before": {
-              content: "",
-              top: "-7px",
-              left: "50%",
-              "-ms-transform": "translateX(-50%)",
-              transform: "translateX(-50%)",
-              display: "inline-block",
-              borderLeft: "8px solid transparent",
-              borderRight: "8px solid transparent",
-              borderBottom: "7px solid #fff",
-              position: "absolute"
-            },
-
             li: {
-              verticalAlign: "middle",
-
-              $nest: {
-                "&::before": {
-                  display: "none"
-                },
-                "&:first-child": {
-                  borderTopRightRadius: 5,
-                  borderTopLeftRadius: 5
-                },
-                "&:last-child": {
-                  borderTopRightRadius: 5,
-                  borderTopLeftRadius: 5
-                },
-
-                a: {
-                  color: "rgba(35, 120, 236, 0.9)"
-                }
-              }
+              marginBottom: 20
             }
           }
         }
       }
     },
-    a: {
-      color: "rgba(255, 255, 255, 0.9)",
-      fontSize: 16,
-      letterSpacing: "1px"
+
+    "@media screen and (max-width: 768px)": {
+      flexDirection: "column",
+
+      $nest: {
+        "> li":{
+          marginBottom: 20,
+        },
+        div: {
+          margin: "0 0 20px"
+          
+        }
+      }
     }
   }
-});
+})
+
+export const MobileBlock = style({
+  width: "100%",
+
+  $nest: {
+    '.navbar-brand': {
+      top: 10,
+      "-ms-transform": "translate(0)",
+      transform: "translate(0)",
+      display: "inline-block",
+      position: "absolute",
+      left: 30
+    },
+
+    button: {
+      position: "absolute",
+      display: "inline-block",
+      top: 17,
+      right: 30,
+      height: 30,
+    }
+  }
+})
+
 
 export const HeaderButton = style({
   textAlign: "right",
   marginRight: 7,
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
 
   $nest: {
+    'iframe,span': {
+      marginRight: 15
+    },
+
     ".custom-btn": {
-      width: 113,
+      width: 'auto',
       color: colors.white,
       boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.4)",
       borderRadius: 5,
@@ -186,8 +152,9 @@ export const HeaderButton = style({
       letterSpacing: "1px",
       display: "inline-block",
       textAlign: "center",
-      padding: "10px 15px",
+      padding: "10px 14px",
       textTransform: "none",
+      cursor: "pointer",
 
       $nest: {
         "&.login": {
@@ -198,17 +165,39 @@ export const HeaderButton = style({
         },
 
         "@media screen and (min-width: 1200px) and (max-width: 1300px)": {
-          width: 98
+          minWidth: 98
         }
       }
-    }
-  }
-});
+    },
 
-export const LoggingHeader = classes(
+    "@media screen and (max-width: 480px)": {
+      // flexDirection: "column",
+      flexWrap: "wrap",
+      justifyContent: "center",
+
+
+      $nest: {
+        'iframe, .custom-btn': {
+          marginBottom: 10
+        }
+      }
+    },
+
+    "@media screen and (min-width: 900px) and (max-width:1200px)": {
+      $nest: {
+        '.custom-btn': {
+          minWidth: 91
+        }
+      }
+    },
+  }
+})
+
+export const BlueHeader = classes(
   Header,
   style({ 
     background: colors.main,
-    marginBottom: 115,
+    marginBottom: 0,
+    position: "relative"
   })
-);
+)

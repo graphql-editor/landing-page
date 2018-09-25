@@ -1,43 +1,60 @@
 import * as React from "react";
 import * as styles from "./style";
+import { withRouter, RouteComponentProps } from "react-router";
+import { UserContainer } from "./UserInteface";
+import { Subscribe } from "unstated";
+import { Form } from "@slothking-online/form";
 
-class SignUp extends React.Component {
+class SignUp extends React.Component<RouteComponentProps<any>, any> {
   render() {
     return (
-      <div className={`${styles.LoginBg} sign-up animatedParent`}>
-        <form className={styles.LoginContactForm}>
-          <h2>Sign Up</h2>
-          <div className="form-group">
-            <input type="text" placeholder="First Name *" required />
-          </div>
-          <div className="form-group">
-            <input type="text" placeholder="Last Name *" required />
-          </div>
-          <div className="form-group">
-            <input type="text" placeholder="Email Address *" required />
-          </div>
-          <div className="form-group">
-            <select className={`select`}>
-              <option value="Select Country">Country</option>
-              <option value="Select Country2">Ukraine</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <input type="text" placeholder="City *" required />
-          </div>
-          <div className="form-group">
-            <input type="text" placeholder="ZIP Code *" required />
-          </div>
-          <div className="form-group">
-            <input type="text" placeholder="Address *" required />
-          </div>
-          <div className="form-group">
-            <input type="text" placeholder="Password *" required />
-          </div>
-          <button>create my account</button>
-        </form>
-      </div>
+      <Subscribe to={[UserContainer]}>
+        {(userOps: UserContainer) => {
+          return (
+            <div className={`${styles.LoginBg} sign-up animatedParent`}>
+              <div className={styles.FormBackground}>
+                <h2 className={styles.FormH2}>Sign Up</h2>
+                <Form
+                  className={styles.FormContent}
+                  submitText="COMING SOON"
+                  fields={[
+                    {
+                      name: "username",
+                      fieldType: "string",
+                      content: {
+                        placeholder: "E-mail Address",
+                        required: true
+                      }
+                    },
+                    {
+                      name: "password",
+                      fieldType: "string",
+                      content: {
+                        placeholder: "Password",
+                        required: true,
+                        type: "password"
+                      }
+                    },
+                    {
+                      name: "rep_password",
+                      fieldType: "string",
+                      content: {
+                        placeholder: "Repeat Password",
+                        required: true,
+                        type: "password"
+                      }
+                    }
+                  ]}
+                  validate={e => {
+                    //userOps.logIn();
+                  }}
+                />
+              </div>
+            </div>
+          );
+        }}
+      </Subscribe>
     );
   }
 }
-export default SignUp;
+export default withRouter(SignUp);

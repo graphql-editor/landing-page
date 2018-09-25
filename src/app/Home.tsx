@@ -1,50 +1,36 @@
 import * as React from "react";
-import { Row } from "reactstrap";
 import * as styles from "./style";
+import { whyYouShouldData, pricingListData, monthPlans } from "./text_data";
 import {
-  whyYouShouldData,
-  hostingSoft,
-  trustedList,
-  pricingListData
-} from "./text_data";
-import {
-  TrustedBox,
-  PriceBox,
+  FeatureBox,
   WhyChooseUs,
-  MainSlider,
-  RecommendsSlider
+  TrustedBoxSlider,
+  GifSection,
+  PriceBox,
 } from "./Components";
-import SearchDomain from "./SearchDomain";
 import { Link } from "react-router-dom";
-import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import {
+  Container,
+  Row
+  //  Col
+} from "reactstrap";
+import { withRouter, RouteComponentProps } from "react-router";
+import CreateAccount from "./Components/CreateAccount";
 
-class Home extends React.Component {
+class Home extends React.Component<RouteComponentProps<any>, any> {
   render() {
     return (
       <div className="wrapper">
-        <MainSlider />
+        <GifSection>
+          <h2>GraphQL Visual Editor</h2>
+          <input type="email" required placeholder="Email Address" />
+          <button className={styles.CustomBtnGreen}>SIGNUP FREE</button>
+        </GifSection>
         <section className={styles.WhyUsSection}>
-          <div className={`${styles.Container} container`}>
+          <Container>
             <div className={styles.PartnersSection}>
-              <h5>Trusted by 150,000+ happy customers worldwide</h5>
-              <OwlCarousel
-                className={`${styles.PartnersSlider} owl-carousel owl-theme`}
-                loop
-                margin={0}
-                nav={false}
-                items={6}
-              >
-                {trustedList.map((el, i) => (
-                  <TrustedBox
-                    key={i}
-                    address={el.address}
-                    imgSrc={el.imgSrc}
-                    altImg={el.altImg}
-                  />
-                ))}
-              </OwlCarousel>
+              <h5>Companies using GraphQL</h5>
+              <TrustedBoxSlider />
             </div>
             <div className={styles.WhyChoose}>
               <h2 className={styles.TitleHead}>Why you should choose us</h2>
@@ -54,71 +40,75 @@ class Home extends React.Component {
                     key={i}
                     imgSrc={el.imgSrc}
                     imgAlt={el.imgAlt}
-                    address={el.address}
                     title={el.title}
                     description={el.description}
                   />
                 ))}
               </Row>
             </div>
-            <div className={styles.HostingSoftware}>
-              <h2 className={styles.TitleHead}>Powerful Hosting Software</h2>
-              <ul className={styles.Counter} id="counter">
-                {hostingSoft.map((el, i) => (
-                  <li key={i}>
-                    <b className="count" data-count={el.num}>
-                      0
-                    </b>
-                    <span>{el.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          </Container>
         </section>
         <div className={styles.PricingTable}>
-          <div className={`${styles.Container} container`}>
-            <h2 className={styles.TitleHead}>Linux Reseller Hosting</h2>
-            <p>High Performance cPanel WHM Reseller Hosting in Europe</p>
-            <ul className={styles.PricingList}>
+          <Container>
+            <h2 className={styles.TitleHead}>Features</h2>
+            <ul className={styles.FeatureList}>
               {pricingListData.map((el, i) => (
-                <PriceBox
+                <FeatureBox
                   key={i}
                   imgSrc={el.imgSrc}
                   imgAlt={el.imgAlt}
                   title={el.title}
                   description={el.description}
-                  price={el.price}
-                  period={el.period}
                 />
               ))}
             </ul>
-          </div>
-          <div className={`${styles.Container} container`}>
+          </Container>
+          <Container className={styles.ChoicePlan}>
+            <h2 className="text-center">Pricing</h2>
+            <div className="tab-content">
+              <div className="tab-pane active">
+                <ul className={styles.ServicePricingList}>
+                  {monthPlans.map((el, i) => (
+                    <PriceBox
+                      key={i}
+                      imgSrc={el.imgSrc}
+                      title={el.title}
+                      list={el.list}
+                      price={el.price}
+                    />
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Container>
+          <Container>
             <div className={styles.InfoPricing}>
-              <h4>Why you need a HOSTING?</h4>
+              {/* <h4>Why you need a GraphQL Visual Editor?</h4> */}
               <ul>
                 <li>
-                  <h6>Easy to Customize</h6>
+                  <h6>TOOL FOR BUSINESS MANAGERS</h6>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.{" "}
+                    GraphQL is cool for business managers too. Create your
+                    business processes in minutes and transform them into a
+                    working system
                   </p>
                 </li>
                 <li className="right">
-                  <h6>Powerful Security</h6>
+                  <h6>COMPLEX GRAPHQL CODE</h6>
                   <p>
-                    Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop.
+                    Complex backend systems are impossible to understand in
+                    short period of time without visual representation. Editor
+                    gives you that.
                   </p>
                 </li>
               </ul>
               <ul className="right">
                 <li>
-                  <h6>Market Performance</h6>
+                  <h6>MERGE ALL QUERY AND MUTATION</h6>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered.
+                    Schema stiching is a small problem in graphql. GraphQLEditor
+                    will do that for you, so you can forget about that problem
+                    right now
                   </p>
                 </li>
                 <li className="button right">
@@ -128,12 +118,38 @@ class Home extends React.Component {
                 </li>
               </ul>
             </div>
-          </div>
+          </Container>
+          {/* <Container>
+            <div className={styles.InfoPlan}>
+              <div className="container">
+                <Row>
+                  <Col md={6}>
+                    <img src="assets/images/improving.png" alt="improving" />
+                    <h5>TOOL FOR BUSINESS MANAGERS</h5>
+                    <p>
+                      GraphQL is cool for business managers too. Create your
+                      business processes in minutes and transform them into a
+                      working system
+                    </p>
+                  </Col>
+                  <Col md={6}>
+                    <img src="assets/images/secured.png" alt="improving" />
+                    <h5>COMPLEX GRAPHQL CODE</h5>
+                    <p>
+                      Complex backend systems are impossible to understand in
+                      short period of time without visual representation. Editor
+                      gives you that.
+                    </p>
+                  </Col>
+                </Row>
+              </div>
+            </div>
+          </Container> */}
         </div>
-        <RecommendsSlider />
-        <SearchDomain />
+        {/* <RecommendsSlider /> */}
+        <CreateAccount />
       </div>
     );
   }
 }
-export default Home;
+export default withRouter(Home);

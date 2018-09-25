@@ -47,7 +47,8 @@
     "webpack-dev-server": "^3.1.0"
   },
   "dependencies": {
-    "@slothking-online/form": "^0.1.31",
+    "@slothking-online/form": "^0.1.36",
+    "@slothking-online/state": "^1.0.1",
     "classnames": "^2.2.5",
     "moment": "^2.21.0",
     "react": "^16.4.2",

@@ -5,25 +5,24 @@ import Login from "./Login";
 import Header from "./Header";
 import Footer from "./Footer";
 import SignUp from "./SignUp";
-import AboutUs from "./AboutUs";
-import Contact from "./Contact";
+import About from "./About";
 import { NotFound } from "./NotFound";
-import { Board } from "./Board";
-import Service from './Service';
+import Prices from './Prices';
+import { withRouter, RouteComponentProps } from 'react-router';
+import UserInteface from "./UserInteface";
 
-class AppContainer extends React.Component<any, any> {
+class AppContainer extends React.Component<RouteComponentProps<any>, any> {
   render() {
     return (
       <div className="wrapper">
-        <Header props={this.props} />
+        <Header />
         <Switch>
           <Route component={Home} exact path="/" />
-          <Route component={Board} exact path="/board" />
-          <Route component={Contact} exact path="/contact" />
           <Route component={Login} exact path="/login" />
           <Route component={SignUp} exact path="/sign-up" />
-          <Route component={AboutUs} exact path="/about-us" />
-          <Route component={Service} exact path="/service" />
+          <Route component={About} exact path="/about" />
+          <Route component={Prices} exact path="/prices" />
+          <Route component={UserInteface} exact path ="/user" />
           <Route component={NotFound} exact path="*" />
         </Switch>
         <Footer />
@@ -31,4 +30,4 @@ class AppContainer extends React.Component<any, any> {
     );
   }
 }
-export default AppContainer;
+export default withRouter(AppContainer);

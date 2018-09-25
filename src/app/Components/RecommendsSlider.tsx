@@ -4,12 +4,14 @@ import * as styles from "../style";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import {Container} from 'reactstrap'
 
 export const RecommendsSlider: React.StatelessComponent<{}> = ({}) => (
-  <div className={`${styles.Container} container`}>
+  // <div className={`${styles.Container} container`}>
+  <Container>
     <OwlCarousel
       className={`slider owl-carousel owl-theme ${styles.UserSlider}`}
-      loop
+      loop={true}
       nav={true}
       items={1}
       center={true}
@@ -31,5 +33,5 @@ export const RecommendsSlider: React.StatelessComponent<{}> = ({}) => (
         </div>
       ))}
     </OwlCarousel>
-  </div>
+  </Container>
 );

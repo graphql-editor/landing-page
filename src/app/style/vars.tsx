@@ -12,4 +12,5 @@ export const colors = {
   lightGrey: "#7c8ca4",
   grey2: "#8198a6",
   darkerBlue: "#3f75ff",
+  footerBackground: "#1f7fe2"
 };

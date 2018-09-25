@@ -1,6 +1,6 @@
-import { style, classes } from "typestyle"
-import { colors } from "./vars"
-import { PricingList } from "./Home"
+import { style, classes } from "typestyle";
+import { colors } from "./vars";
+import { FeatureList } from "./Home";
 
 export const ServicePage = style({
   $nest: {
@@ -8,38 +8,32 @@ export const ServicePage = style({
       width: 1010
     }
   }
-})
+});
 
 export const ChoicePlan = style({
-  marginBottom: 112,
-  padding: "160px 0 0",
-  paddingTop: 160,
-  background: `${
-    colors.grey
-  } url(../assets/images/choice-plan.png) no-repeat top`,
+  paddingTop: 30, // 60
+  marginBottom: 30, // 60
 
   $nest: {
-    "@media screen and (max-width: 768px)": {
-      marginBottom: 60
-    },
-
-    "@media screen and (max-width: 991px)": {
-      padding: "120px 0 0"
-    },
-
-    "@media screen and (min-width: 991px) and (max-width: 1200px)": {
-      paddingTop: 145
-    },
-
     ".container": {
-      width: 1010
+      width: 1010,
+
+      $nest: {
+        "@media screen and (min-width: 768px) and (max-width: 991px)": {
+          width: 750
+        },
+
+        "@media screen and (max-width: 768px)": {
+          width: "auto"
+        }
+      }
     },
 
     h2: {
       fontSize: 46,
       color: colors.white,
       letterSpacing: "2px",
-      marginBottom: 24,
+      marginBottom: 50,
       fontWeight: 300
     },
 
@@ -56,7 +50,7 @@ export const ChoicePlan = style({
           display: "block"
         },
         li: {
-          float: "none",
+          
           display: "inline-block",
           border: "2px solid #74a0fb",
           //marginRight: "-4px",
@@ -104,19 +98,58 @@ export const ChoicePlan = style({
           display: "none"
         }
       }
-    }
+    },
+    "@media screen and (max-width: 768px)": {
+      marginBottom: 60
+    },
+
+    "@media screen and (max-width: 991px)": {
+      padding: '60px 0 0',  //"120px 0 0"
+      $nest: {
+        li: {
+          float: "none",
+        }
+      }
+    },
+
+    "@media screen and (min-width: 992px) and (max-width: 1200px)": {
+      paddingTop: 105 //145
+    },
   }
-})
+});
+
+export const ChoicePlanPrices = classes(ChoicePlan, style({
+  marginBottom: 112,
+  padding: "160px 0 0",
+  paddingTop: 140,
+  background: `url(../assets/images/choice-plan.png) no-repeat top`, //colors.gray
+}))
 
 export const ServicePricingList = classes(
-  PricingList,
+  FeatureList,
   style({
     $nest: {
+
+      '> li': {
+        height: 615,
+        overflow: "hidden"
+      },
+
       li: {
         width: "30.7%",
-        float: "none",
+        //float: "none",
         padding: "43px 35px 28px 35px",
-        marginRight: 33
+        marginRight: 33,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+
+        $nest: {
+          div: {
+            width: "100%",
+          }
+        }
       },
       ul: {
         marginBottom: 15,
@@ -128,21 +161,61 @@ export const ServicePricingList = classes(
             float: "none",
             marginRight: 0,
             boxShadow: "none",
-            marginBottom: 17,
+            marginBottom: 0,
+            lineHeight: "26px",
             backgroundColor: "transparent",
             borderRadius: 0,
             padding: 0,
             display: "block",
-            letterSpacing: 0
+            letterSpacing: 0,
+          },
+        }
+      },
+
+      "@media screen and (max-width: 480px)": {
+        $nest: {
+          '> li': {
+            width: "85% !important"
+          }
+        }
+      },
+
+      "@media screen and (max-width: 991px)": {
+        $nest: {
+          "> li": {
+            height: "auto",
+            width: "75%",
+            margin: "30px auto",
+            marginRight: "auto",
+            display: "block",
+
+            
+            $nest: {
+              "&:last-child": {
+                marginRight: "auto"
+              }
+            }
+          }
+        }
+      },
+
+      "@media screen and (min-width: 991px) and (max-width: 1200px)": {
+        display: "inline-block",
+  
+        li: {
+          width: "30.7%",
+          ".custom-btn": {
+            fontSize: 12
           }
         }
       }
     }
   })
-)
+);
 
 export const InfoPlan = style({
-  paddingBottom: 83,
+  //paddingBottom: 83,
+  paddingBottom: 43,
 
   $nest: {
     img: {
@@ -160,13 +233,15 @@ export const InfoPlan = style({
       color: colors.textLight,
       fontSize: 14,
       letterSpacing: "1px",
-      lineHeight: "23px"
+      lineHeight: "23px",
+
+      textAlign: "left"
     }
   }
-})
+});
 
 export const BlockFeatures = style({
-  marginBottom: "-80px",
+  marginBottom: "180px",
 
   $nest: {
     ".row": {
@@ -177,6 +252,13 @@ export const BlockFeatures = style({
       flexDirection: "row",
 
       $nest: {
+        '.text': {
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-start"
+        },
+
         "@media screen and (max-width: 768px)": {
           flexDirection: "column"
         },
@@ -217,129 +299,44 @@ export const BlockFeatures = style({
       }
     }
   }
-})
+});
 
-//table
-export const InfoPlans = style({
-  background: "#f6fafd url(../assets/images/bg-servise-2.png) no-repeat top",
-  paddingTop: 268,
 
-  $nest: {
-    ".title-head": {
-      marginBottom: 10
-    },
+// export const BottomInfoPlans = style({
+//   marginTop: "-240px",
+//   padding: "260px 0 175px 0",
+//   marginBottom: 80,
+//   background: "url(../assets/images/bottom-info-plans.png) no-repeat center",
 
-    p: {
-      color: colors.textLight,
-      fontSize: 14,
-      textAlign: "center",
-      letterSpacing: "1px",
-      marginBottom: 45
-    },
+//   $nest: {
+//     ".title-head": {
+//       color: colors.white,
+//       marginTop: 100,
+//       marginBottom: 7,
+//       fontWeight: 400
+//     },
 
-    table: {
-      width: "100%",
-      boxShadow: "1px 1px 22px rgba(157, 184, 209, 0.19)",
-      borderRadius: 3,
-      zIndex: 999,
-      position: "relative",
-      backgroundColor: colors.white,
+//     p: {
+//       textAlign: "center",
+//       fontSize: 14,
+//       marginBottom: 25,
+//       color: "rgba(205, 220, 236, 0.8)"
+//     },
 
-      $nest: {
-        tr: {
-          padding: "0 40px",
+//     ".custom-btn": {
+//       padding: "16px 29px",
+//       fontSize: 15,
+//       marginBottom: 60
+//     },
 
-          $nest: {
-            td: {
-              color: colors.textLight,
-              fontSize: 15,
-              letterSpacing: "1px",
-              textAlign: "center",
-              padding: "10px 0",
+//     ".partner-slider": {
+//       marginTop: 85,
+//       textAlign: "center",
+//       cursor: "all-scroll"
+//     }
+//   }
+// });
 
-              $nest: {
-                "&.text-left": {
-                  width: "27%",
-                  textAlign: "left",
-                  paddingLeft: 40
-                },
-                
-                b: {
-                  color: colors.text,
-                }
-              }
-            },
-
-            '&.offset-inside td': {
-              paddingTop: 43,
-            }
-          }
-        },
-
-        "thead tr td": {
-          paddingTop: 35,
-          color: colors.text,
-          fontSize: 18,
-          letterSpacing: "1px",
-          textAlign: "center",
-          padding: "10px 0",
-          fontWeight: 700,
-
-          $nest: {
-            "&:first-child": {
-              paddingBottom: 18
-            },
-
-            "&.text-left": {
-              width: "27%",
-              textAlign: "left",
-              paddingLeft: 40
-            }
-          }
-        },
-
-        "tbody td": {
-          $nest: {
-            '&.background': {
-              background: "rgba(230, 237, 246, 0.4)"
-            }
-          }
-        }
-      }
-    }
-  }
-})
-
-export const BottomInfoPlans = style({
-  marginTop: "-240px",
-  padding: "260px 0 175px 0",
-  marginBottom: 80,
-  background: "url(../assets/images/bottom-info-plans.png) no-repeat center",
-
-  $nest: {
-    '.title-head': {
-      color: colors.white,
-      marginTop: 100,
-      marginBottom: 7,
-      fontWeight: 400
-    },
-    
-    p: {
-      textAlign: "center",
-      fontSize: 14,
-      marginBottom: 25,
-      color: "rgba(205, 220, 236, 0.8)"
-    },
-
-    '.custom-btn': {
-      padding: "16px 29px",
-      fontSize: 15
-    },
-
-    '.partner-slider': {
-      marginTop: 85,
-      textAlign: "center",
-      cursor: "all-scroll",
-    }
-  }
+export const PricesSlider = style({
+  marginBottom: 150
 })

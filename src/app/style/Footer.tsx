@@ -1,10 +1,9 @@
 import { style, classes } from "typestyle";
 import { colors } from "./vars";
-// import * as vars from "./vars"
 
 export const Footer = style({
   paddingTop: 91,
-  backgroundColor: "#1f7fe2"
+  backgroundColor: colors.footerBackground
 });
 
 export const WidgetFooter = style({
@@ -44,7 +43,32 @@ export const WidgetFooter = style({
           }
         }
       }
-    }
+    },
+
+    "@media screen and (max-width: 480px)": {
+      width: "100%",
+      textAlign: "center",
+      marginBottom: 40,
+    },
+
+    "@media screen and (min-width: 480px) and (max-width: 768px)": {
+      width: "50%",
+      wordWrap: "break-word",
+      marginBottom: 40,
+
+      "&:nth-child(4)": {
+        clear: "initial"
+      }
+    },
+
+    "@media screen and (min-width: 768px) and (max-width: 991px)": {
+      width: "33%",
+      wordWrap: "break-word",
+
+      "&:nth-child(4)": {
+        clear: "both"
+      }
+    },
   }
 });
 
@@ -81,11 +105,21 @@ export const WidgetFooterLast = classes(
                 alignItems: "center",
                 height: "100%",
                 color: "rgba(31, 127, 226, 0.8)",
-                fontSize: 18,
+                fontSize: 18
               }
             }
           }
         }
+      },
+
+      "@media screen and (max-width: 480px)": {
+        width: "100% !important",
+        textAlign: "center"
+      },
+  
+      "@media screen and (max-width: 991px)": {
+        width: "33%",
+        paddingLeft: 0,
       }
     }
   })

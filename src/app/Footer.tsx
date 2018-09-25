@@ -2,12 +2,14 @@ import * as React from "react";
 import * as styles from "./style";
 import { FooterWidget } from "./Components";
 import { footerData } from "./text_data";
-import { Link } from "react-router-dom";
-class Footer extends React.Component<any, any> {
+import { Container } from "reactstrap";
+import { withRouter, RouteComponentProps } from 'react-router';
+
+class Footer extends React.Component<RouteComponentProps<any>, any> {
   render() {
     return (
       <footer className={styles.Footer}>
-        <div className="container">
+        <Container>
           {footerData.map((el, i) => (
             <FooterWidget
               key={i}
@@ -18,27 +20,28 @@ class Footer extends React.Component<any, any> {
           ))}
           <div className={styles.WidgetFooterLast}>
             <a href="/">
-              <img src="assets/images/logo.svg" alt="logo" />
+              <img src="assets/images/logo_small.png" alt="logo" />
             </a>
             <p>There are many variations of passages of Lorem Ipsum</p>
             <ul className="social-icon">
+              {/* <li>
+                <a href="https://github.com/slothking-online/grqphql-editor">
+                  <i className={`fab fa-facebook-f`} />
+                </a>
+              </li> */}
               <li>
-                <Link to="facebook.com"><i className={`fab fa-facebook-f`} /></Link>
-              </li>
-              <li>
-                <Link to="instagram.com"><i className={`fab fa-instagram`} /></Link>
-              </li>
-              <li>
-                <Link to="youtube.com"><i className={`fab fa-youtube`} /></Link>
+                <a href="https://github.com/slothking-online/grqphql-editor">
+                  <i className="fab fa-github" />
+                </a>
               </li>
             </ul>
           </div>
           <div className={styles.Copyright}>
-            <p>&copy; Copyright 2017 Hosting, All Rights Reserved</p>
+            <p>&copy; Copyright 2018 AEXOL/Slothking</p>
           </div>
-        </div>
+        </Container>
       </footer>
     );
   }
 }
-export default Footer;
+export default withRouter(Footer);

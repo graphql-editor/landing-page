@@ -109,11 +109,6 @@ module.exports = {
       'window.jQuery': 'jquery',
       Tether: 'tether'
     }),
-    // new ExtractTextPlugin({
-    //   filename: "./assets/css/style.css",
-    //   disable: false,
-    //   allChunks: true
-    // }),
   ],
   devServer: {
     contentBase: sourcePath,

@@ -3,7 +3,7 @@ import { colors } from "./vars"
 
 export const PreFooter = style({
   marginTop: "-170px",
-  marginBottom: "-3.3%",
+  marginBottom: "-3.4%",
 
   $nest: {
     img: {
@@ -13,7 +13,7 @@ export const PreFooter = style({
   }
 })
 
-export const SearchDomain = style({
+export const PrefooterCreateAccount = style({
   overflow: "visible",
   padding: "61px 0 45px 0",
   backgroundColor: "#298bef",
@@ -129,10 +129,10 @@ export const SearchDomain = style({
 
         ".custom-btn": {
           position: "relative",
-          top: "-1px",
+          top: 0,
           marginLeft: 16,
           border: "none",
-          padding: "15px 71px",
+          padding: "15px 50px",
           background:
             colors.signup,
           fontSize: "15px",
@@ -141,8 +141,54 @@ export const SearchDomain = style({
           borderRadius: 7,
           display: "inline-block",
           textTransform: "uppercase"
+        },
+
+        "@media screen and (max-width: 768px)": {
+          $nest: {
+            '.custom-btn, .form-group, .form-group input': {
+              width: "100% !important",
+              marginLeft: 0
+            }
+          }
+        },
+
+        "@media screen and (min-width: 991px) and (max-width: 1200px)": {
+          $nest: {
+            '.form-group input': {
+              width: 340
+            }
+          }
+        },
+      }
+    },
+
+    "@media screen and (max-width: 576px)": {
+      $nest: {
+        h3: {
+          textAlign: "center"
         }
       }
-    }
+    },
+
+    "@media screen and (max-width: 991px)": {
+      padding: "30px 0 45px 0",
+
+      $nest:{ 
+        h3: {
+          paddingBottom: 10
+        },
+
+        form: {
+          marginLeft: 0,
+
+          $nest: {
+            '.form-group, .form-group input': {
+              //width: "100% !important",
+              marginLeft: "0"
+            }
+          }
+        }
+      }
+    },
   }
 })
