@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Col } from "reactstrap";
-import * as styles from "../../style";
+import * as styles from "../style";
 import { Link } from "react-router-dom";
 
 export const WhyChooseUs: React.StatelessComponent<{

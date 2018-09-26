@@ -1,10 +1,10 @@
 import * as React from "react";
 import * as styles from "./style";
-import { 
-  //RecommendsSlider,
-   GifSection 
-} from "./Components";
-import { Row, Col } from "reactstrap";
+// import { 
+//   //RecommendsSlider,
+//    GifSection 
+// } from "./Components";
+import { Row, Col, Container } from "reactstrap";
 // import { ourTeam } from "./text_data";
 import CreateAccount from "./Components/CreateAccount";
 
@@ -20,18 +20,18 @@ class About extends React.Component {
     // let team = foldm(ourTeam, 4);
     return (
       <React.Fragment>
-        <GifSection>
+        {/* <GifSection>
           <h1>About Us</h1>
           <p>moving hosting solutions to the next level</p>
-        </GifSection>
+        </GifSection> */}
         <div className={styles.InfoBlock}>
-          <div className={`${styles.Container} container`}>
+          <Container>
             <p>
               GraphQL Editors makes it easier to understand graphql schema.
               Create schema by joining visual blocks. GraphQLEditor will
               transform them into code.
             </p>
-          </div>
+          </Container>
         </div>
         <div className={`${styles.TeamBlock} animatedParent`}>
           <Row>
@@ -45,14 +45,14 @@ class About extends React.Component {
               </p>
             </Col>
             <Col md={6} className="images animated bounceInLeft">
-              <img src="./assets/images/about_example1.png" alt="image" />
+              <img src={require("../assets/images/about_example1.png")} alt="image" />
             </Col>
           </Row>
         </div>
         <div className={`${styles.TeamBlock} reverse animatedParent`}>
           <Row>
             <Col md={6} className="images animated bounceInRight">
-              <img src="./assets/images/about_example2.png" alt="image" />
+              <img src={require("../assets/images/about_example2.png")} alt="image" />
             </Col>
             <Col md={6} className="col-6 animated bounceInLeft">
               <h3>To code generation</h3>
@@ -68,7 +68,7 @@ class About extends React.Component {
         <div className={`${styles.ImagesBg} animatedParent`}>
           <img
             className="animated growIn"
-            src="./assets/images/logo_big.png"
+            src={require("../assets/images/logo_big.png")}
             alt="image2"
           />
         </div>

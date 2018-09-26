@@ -18,23 +18,23 @@ class Footer extends React.Component<RouteComponentProps<any>, any> {
               linksTo={el.linksTo}
             />
           ))}
-          <div className={styles.WidgetFooterLast}>
+          <div className={styles.FooterWidgetLast}>
             <a href="/">
-              <img src="assets/images/logo_small.png" alt="logo" />
+              <img src={require("../assets/images/logo_medium.png")} alt="GRAPHQL EDITOR" />
             </a>
-            <p>There are many variations of passages of Lorem Ipsum</p>
-            <ul className="social-icon">
-              {/* <li>
+            <p>Be a part of the backend revolution!</p>
+            {/* <ul className="social-icon">
+              <li>
                 <a href="https://github.com/slothking-online/grqphql-editor">
                   <i className={`fab fa-facebook-f`} />
                 </a>
-              </li> */}
+              </li>
               <li>
                 <a href="https://github.com/slothking-online/grqphql-editor">
                   <i className="fab fa-github" />
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
           <div className={styles.Copyright}>
             <p>&copy; Copyright 2018 AEXOL/Slothking</p>

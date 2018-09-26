@@ -1,4 +1,4 @@
-import { style, classes } from "typestyle"
+import { style } from "typestyle"
 import { colors } from "./vars"
 
 export const Header = style({
@@ -7,7 +7,7 @@ export const Header = style({
   width: "100%",
   zIndex: 999999,
   padding: "40px 0",
-  position: "absolute",
+  //position: "absolute",
   marginBottom: 0,
   backgroundColor: "transparent",
   display: "block",
@@ -15,6 +15,9 @@ export const Header = style({
   border: 0,
   fontSize: "100%",
   verticalAlign: "baseline",
+
+
+  position: "relative",
 
   $nest: {
     "&::before, &::after ": {
@@ -24,12 +27,9 @@ export const Header = style({
     },
 
     ".logo": {
-      $nest: {
-        img: {
-          maxWidth: 144,
-          height: "auto"
-        }
-      }
+      maxWidth: 144,
+      height: "auto",
+      cursor: "pointer"
     },
 
     ".list ul": {
@@ -49,8 +49,13 @@ export const NavContent = style({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "space-between",
+  width: "100%",
 
   $nest: {
+    "> li": {
+      marginBottom: 0
+    },
+
     div: {
       display: "flex",
       flexDirection: "row"
@@ -60,10 +65,16 @@ export const NavContent = style({
       margin: "0 10px",
       fontSize: 18,
       
-
       $nest: {
         a: {
-          color: colors.white,
+          color: colors.textLight,
+
+          $nest: {
+            "&:hover": {
+              color: colors.signup,
+              transition: "0.2s linear color"
+            }
+          }
         }
       }
     },
@@ -90,19 +101,34 @@ export const NavContent = style({
       }
     },
 
-    "@media screen and (max-width: 768px)": {
-      flexDirection: "column",
-
+    "@media screen and (max-width: 576px)": {
       $nest: {
-        "> li":{
-          marginBottom: 20,
-        },
-        div: {
-          margin: "0 0 20px"
-          
+        'li, img': {
+          marginBottom: 30
         }
       }
-    }
+    },
+
+    "@media screen and (max-width: 768px)": {
+      //flexDirection: "column",
+
+      $nest: {
+        div: {
+          margin: "0 0 20px"
+        }
+      }
+    },
+
+    "@media screen and (max-width: 991px)": {
+      flexDirection: "column !important",
+      //background: "red",
+      $nest: {
+
+        'li, img': {
+          marginBottom: 20
+        }
+      }
+    },
   }
 })
 
@@ -130,7 +156,7 @@ export const MobileBlock = style({
 })
 
 
-export const HeaderButton = style({
+export const HeaderButtons = style({
   textAlign: "right",
   marginRight: 7,
   display: "flex",
@@ -146,7 +172,7 @@ export const HeaderButton = style({
     ".custom-btn": {
       width: 'auto',
       color: colors.white,
-      boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.4)",
+      //boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.4)",
       borderRadius: 5,
       background: colors.signup,
       letterSpacing: "1px",
@@ -159,7 +185,7 @@ export const HeaderButton = style({
       $nest: {
         "&.login": {
           marginRight: 7,
-          boxShadow: "1px 1px 22px rgba(14, 21, 34, 0.19)",
+          //boxShadow: "1px 1px 22px rgba(14, 21, 34, 0.19)",
           borderRadius: 5,
           background: `${colors.login} none`
         },
@@ -174,7 +200,7 @@ export const HeaderButton = style({
       // flexDirection: "column",
       flexWrap: "wrap",
       justifyContent: "center",
-
+      flexDirection: "column",
 
       $nest: {
         'iframe, .custom-btn': {
@@ -182,6 +208,7 @@ export const HeaderButton = style({
         }
       }
     },
+
 
     "@media screen and (min-width: 900px) and (max-width:1200px)": {
       $nest: {
@@ -192,12 +219,3 @@ export const HeaderButton = style({
     },
   }
 })
-
-export const BlueHeader = classes(
-  Header,
-  style({ 
-    background: colors.main,
-    marginBottom: 0,
-    position: "relative"
-  })
-)

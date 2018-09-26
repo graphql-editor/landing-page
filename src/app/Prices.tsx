@@ -20,7 +20,7 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
           }
         >
           <div className="container">
-            <h2 className="text-center">Managed VPS Service</h2>
+            <h2 className="text-center">Pricing</h2>
             <div className="tab-content">
               <div role="tabpanel" className="tab-pane active" id="monthly">
                 <ul className={styles.ServicePricingList}>
@@ -40,8 +40,8 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
           <div className={styles.InfoPlan}>
             <div className="container">
               <Row>
-                <Col md={6}>
-                  <img src="assets/images/improving.png" alt="improving" />
+                <Col xs={12} md={6}>
+                  <img src={require("../assets/images/improving.png")} alt="improving" />
                   <h5>TOOL FOR BUSINESS MANAGERS</h5>
                   <p>
                     GraphQL is cool for business managers too. Create your
@@ -49,8 +49,8 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
                     working system
                   </p>
                 </Col>
-                <Col md={6}>
-                  <img src="assets/images/secured.png" alt="improving" />
+                <Col xs={12} md={6}>
+                  <img src={require("../assets/images/secured.png")} alt="improving" />
                   <h5>COMPLEX GRAPHQL CODE</h5>
                   <p>
                     Complex backend systems are impossible to understand in
@@ -75,7 +75,7 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
               </p>
             </Col>
             <Col md={6} className="text-left animated bounceInRight">
-              <img src="assets/images/server-block.svg" alt="server-block" />
+              <img src={require("../assets/images/server-block.svg")} alt="server-block" />
             </Col>
           </Row>
         </Container>
@@ -100,7 +100,7 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
 
         <div className={`container ${styles.PricesSlider}`}>
           <div className={styles.PartnersSection}>
-            <h5>Companies using GraphQL</h5>
+            <h5>THESE COMAPNIES ARE USING GRAPHQL. YOU SHOULD CONSDIER IT TOO.</h5>
             <TrustedBoxSlider />
           </div>
         </div>

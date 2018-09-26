@@ -1,7 +1,5 @@
-import { style } from "typestyle"
-import { colors } from "./vars"
-
-
+import { style } from "typestyle";
+import { colors } from "./vars";
 
 export const InfoBlock = style({
   padding: "80px 0",
@@ -19,7 +17,7 @@ export const InfoBlock = style({
       letterSpacing: "2px"
     }
   }
-})
+});
 
 export const TeamBlock = style({
   paddingRight: 15,
@@ -38,15 +36,28 @@ export const TeamBlock = style({
     },
     ".col-6": {
       maxWidth: 460,
-      marginRight: 23
+      marginRight: 23,
     },
+
+    '.bounceInRight img': {
+      borderTopRightRadius: 7,
+      borderBottomRightRadius: 7,
+    },
+
+    '.bounceInLeft img': {
+      borderTopLeftRadius: 7,
+      borderBottomLeftRadius: 7,
+    },
+
     ".images": {
       textAlign: "right",
       paddingRight: 0,
 
       $nest: {
         img: {
-          width: 630,
+
+          //width: 400,
+          //boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.5)",
           $nest: {
             "@media screen and (min-width: 1460px)": {
               width: "100%"
@@ -60,11 +71,17 @@ export const TeamBlock = style({
       fontSize: 32,
       letterSpacing: "3px",
       marginBottom: 18,
-      marginTop: 23
+      marginTop: 23,
+
+      $nest: {
+        "&:last-of-type": {
+          color: colors.signup
+        }
+      }
     },
     p: {
       color: colors.textLight,
-      fontSize: 14,
+      fontSize: 20,
       letterSpacing: "1px"
     },
     ul: {
@@ -103,7 +120,9 @@ export const TeamBlock = style({
           boxSizing: "border-box",
 
           $nest: {
-            img: { maxWidth: "100%" }
+            img: {
+              maxWidth: "100%",
+            }
           }
         },
         ".col-6": {
@@ -115,7 +134,7 @@ export const TeamBlock = style({
         h3: {
           fontSize: 31,
           lineHeight: "45px",
-          
+
           marginTop: 28
         },
         p: {
@@ -125,7 +144,7 @@ export const TeamBlock = style({
       }
     }
   }
-})
+});
 
 export const AboutBlock = style({
   marginTop: "-3px",
@@ -135,16 +154,16 @@ export const AboutBlock = style({
   background: colors.main, //"url(../assets/images/bg-team.png) no-repeat",
 
   $nest: {
-    '.hosting-software': {
+    ".hosting-software": {
       marginBottom: 90,
 
       $nest: {
-        '.title-head': {
+        ".title-head": {
           marginBottom: 43,
           color: colors.white,
           textAlign: "center",
           fontSize: 32,
-          letterSpacing: "3px",
+          letterSpacing: "3px"
         },
         ul: {
           width: "100%",
@@ -193,7 +212,7 @@ export const AboutBlock = style({
       }
     }
   }
-})
+});
 
 export const ImagesBg = style({
   $nest: {
@@ -202,18 +221,18 @@ export const ImagesBg = style({
       margin: "0 25% 150px"
     }
   }
-})
+});
 
 export const OurTeam = style({
   marginBottom: 80,
 
   $nest: {
-    '.title-head': {
+    ".title-head": {
       color: colors.white,
       marginBottom: 44,
       textAlign: "center",
       fontSize: 32,
-      letterSpacing: "3px",
+      letterSpacing: "3px"
     },
 
     ul: {
@@ -239,19 +258,20 @@ export const OurTeam = style({
               borderRadius: 6,
               transition: "0.3s linear"
             },
-            '.inside': {
+
+            ".inside": {
               padding: "24px 26px",
               boxShadow: "1px 1px 44px rgba(38, 63, 90, 0.09)",
               borderRadius: 5,
               backgroundColor: colors.white,
               textAlign: "center",
-              
+
               $nest: {
-                '.name': {
+                ".name": {
                   color: colors.text,
                   fontSize: 18,
                   letterSpacing: "1px",
-                  marginBottom: 7,
+                  marginBottom: 7
                 },
                 span: {
                   color: colors.textLight,
@@ -264,4 +284,4 @@ export const OurTeam = style({
       }
     }
   }
-})
+});

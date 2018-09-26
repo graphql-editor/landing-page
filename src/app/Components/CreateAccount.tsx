@@ -1,6 +1,6 @@
 import * as React from "react";
-import * as styles from "../style";
-import { Row, Col } from "reactstrap";
+import * as styles from "./style";
+import { Row, Col, Container } from "reactstrap";
 import { withRouter, RouteComponentProps } from "react-router";
 import { UserContainer } from "../UserInteface";
 import { Subscribe } from "unstated";
@@ -16,7 +16,7 @@ class CreateAccount extends React.Component<RouteComponentProps<any>, any> {
                 <img src="./assets/images/line-prefoter.svg" alt="bg-prefooter" />
               </div> */}
               <div className={styles.PrefooterCreateAccount}>
-                <div className={`${styles.Container} animated fadeInUpShort`}>
+              <Container>
                   <Row>
                     <Col lg="4" md="12">
                       <h3>Create Account</h3>
@@ -32,7 +32,7 @@ class CreateAccount extends React.Component<RouteComponentProps<any>, any> {
                       </form>
                     </Col>
                   </Row>
-                </div>
+                </Container>
               </div>
             </React.Fragment>
           );

@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as styles from "../style";
+import * as styles from "./style";
 
 export const GifSection: React.StatelessComponent<{
   children?: React.ReactNode;

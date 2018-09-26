@@ -11,6 +11,7 @@ export const TrustedBoxSlider: React.StatelessComponent<{}> = ({}) => (
     loop
     margin={50}
     nav={false}
+    dots={false}
     navText={[""]}
     items={5}
     autoplay={true}

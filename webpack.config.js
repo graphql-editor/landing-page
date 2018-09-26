@@ -8,7 +8,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   context: sourcePath,
@@ -63,7 +62,7 @@ module.exports = {
       //{test: /\.(woff|woff2|eot|ttf|svg)$/,loader: 'url-loader?limit=100000'}, // url-loader?limit=100000
       { test: /\.(jpg|gif)$/, use: 'file-loader' },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
             loader: 'file-loader',
             options: {

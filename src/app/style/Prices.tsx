@@ -2,36 +2,15 @@ import { style, classes } from "typestyle";
 import { colors } from "./vars";
 import { FeatureList } from "./Home";
 
-export const ServicePage = style({
-  $nest: {
-    ".container": {
-      width: 1010
-    }
-  }
-});
-
 export const ChoicePlan = style({
   paddingTop: 30, // 60
   marginBottom: 30, // 60
 
   $nest: {
-    ".container": {
-      width: 1010,
-
-      $nest: {
-        "@media screen and (min-width: 768px) and (max-width: 991px)": {
-          width: 750
-        },
-
-        "@media screen and (max-width: 768px)": {
-          width: "auto"
-        }
-      }
-    },
 
     h2: {
       fontSize: 46,
-      color: colors.white,
+      color: colors.signup,
       letterSpacing: "2px",
       marginBottom: 50,
       fontWeight: 300
@@ -120,9 +99,9 @@ export const ChoicePlan = style({
 
 export const ChoicePlanPrices = classes(ChoicePlan, style({
   marginBottom: 112,
-  padding: "160px 0 0",
-  paddingTop: 140,
-  background: `url(../assets/images/choice-plan.png) no-repeat top`, //colors.gray
+  padding: "50px 0 0",
+  //paddingTop: 140,
+  //background: `url(${require("../../assets/images/choice-plan.png")}) no-repeat top`, //colors.gray
 }))
 
 export const ServicePricingList = classes(
@@ -306,7 +285,7 @@ export const BlockFeatures = style({
 //   marginTop: "-240px",
 //   padding: "260px 0 175px 0",
 //   marginBottom: 80,
-//   background: "url(../assets/images/bottom-info-plans.png) no-repeat center",
+//   background: `url(${require(../../assets/images/bottom-info-plans.png)}) no-repeat center`,
 
 //   $nest: {
 //     ".title-head": {

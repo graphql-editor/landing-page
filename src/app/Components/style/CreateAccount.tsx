@@ -1,5 +1,5 @@
 import { style } from "typestyle"
-import { colors } from "./vars"
+import { colors } from "../../style/vars"
 
 export const PreFooter = style({
   marginTop: "-170px",
@@ -16,12 +16,12 @@ export const PreFooter = style({
 export const PrefooterCreateAccount = style({
   overflow: "visible",
   padding: "61px 0 45px 0",
-  backgroundColor: "#298bef",
+  backgroundColor: colors.grey, //"#298bef",
 
   $nest: {
     h3: {
       fontSize: 28,
-      color: colors.white,
+      color: colors.textLight, //colors.white,
       letterSpacing: "2px",
       paddingTop: 0,
       marginTop: "-5px"

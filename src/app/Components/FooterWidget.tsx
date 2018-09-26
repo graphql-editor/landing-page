@@ -1,12 +1,12 @@
 import * as React from "react";
-import * as styles from "../style";
+import * as styles from "./style";
 
 export const FooterWidget: React.StatelessComponent<{
   title: string;
   links: any;
   linksTo: any;
 }> = ({ title, links, linksTo }) => (
-  <div className={styles.WidgetFooter}>
+  <div className={styles.FooterWidget}>
     <h4>{title}</h4>
     <ul>
       {links.map((el, i) => (
