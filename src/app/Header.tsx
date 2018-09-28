@@ -29,36 +29,39 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                     </NavbarBrand>
                     <li className="list">
                       <ul>
+                        <li>
+                          <a
+                            className="github-button"
+                            href="https://github.com/slothking-online/graphql-editor"
+                            //data-icon="octicon-star"
+                            data-size="large"
+                            data-show-count={true}
+                            aria-label="Star slothking-online/graphql-editor on GitHub"
+                          >
+                            Star
+                          </a>
+                        </li>
                         <NavItem>
                           <Link to="/">Home</Link>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                           <Link to="/about">About</Link>
-                        </NavItem>
+                        </NavItem> */}
                         <NavItem>
                           <a href="https://demo.graphqleditor.com/">Demo</a>
                         </NavItem>
                         <NavItem>
                           <Link to="/prices">Pricing</Link>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                           <a href="https://github.com/slothking-online/grqphql-editor">
                             CLI
                           </a>
-                        </NavItem>
+                        </NavItem> */}
                       </ul>
                     </li>
-                    <li className={styles.HeaderButtons}>
-                      <a
-                        className="github-button"
-                        href="https://github.com/slothking-online/graphql-editor"
-                        //data-icon="octicon-star"
-                        data-size="large"
-                        data-show-count={true}
-                        aria-label="Star slothking-online/graphql-editor on GitHub"
-                      >
-                        Star
-                      </a>
+                    {/* <li className={styles.HeaderButtons}>
+                      
 
                       {userOps.state.valid ? (
                         <Link to="/user" className="custom-btn login">
@@ -80,8 +83,8 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                         <Link to="/sign-up" className="custom-btn">
                           SIGNUP FREE
                         </Link>
-                      )}
-                    </li>
+                      )} 
+                    </li> */}
                   </Nav>
                 </Navbar>
               </Container>

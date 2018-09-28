@@ -1,3 +1,9 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
+@import url("./assets/css/style.css");
+@import url("./assets/css/responsive.css");
+@import url("./assets/css/lib/animations.min.css");
+@import url("https://use.fontawesome.com/releases/v5.3.1/css/all.css");
+
 :root{
     --main-color: #00A0E0;
     --color-one: #000;
@@ -35,6 +41,7 @@ ol li, ul li {
     font-size: 15px;
     margin-bottom: 10px;
     letter-spacing: 1px;
+    list-style: none;
 }
 
 img {

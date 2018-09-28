@@ -8,14 +8,15 @@ import {
 import {
   FeatureBox,
   WhyChooseUs,
-  TrustedBoxSlider,
+  CompaniesUsingSlider,
   GifSection
   //PriceBox
 } from "./Components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter, RouteComponentProps } from "react-router";
 import CreateAccount from "./Components/CreateAccount";
+// import { Form } from "@slothking-online/form";
 
 class Home extends React.Component<RouteComponentProps<any>, any> {
   render() {
@@ -28,39 +29,47 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
                 <h2>GRAPHQL VISUAL EDITOR</h2>
                 {/* <img src={"assets/images/logo_medium.png"} /> */}
                 <p>
-                  <b>GraphQL Editor</b>{" "}
-                  makes understanding <b>GraphQL</b>{" "}schema a lot easier. Plan
-                  it out by linking visual blocks and our editor will transform
-                  them into a code!
+                  <b>GraphQL Editor</b> makes understanding <b>GraphQL</b>{" "}
+                  schema a lot easier. Plan it out by linking visual blocks and
+                  our editor will transform them into a code!
                 </p>
-                <span>
-                  <input type="email" required placeholder="Email Address" />
-                  <button className={styles.CustomBtnGreen}>SIGNUP FREE</button>
-                </span>
+                <form
+                  action="https://api.producthunt.com/widgets/upcoming/v1/upcoming/graphql-visual-designer/forms"
+                  method="post"
+                  id="ph-email-form"
+                  name="ph-email-form"
+                  target="_blank"
+                >
+                  <input
+                    type="email"
+                   
+                    name="email"
+                    id="ph-email"
+                    placeholder="Email Address"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className={styles.CustomBtnGreen}
+                    name="subscribe"
+                    id="ph-subscribe-button"
+                  >
+                    JOIN BETA LIST
+                  </button>
+                </form>
               </Col>
               <Col md={6}>
                 <img src={require("../assets/images/1.png")} alt="" />
               </Col>
             </Row>
           </Container>
-
-          {/* <h2>GraphQL Visual Editor</h2> */}
-          {/* <img src={"assets/images/logo_medium.png"} />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus consequatur sapiente, aliquam voluptatum, blanditiis esse quia quas, soluta perspiciatis</p>
-          <input type="email" required placeholder="Email Address" />
-          <button className={styles.CustomBtnGreen}>SIGNUP FREE</button> */}
         </GifSection>
         <section className={styles.WhyUsSection}>
           <Container>
-            <div className={styles.PartnersSection}>
-              <h5>
-                THESE COMAPNIES ARE USING GRAPHQL. YOU SHOULD CONSDIER IT TOO.
-              </h5>
-              <TrustedBoxSlider />
-            </div>
+            <CompaniesUsingSlider/>
             <div className={styles.HowItWorks}>
               <h2>How it works</h2>
-              <div className="gif" />
+              <img src={require("../assets/images/diagram.gif")} alt="" />
             </div>
             <div className={styles.WhyChoose}>
               <h2 className={styles.TitleHead}>Why you should choose us</h2>
@@ -80,7 +89,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
         </section>
         <div className={styles.PricingTable}>
           <Container>
-            <h2 className={styles.TitleHead}>COMING SOON</h2>
+            <h2 className={styles.TitleHead}>ROADMAP</h2>
             <ul className={styles.FeatureList}>
               {pricingListData.map((el, i) => (
                 <FeatureBox
@@ -93,7 +102,8 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
               ))}
             </ul>
           </Container>
-          {/* <Container className={styles.ChoicePlan}>
+          {/* 
+          <Container className={styles.ChoicePlan}>
             <h2 className="text-center">Pricing</h2>
             <div className="tab-content">
               <div className="tab-pane active">
@@ -142,9 +152,15 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
                   </p>
                 </li>
                 <li className="button right">
-                  <Link to="/login" className="custom-btn">
-                    Get Started Now
-                  </Link>
+                  <a
+                    href="https://demo.graphqleditor.com/"
+                    className="custom-btn"
+                  >
+                    TRY DEMO
+                  </a>
+                  {/* <Link to="/login" className="custom-btn">
+                    
+                  </Link> */}
                 </li>
               </ul>
             </div>

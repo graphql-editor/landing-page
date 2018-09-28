@@ -5,7 +5,7 @@ export * from "./FooterWidget";
 export * from './GifSection'
 export * from './PriceBox'
 export * from './RecommendsSlider'
-export * from './TrustedBoxSlider'
+export * from './CompaniesUsingSlider'
 
 
 

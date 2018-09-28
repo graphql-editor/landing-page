@@ -3,7 +3,7 @@ import * as styles from "./style";
 import { monthPlans } from "./text_data";
 import { Row, Col, Container } from "reactstrap";
 // import { RecommendsSlider } from "./Components";
-import { TrustedBoxSlider, PriceBox } from "./Components";
+import { CompaniesUsingSlider, PriceBox } from "./Components";
 import { withRouter, RouteComponentProps } from "react-router";
 import CreateAccount from "./Components/CreateAccount";
 
@@ -99,10 +99,7 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
         {/* <RecommendsSlider /> */}
 
         <div className={`container ${styles.PricesSlider}`}>
-          <div className={styles.PartnersSection}>
-            <h5>THESE COMAPNIES ARE USING GRAPHQL. YOU SHOULD CONSDIER IT TOO.</h5>
-            <TrustedBoxSlider />
-          </div>
+          <CompaniesUsingSlider/>
         </div>
 
         <CreateAccount />

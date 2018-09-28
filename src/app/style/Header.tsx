@@ -56,6 +56,16 @@ export const NavContent = style({
       marginBottom: 0
     },
 
+    ".list > ul": {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+
+      $nest: {
+        li: {margin: "auto 8px"}
+      }
+    },
+
     div: {
       display: "flex",
       flexDirection: "row"
@@ -64,6 +74,7 @@ export const NavContent = style({
     '.nav-item': {
       margin: "0 10px",
       fontSize: 18,
+      listStyle: 'none',
       
       $nest: {
         a: {
@@ -105,6 +116,19 @@ export const NavContent = style({
       $nest: {
         'li, img': {
           marginBottom: 30
+        },
+
+        '.list ul': {
+          display: 'flex',
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+
+          $nest:{ 
+            li: {
+              marginBottom: 15
+            }
+          }
         }
       }
     },

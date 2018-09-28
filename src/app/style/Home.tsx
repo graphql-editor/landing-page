@@ -1,94 +1,6 @@
 import { style, classes } from "typestyle"
 import { colors } from "./vars"
 
-// export const Container = style({
-//   width: "100%",
-//   padding: "0 15px",
-//   margin: "0 auto",
-//   border: 0,
-//   fontSize: "100%",
-
-//   $nest: {
-//     "@media only screen and (min-width: 576px)": {
-//       width: 540
-//     },
-//     "@media only screen and (min-width: 768px)": {
-//       width: 750
-//     },
-//     "@media only screen and (min-width: 992px)": {
-//       width: 970
-//     },
-//     "@media only screen and (min-width: 1200px)": {
-//       width: 1140
-//     }
-//   }
-// })
-
-export const PartnersSlider = style({
-  display: "block",
-  paddingBottom: 10,
-
-  $nest: {
-    ".owl-stage-outer": {
-      position: "relative",
-      overflow: "hidden",
-      "-webkit-transform": "translate3d(0,0,0)",
-
-      $nest: {
-        ".owl-stage": {
-          $nest: {
-            ".owl-item": {
-              display: "block",
-              float: "left",
-
-              $nest: {
-                img: {
-                  // width: 140,
-                  height: 70,
-                  borderRadius: 6
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "@media screen and (max-width: 480px)": {
-      // paddingBottom: 20,
-      marginBottom: 30
-    },
-
-    "@media screen and (max-width: 768px)": {
-      // paddingBottom: 40,
-      marginBottom: 0
-    }
-  }
-})
-
-export const PartnersSection = style({
-  textAlign: "center",
-  //paddingBottom: 47,
-  marginBottom: 65,
-  borderBottom: "2px solid rgba(219, 234, 248, 0.6)",
-  overflow: "hidden",
-
-  $nest: {
-    "owl-item": {
-      float: "left"
-    },
-
-    h5: {
-      margin: "40px 0 20px",
-      fontSize: 15,
-      marginBottom: 45,
-      letterSpacing: 1,
-      textTransform: "uppercase",
-
-      color: colors.signup
-    }
-  }
-})
-
 
 export const HowItWorks = style({
   marginBottom: 80,
@@ -102,35 +14,29 @@ export const HowItWorks = style({
       textAlign: "center"
     },
 
-    '.gif': {
-        background: `url(${require("../../assets/images/diagram.gif")})`,
-        backgroundSize: "cover",
-        height: 500,
-
-        backgroundPosition: "top",
-        backgroundRepeat: "no-repeat",
-        borderRadius: 7,
-
-
-        boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.5)",
+    img: {
+      backgroundSize: "cover",
+      height: 'auto',
+      width: "100%",
+      borderRadius: 7,
+      boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.5)",
     },
 
     "@media screen and (max-width: 576px)": {
       display: "none"
     },
 
-    "@media screen and (min-width: 576px) and (max-width: 768px)": {
+    "@media screen and (min-width: 991px) and (max-width: 1200px)": {
       $nest: {
-        '.gif': {
-          height: 390
+        img: {
+          width: "85%",
+          display: 'block',
+          margin: '0 auto'
         }
       }
-    },
+    }
   }
 })
-
-
-
 
 
 export const WhyUsSection = style({
@@ -279,7 +185,7 @@ export const FeatureList = style({
       padding: "33px 29px 33px 35px",
       textAlign: "center",
       display: "inline-block",
-      boxShadow: "1px 1px 22px rgba(157, 184, 209, 0.19)",
+      boxShadow: '1px 1px 7px rgba(157, 184, 209, 0.27)', //"1px 1px 22px rgba(157, 184, 209, 0.19)",
       borderRadius: 3,
       backgroundColor: "white",
       marginRight: 10,
@@ -298,7 +204,8 @@ export const FeatureList = style({
 
           $nest: {
             img: {
-              height: 50
+              height: 50,
+              //filter: `invert(0) sepia(0) saturate(1) hue-rotate(105deg)`
             }
           }
         },
@@ -366,7 +273,7 @@ export const FeatureList = style({
           padding: "14px 15px",
           fontSize: 15,
           color: colors.white,
-          boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",
+          //boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",
           borderRadius: 7,
           display: "inline-block",
           textTransform: "uppercase",
@@ -424,7 +331,7 @@ export const FeatureList = style({
 
 export const InfoPricing = style({
   padding: "50px 52px 20px 52px",
-  boxShadow: "1px 1px 30px rgba(14, 21, 34, 0.07)",
+  boxShadow: `1px 1px 7px rgba(14, 21, 34, 0.07)`, //"1px 1px 30px rgba(14, 21, 34, 0.07)",
   borderRadius: 4,
   backgroundColor: "white",
   width: "100%",
@@ -476,7 +383,7 @@ export const InfoPricing = style({
 
               $nest: {
                 ".custom-btn": {
-                  boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",
+                  //boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",
                   borderRadius: 7,
                   backgroundColor: colors.signup, //colors.main,
                   display: "inline-block",
@@ -490,9 +397,15 @@ export const InfoPricing = style({
             },
 
             "@media screen and (max-width: 768px)": {
+
               $nest: {
-                ".buton": {
-                  background: "red"
+                "&.button": {
+                  paddingLeft: 0
+                },
+
+                ".custom-btn": { 
+                  width: "100%",
+                  textAlign: "center",
                 }
               }
             }
@@ -668,7 +581,8 @@ export const CustomBtn = style({
 export const CustomBtnGreen = classes(
   CustomBtn,
   style({
-    background: colors.signup
+    background: colors.signup,
+    boxShadow: "none",
       // "#0479ec linear-gradient(69deg, #37ddcb 0%, #42cbd1 80%, #42cbd1 100%)"
   })
 )

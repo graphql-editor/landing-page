@@ -4,6 +4,8 @@ import { Row, Col, Container } from "reactstrap";
 import { withRouter, RouteComponentProps } from "react-router";
 import { UserContainer } from "../UserInteface";
 import { Subscribe } from "unstated";
+// import { Form } from "@slothking-online/form";
+import * as mainstyle from '../style'
 
 class CreateAccount extends React.Component<RouteComponentProps<any>, any> {
   render() {
@@ -12,22 +14,51 @@ class CreateAccount extends React.Component<RouteComponentProps<any>, any> {
         {(userOps: UserContainer) => {
           return (
             <React.Fragment>
-              {/* <div className={`${styles.PreFooter}`}>
-                <img src="./assets/images/line-prefoter.svg" alt="bg-prefooter" />
-              </div> */}
               <div className={styles.PrefooterCreateAccount}>
-              <Container>
-                  <Row>
+                <Container>
+                  <Row style={{margin: "0 auto"}}>
                     <Col lg="4" md="12">
-                      <h3>Create Account</h3>
+                      <h3>Join NOW!</h3>
                     </Col>
                     <Col lg="8" md="12">
-                      <form>
-                        <div className="form-group">
-                          <input type="text" placeholder="Email Address" />
-                        </div>
-                        <button className="custom-btn green">
-                          SIGNUP FREE
+                      {/* <Form
+                        submitText="JOIN BETA LIST"
+                        fields={[
+                          {
+                            name: "username",
+                            fieldType: "string",
+                            content: {
+                              placeholder: "Email Address",
+                              required: true
+                            }
+                          }
+                        ]}
+                        validate={e => {
+                          //userOps.logIn();
+                        }}
+                      /> */}
+
+                      <form
+                        action="https://api.producthunt.com/widgets/upcoming/v1/upcoming/graphql-visual-designer/forms"
+                        method="post"
+                        id="ph-email-form"
+                        name="ph-email-form"
+                        target="_blank"
+                      >
+                        <input
+                          type="email"
+                          name="email"
+                          id="ph-email"
+                          placeholder="Email Address"
+                          required
+                        />
+                        <button
+                          type="submit"
+                          className={mainstyle.CustomBtnGreen}
+                          name="subscribe"
+                          id="ph-subscribe-button"
+                        >
+                          JOIN BETA LIST
                         </button>
                       </form>
                     </Col>

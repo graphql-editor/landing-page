@@ -13,7 +13,8 @@ export const FeatureBox: React.StatelessComponent<{
     </div>
     <h5>{title}</h5>
     <p>{description}</p>
-    <a href="https://demo.graphqleditor.com/" className="custom-btn">Try Demo</a>
+    <button className="custom-btn">COMING SOON</button>
+    {/* <a href="https://demo.graphqleditor.com/" className="custom-btn">Try Demo</a> */}
   </li>
   
 );

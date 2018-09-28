@@ -2,6 +2,7 @@ import { style, classes } from "typestyle";
 import { colors } from "./vars";
 import { FeatureList } from "./Home";
 
+
 export const ChoicePlan = style({
   paddingTop: 30, // 60
   marginBottom: 30, // 60

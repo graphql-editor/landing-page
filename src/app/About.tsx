@@ -35,7 +35,7 @@ class About extends React.Component {
         </div>
         <div className={`${styles.TeamBlock} animatedParent`}>
           <Row>
-            <Col md={6} className="animated bounceInRight col-6">
+            <Col xs={12} md={6} className="animated bounceInRight col-6">
               <h3>From diagram creation</h3>
               <p>
                 GraphQL Editor is a visual drag and drop tool and innovative devops
@@ -44,17 +44,17 @@ class About extends React.Component {
                 Database design and system construction have never been so easy.
               </p>
             </Col>
-            <Col md={6} className="images animated bounceInLeft">
+            <Col xs={12} md={6} className="images animated bounceInLeft">
               <img src={require("../assets/images/about_example1.png")} alt="image" />
             </Col>
           </Row>
         </div>
         <div className={`${styles.TeamBlock} reverse animatedParent`}>
           <Row>
-            <Col md={6} className="images animated bounceInRight">
+            <Col xs={12} md={6} className="images animated bounceInRight">
               <img src={require("../assets/images/about_example2.png")} alt="image" />
             </Col>
-            <Col md={6} className="col-6 animated bounceInLeft">
+            <Col xs={12} md={6} className="col-6 animated bounceInLeft">
               <h3>To code generation</h3>
               <p>
                 GraphQL Editor supports middleware as software abstraction layer that

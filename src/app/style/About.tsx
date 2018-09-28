@@ -55,7 +55,6 @@ export const TeamBlock = style({
 
       $nest: {
         img: {
-
           //width: 400,
           //boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.5)",
           $nest: {
@@ -140,6 +139,60 @@ export const TeamBlock = style({
         p: {
           marginBottom: 20,
           letterSpacing: "1px"
+        }
+      }
+    },
+
+    "@media screen and (max-width: 768px)":{
+
+      $nest: {
+        "&:first-of-type": {
+          //background: "red"
+        },
+
+        '.col-6': {
+          maxWidth: "100%",
+          textAlign: 'center',
+          margin: "10px auto 30px",
+        },
+
+        '.images': {
+          paddingRight: 15,
+          paddingLeft: 15,
+          
+          $nest: {
+            img: { borderRadius: 7 }
+          }
+        },
+
+        '&.reverse .row': {
+          //background: "blue",
+
+          $nest: {
+            '.col-6': {
+              order: 1,
+              margin: "10px auto 30px"
+            },
+            '.images': {
+              order: 2,
+              paddingLeft: 15,
+              // $nest: {
+              //   img: {marginLeft: "auto"}
+              // }
+            }
+          }
+        }
+      }
+    },
+
+    "@media screen and (min-width: 768px) and (max-width: 991px)": {
+      $nest: {
+        '.col-6': {
+          marginRight: 0
+        },
+
+        '&.reverse .col-6': {
+          marginLeft: 0
         }
       }
     }

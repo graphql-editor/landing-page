@@ -4,7 +4,7 @@ import { colors } from "../../style/vars";
 export const GifBackground = style({
   display: "block",
   // padding: `50px 0 120px`,
-  margin: "60px auto 120px",
+  margin: "60px auto 220px",
   width: "100%",
   zIndex: 1,
   // background: `url(${require("../../../assets/images/diagram.gif")})`,
@@ -20,7 +20,7 @@ export const GifBackground = style({
       // transform: "translate(-50%, -50%)",
       // position: "absolute",
       // textAlign: "center",
-      //padding: "200px 20px",
+      // padding: "200px 20px",
       height: "100%",
       display: "flex",
       flexDirection: "column",
@@ -31,9 +31,9 @@ export const GifBackground = style({
         ".text-content": {
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
-          textAlign: "center"
+          textAlign: "left"
         },
 
         b: {
@@ -46,7 +46,6 @@ export const GifBackground = style({
           letterSpacing: "4px",
           textTransform: "uppercase",
           fontWeight: 600,
-
           margin: 0
         },
 
@@ -56,7 +55,6 @@ export const GifBackground = style({
           //textTransform: "uppercase",
           letterSpacing: "1px",
           //marginBottom: 20
-
           margin: `15px 0 35px`,
           width: "80%"
           //textAlign: "center"
@@ -68,12 +66,12 @@ export const GifBackground = style({
           height: 45,
           padding: "0 90px 0 24px",
           lineHeight: "45px",
-          boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.15)",
+          boxShadow: '1px 1px 5px rgba(98, 129, 157, 0.15)', //"1px 1px 22px rgba(98, 129, 157, 0.15)",
           borderRadius: 7,
           backgroundColor: colors.white,
           color: colors.textLight,
           fontSize: 14,
-          marginRight: 15
+          marginRight: 15,
         },
 
         img: {
@@ -92,22 +90,30 @@ export const GifBackground = style({
 
         "@media screen and (max-width: 768px)": {
           width: "100%",
-          textAlign: "center",
+          alignItems: "center",
 
           $nest: {
             ".text-content": {
               alignItems: "center",
+              textAlign: "center",
 
               $nest: {
-                "> span": {
-                  marginBottom: 40
+                form: {
+                  marginBottom: 60,
+
+                  $nest: {
+                    'input, button': {
+                      display: "block",
+                      margin: '0 0 15px',
+                      width: "100%",
+                    },
+                  }
                 }
               }
             },
-            input: {
-              maxWidth: "90%",
-              marginBottom: 15
-            }
+            // input: {
+            //   marginBottom: 15
+            // }
           }
         },
 
@@ -117,15 +123,28 @@ export const GifBackground = style({
           }
         },
 
-        "@media screen and (max-width: 1195px)": {
+        "@media screen and (max-width: 1200px)": {
           $nest: {
-            input: { marginBottom: 20 }
+            input: { marginBottom: 10 }
           }
         }
+      }
+    },
+
+    "@media screen and (max-width: 768px)": {
+      margin: "0 auto 150px",
+
+      $nest: {
+        '.row': { margin: 0 }
       }
     }
   }
 });
+
+
+
+
+/* old style with gif */
 
 // export const GifBackground = style({
 //   position: "relative",
