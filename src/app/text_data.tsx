@@ -57,7 +57,7 @@ export const trustedList = [
     address: "https://www.github.com/",
     imgSrc: require("../assets/images/github.png"),
     altImg: "github"
-  }
+  },
 ];
 
 // ************************ PRICING LIST ************************

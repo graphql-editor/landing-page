@@ -3,26 +3,20 @@ import * as styles from "./style";
 import { monthPlans } from "./text_data";
 import { Row, Col, Container } from "reactstrap";
 // import { RecommendsSlider } from "./Components";
-import { CompaniesUsingSlider, PriceBox } from "./Components";
+import { PriceBox } from "./Components";
 import { withRouter, RouteComponentProps } from "react-router";
 import CreateAccount from "./Components/CreateAccount";
+import CompaniesUsingSlider from "./Components/CompaniesUsingSlider";
 
 class Prices extends React.Component<RouteComponentProps<any>, any> {
   render() {
-    const {
-      location: { pathname }
-    } = this.props;
     return (
       <React.Fragment>
-        <div
-          className={
-            pathname == "/prices" ? styles.ChoicePlanPrices : styles.ChoicePlan
-          }
-        >
-          <div className="container">
+        <div className={styles.ChoicePlan}>
+          <Container>
             <h2 className="text-center">Pricing</h2>
             <div className="tab-content">
-              <div role="tabpanel" className="tab-pane active" id="monthly">
+              <div className="tab-pane active">
                 <ul className={styles.ServicePricingList}>
                   {monthPlans.map((el, i) => (
                     <PriceBox
@@ -36,12 +30,15 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
                 </ul>
               </div>
             </div>
-          </div>
+          </Container>
           <div className={styles.InfoPlan}>
-            <div className="container">
+            <Container>
               <Row>
                 <Col xs={12} md={6}>
-                  <img src={require("../assets/images/improving.png")} alt="improving" />
+                  <img
+                    src={require("../assets/images/improving.png")}
+                    alt="improving"
+                  />
                   <h5>TOOL FOR BUSINESS MANAGERS</h5>
                   <p>
                     GraphQL is cool for business managers too. Create your
@@ -50,7 +47,10 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
                   </p>
                 </Col>
                 <Col xs={12} md={6}>
-                  <img src={require("../assets/images/secured.png")} alt="improving" />
+                  <img
+                    src={require("../assets/images/secured.png")}
+                    alt="improving"
+                  />
                   <h5>COMPLEX GRAPHQL CODE</h5>
                   <p>
                     Complex backend systems are impossible to understand in
@@ -59,23 +59,24 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
                   </p>
                 </Col>
               </Row>
-            </div>
+            </Container>
           </div>
         </div>
-        <Container className={`container-fluid ${styles.BlockFeatures} animatedParent`}>
-        <Row>
-            <Col md={5} className="col-5 text">
-              <h3 className="animated bounceInUp delay-250">
-                MERGE ALL QUERY AND MUTATION
-              </h3>
-              <p className="animated bounceInUp delay-250">
+        <Container fluid={true} className={styles.BlockFeatures}>
+          <Row>
+            <Col md={5} className="text">
+              <h3>MERGE ALL QUERY AND MUTATION</h3>
+              <p>
                 Schema stiching is a small problem in graphql. GraphQLEditor
                 will do that for you, so you can forget about that problem right
                 now
               </p>
             </Col>
-            <Col md={6} className="text-left animated bounceInRight">
-              <img src={require("../assets/images/server-block.svg")} alt="server-block" />
+            <Col md={6} className="text-left">
+              <img
+                src={require("../assets/images/server-block.svg")}
+                alt="server-block"
+              />
             </Col>
           </Row>
         </Container>
@@ -98,10 +99,9 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
         </div> */}
         {/* <RecommendsSlider /> */}
 
-        <div className={`container ${styles.PricesSlider}`}>
-          <CompaniesUsingSlider/>
-        </div>
-
+        <Container className={styles.PricesSlider}>
+          <CompaniesUsingSlider />
+        </Container>
         <CreateAccount />
       </React.Fragment>
     );

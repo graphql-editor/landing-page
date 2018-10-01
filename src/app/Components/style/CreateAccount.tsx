@@ -33,6 +33,7 @@ export const PrefooterCreateAccount = style({
         },
 
         button: {
+          width: "auto",
           position: "relative",
           top: 0,
           marginLeft: 16,

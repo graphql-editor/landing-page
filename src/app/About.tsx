@@ -20,10 +20,6 @@ class About extends React.Component {
     // let team = foldm(ourTeam, 4);
     return (
       <React.Fragment>
-        {/* <GifSection>
-          <h1>About Us</h1>
-          <p>moving hosting solutions to the next level</p>
-        </GifSection> */}
         <div className={styles.InfoBlock}>
           <Container>
             <p>
@@ -33,9 +29,9 @@ class About extends React.Component {
             </p>
           </Container>
         </div>
-        <div className={`${styles.TeamBlock} animatedParent`}>
+        <div className={styles.TeamBlock}>
           <Row>
-            <Col xs={12} md={6} className="animated bounceInRight col-6">
+            <Col xs={12} md={6}>
               <h3>From diagram creation</h3>
               <p>
                 GraphQL Editor is a visual drag and drop tool and innovative devops
@@ -44,17 +40,17 @@ class About extends React.Component {
                 Database design and system construction have never been so easy.
               </p>
             </Col>
-            <Col xs={12} md={6} className="images animated bounceInLeft">
+            <Col xs={12} md={6} className="images-right">
               <img src={require("../assets/images/about_example1.png")} alt="image" />
             </Col>
           </Row>
         </div>
-        <div className={`${styles.TeamBlock} reverse animatedParent`}>
+        <div className={`${styles.TeamBlock} reverse`}>
           <Row>
-            <Col xs={12} md={6} className="images animated bounceInRight">
+            <Col xs={12} md={6} className="images-left">
               <img src={require("../assets/images/about_example2.png")} alt="image" />
             </Col>
-            <Col xs={12} md={6} className="col-6 animated bounceInLeft">
+            <Col xs={12} md={6} className="bounceInLeft">
               <h3>To code generation</h3>
               <p>
                 GraphQL Editor supports middleware as software abstraction layer that
@@ -65,14 +61,15 @@ class About extends React.Component {
             </Col>
           </Row>
         </div>
-        <div className={`${styles.ImagesBg} animatedParent`}>
+        <div className={`${styles.ImagesBg}`}>
           <img
-            className="animated growIn"
             src={require("../assets/images/logo_big.png")}
             alt="image2"
           />
         </div>
+
         {/* use later */}
+
         {/* <section className={styles.AboutBlock}>
           <div className={`${styles.Container} container small`}>
             <div className={styles.OurTeam}>
@@ -80,7 +77,7 @@ class About extends React.Component {
               {team.map((el, i) => (
                 <ul key={i}>
                   {el.map((e, ind) => (
-                    <li className="animated bounceInUp delay-250" key={ind}>
+                    <li key={ind}>
                       <img src={e.imgSrc} alt="team-img" />
                       <div className="inside">
                         <a href="#" className="name">

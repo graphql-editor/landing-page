@@ -5,7 +5,6 @@ import { withRouter, RouteComponentProps } from "react-router";
 import { UserContainer } from "../UserInteface";
 import { Subscribe } from "unstated";
 // import { Form } from "@slothking-online/form";
-import * as mainstyle from '../style'
 
 class CreateAccount extends React.Component<RouteComponentProps<any>, any> {
   render() {
@@ -54,7 +53,7 @@ class CreateAccount extends React.Component<RouteComponentProps<any>, any> {
                         />
                         <button
                           type="submit"
-                          className={mainstyle.CustomBtnGreen}
+                          className={styles.Button}
                           name="subscribe"
                           id="ph-subscribe-button"
                         >

@@ -1,4 +1,4 @@
-import { style, classes } from "typestyle"
+import { style } from "typestyle"
 import { colors } from "./vars"
 
 
@@ -139,7 +139,7 @@ export const WhyChoose = style({
 
 // ************************ Pricing ************************
 
-export const PricingTable = style({
+export const RoadMap = style({
   padding: "80px 0",
   background: colors.white, // colors.main, // "url(assets/images/bg-blue.png) no-repeat center",
   // backgroundSize: "cover",
@@ -269,18 +269,6 @@ export const FeatureList = style({
           }
         },
 
-        ".custom-btn": {
-          padding: "14px 15px",
-          fontSize: 15,
-          color: colors.white,
-          //boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",
-          borderRadius: 7,
-          display: "inline-block",
-          textTransform: "uppercase",
-          backgroundColor: colors.signup, //colors.main,
-          width: "100%"
-        },
-
         "@media screen and (max-width: 768px)": {
           $nest: {
             p: {
@@ -329,7 +317,7 @@ export const FeatureList = style({
   }
 })
 
-export const InfoPricing = style({
+export const RoadMapBox = style({
   padding: "50px 52px 20px 52px",
   boxShadow: `1px 1px 7px rgba(14, 21, 34, 0.07)`, //"1px 1px 30px rgba(14, 21, 34, 0.07)",
   borderRadius: 4,
@@ -382,16 +370,8 @@ export const InfoPricing = style({
               background: "none",
 
               $nest: {
-                ".custom-btn": {
-                  //boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",
-                  borderRadius: 7,
-                  backgroundColor: colors.signup, //colors.main,
-                  display: "inline-block",
-                  padding: "14px 40px 14px 38px",
-                  letterSpacing: 0,
-                  textTransform: "uppercase",
-                  fontSize: 15,
-                  color: "white"
+                div: {
+                  width: "auto"
                 }
               }
             },
@@ -565,24 +545,3 @@ export const UserSlider = style({
     }
   }
 })
-
-export const CustomBtn = style({
-  padding: "14px 15px",
-  fontSize: 15,
-  color: colors.white,
-  boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",
-  borderRadius: 7,
-  display: "inline-block",
-  textTransform: "uppercase",
-  backgroundColor: colors.main,
-  cursor: "pointer"
-})
-
-export const CustomBtnGreen = classes(
-  CustomBtn,
-  style({
-    background: colors.signup,
-    boxShadow: "none",
-      // "#0479ec linear-gradient(69deg, #37ddcb 0%, #42cbd1 80%, #42cbd1 100%)"
-  })
-)

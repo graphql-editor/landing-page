@@ -61,8 +61,6 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                       </ul>
                     </li>
                     {/* <li className={styles.HeaderButtons}>
-                      
-
                       {userOps.state.valid ? (
                         <Link to="/user" className="custom-btn login">
                           USER

@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Button } from "./Button";
+import * as styles from './style'
 
 export const PriceBox: React.StatelessComponent<{
   imgSrc: string,
@@ -10,7 +11,7 @@ export const PriceBox: React.StatelessComponent<{
 }> = ({
   imgSrc, title, list, price
 }) => (
-  <li className="animated bounceInLeft delay-250" >
+  <li >
     <div>
       <div className="images">
         <img src={imgSrc} alt="" />
@@ -29,9 +30,9 @@ export const PriceBox: React.StatelessComponent<{
       <div className="price">
         {price}$<span>/month</span>
       </div>
-      <Link to="/" className="custom-btn">
+      <Button className={styles.Button} >
         Coming Soon
-      </Link>
+      </Button>
     </div>
   </li>
 );

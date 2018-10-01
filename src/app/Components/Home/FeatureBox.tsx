@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Button } from "../Button";
+import * as styles from '../style'
 
 export const FeatureBox: React.StatelessComponent<{
   imgSrc: string;
@@ -13,7 +15,7 @@ export const FeatureBox: React.StatelessComponent<{
     </div>
     <h5>{title}</h5>
     <p>{description}</p>
-    <button className="custom-btn">COMING SOON</button>
+    <Button className={styles.Button}>COMING SOON</Button>
     {/* <a href="https://demo.graphqleditor.com/" className="custom-btn">Try Demo</a> */}
   </li>
   

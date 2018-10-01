@@ -102,12 +102,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'assets/index.html'
     }),
-    new webpack.ProvidePlugin({ // inject ES5 modules as global vars
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Tether: 'tether'
-    }),
+    // new webpack.ProvidePlugin({ // inject ES5 modules as global vars
+    //   $: 'jquery',
+    //   jQuery: 'jquery',
+    //   'window.jQuery': 'jquery',
+    //   Tether: 'tether'
+    // }),
   ],
   devServer: {
     contentBase: sourcePath,

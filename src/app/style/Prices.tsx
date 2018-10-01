@@ -17,56 +17,6 @@ export const ChoicePlan = style({
       fontWeight: 300
     },
 
-    ".nav-tabs": {
-      marginBottom: 56,
-      border: "none",
-      width: "100%",
-      textAlign: "center",
-      display: "inline-block",
-
-      $nest: {
-        "li > a": {
-          position: "relative",
-          display: "block"
-        },
-        li: {
-          
-          display: "inline-block",
-          border: "2px solid #74a0fb",
-          //marginRight: "-4px",
-
-          $nest: {
-            "&:first-child": {
-              borderTopLeftRadius: 5,
-              borderBottomLeftRadius: 5
-            },
-            "&:last-child": {
-              borderTopRightRadius: 5,
-              borderBottomRightRadius: 5
-            },
-            "&.active": {
-              backgroundColor: colors.white,
-              borderColor: colors.white,
-              $nest: {
-                a: { color: colors.darkerBlue }
-              }
-            },
-
-            a: {
-              borderRadius: 0,
-              color: colors.whiteDark,
-              fontSize: 14,
-              letterSpacing: "1px",
-              marginRight: 0,
-              border: "none",
-              padding: "8px 37px",
-              backgroundColor: "transparent",
-              textTransform: "uppercase"
-            }
-          }
-        }
-      }
-    },
     ".tab-content": {
       paddingBottom: 18,
 
@@ -79,6 +29,7 @@ export const ChoicePlan = style({
         }
       }
     },
+    
     "@media screen and (max-width: 768px)": {
       marginBottom: 60
     },

@@ -34,17 +34,17 @@ export const TeamBlock = style({
       alignItems: "center",
       justifyContent: "flex-end"
     },
-    ".col-6": {
-      maxWidth: 460,
+    ".col-md-6": {
+      //maxWidth: 460,
       marginRight: 23,
     },
 
-    '.bounceInRight img': {
+    '.images-left img': {
       borderTopRightRadius: 7,
       borderBottomRightRadius: 7,
     },
 
-    '.bounceInLeft img': {
+    '.images-right img': {
       borderTopLeftRadius: 7,
       borderBottomLeftRadius: 7,
     },
@@ -150,7 +150,7 @@ export const TeamBlock = style({
           //background: "red"
         },
 
-        '.col-6': {
+        '.col-md-6': {
           maxWidth: "100%",
           textAlign: 'center',
           margin: "10px auto 30px",
@@ -173,7 +173,7 @@ export const TeamBlock = style({
               order: 1,
               margin: "10px auto 30px"
             },
-            '.images': {
+            '.images-left': {
               order: 2,
               paddingLeft: 15,
               // $nest: {
