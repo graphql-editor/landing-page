@@ -55,7 +55,7 @@ export const PrefooterCreateAccount = style({
               width: "100%",
               maxWidth: "100%"
             },
-            //input: { marginRight: 0 }
+            input: { width: '100%' }
           }
         },
 

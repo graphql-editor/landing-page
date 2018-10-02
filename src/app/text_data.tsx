@@ -58,6 +58,11 @@ export const trustedList = [
     imgSrc: require("../assets/images/github.png"),
     altImg: "github"
   },
+  {
+    address: "https://www.paypal.com/",
+    imgSrc: require("../assets/images/paypal.png"),
+    altImg: "paypal"
+  },
 ];
 
 // ************************ PRICING LIST ************************
@@ -191,7 +196,7 @@ export const ourTeam = [
     imgSrc: require("../assets/images/team-img.png"),
     name: "John Ipsum",
     position: "developer"
-  }
+  },
 ];
 
 // ************************ SERVICE ************************

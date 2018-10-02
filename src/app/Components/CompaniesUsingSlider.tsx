@@ -1,35 +1,11 @@
 import * as React from "react";
 import * as styles from "./style";
-import { trustedList } from "../text_data";
 import { withRouter, RouteComponentProps } from "react-router";
+import { trustedList } from "../text_data";
 
-class CompaniesUsingSlider extends React.Component<
-  RouteComponentProps<any>,
-  {
-    list: Array<any>;
-    interval: any;
-  }
-> {
-  state = {
-    list: trustedList,
-    interval: ""
-  };
-
-  componentDidMount() {
-    // const { list } = this.state;
-    let arr: any = trustedList;
-    setInterval(() => {
-      arr = [arr.splice(arr.length - 1, arr.length)[0], ...arr];
-      //console.log(arr)
-      this.setState({
-        list: arr
-      });
-    }, 3000);
-  }
-
+class CompaniesUsingSlider extends React.Component<RouteComponentProps<any>,any> {
   render() {
-    const { list } = this.state;
-
+    const doubledList = [...trustedList, ...trustedList]
     return (
       <div className={styles.PartnersSection}>
         <h5>
@@ -37,26 +13,9 @@ class CompaniesUsingSlider extends React.Component<
         </h5>
         <div
           className={styles.PartnersSlider}
-          // responsive={{
-          //   0: {
-          //     items: 1
-          //   },
-          //   400: {
-          //     items: 2
-          //   },
-          //   550: {
-          //     items: 3
-          //   },
-          //   800: {
-          //     items: 4
-          //   },
-          //   1000: {
-          //     items: 5
-          //   }
-          // }}
         >
           <div className="content">
-            {list.map((el, i) => (
+            {doubledList.map((el, i) => (
               <div className="item" key={i}>
                 <a href={el.address}>
                   <img src={el.imgSrc} alt={el.altImg} />

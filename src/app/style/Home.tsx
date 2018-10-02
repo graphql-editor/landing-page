@@ -370,25 +370,23 @@ export const RoadMapBox = style({
               background: "none",
 
               $nest: {
+                "@media screen and (max-width: 768px)": {
+                  paddingLeft: 0,
+
+                  $nest: {
+                    div: {
+                      padding: `14px 0`,
+                      width: '100%',
+                      textAlign: "center",
+                    },
+                  }
+                },
+
                 div: {
                   width: "auto"
                 }
               }
             },
-
-            "@media screen and (max-width: 768px)": {
-
-              $nest: {
-                "&.button": {
-                  paddingLeft: 0
-                },
-
-                ".custom-btn": { 
-                  width: "100%",
-                  textAlign: "center",
-                }
-              }
-            }
           }
         }
       }

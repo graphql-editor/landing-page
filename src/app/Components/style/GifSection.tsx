@@ -55,12 +55,12 @@ export const GifBackground = style({
           height: 45,
           padding: "0 90px 0 24px",
           lineHeight: "45px",
-          boxShadow: '1px 1px 5px rgba(98, 129, 157, 0.15)', //"1px 1px 22px rgba(98, 129, 157, 0.15)",
+          boxShadow: "1px 1px 5px rgba(98, 129, 157, 0.15)", //"1px 1px 22px rgba(98, 129, 157, 0.15)",
           borderRadius: 7,
           backgroundColor: colors.white,
           color: colors.textLight,
           fontSize: 14,
-          marginRight: 15,
+          marginRight: 15
         },
 
         button: {
@@ -95,15 +95,17 @@ export const GifBackground = style({
                   marginBottom: 60,
 
                   $nest: {
-                    'input, button': {
+                    "input, button": {
                       display: "block",
-                      margin: '0 0 15px',
-                      width: "100%",
+                      margin: "0 0 15px",
+                      width: "100%"
                     },
+
+                    button: { width: "100%" }
                   }
                 }
               }
-            },
+            }
             // input: {
             //   marginBottom: 15
             // }
@@ -128,7 +130,7 @@ export const GifBackground = style({
       margin: "0 auto 150px",
 
       $nest: {
-        '.row': { margin: 0 }
+        ".row": { margin: 0 }
       }
     }
   }

@@ -1,7 +1,6 @@
-import { style,
-  // keyframes
-} from "typestyle";
-import { colors} from "../../style/vars";
+import { style, keyframes } from "typestyle";
+import { colors } from "../../style/vars";
+import { trustedList } from "../../text_data";
 
 export const PartnersSection = style({
   textAlign: "center",
@@ -13,15 +12,10 @@ export const PartnersSection = style({
   borderRadius: 7,
 
   $nest: {
-    "owl-item": {
-      float: "left"
-    },
-
     h5: {
-      margin: "20px 0", // "40px 0 20px",
+      margin: "20px 0",
       padding: "0 10px",
       fontSize: 15,
-      //marginBottom: 45,
       letterSpacing: 1,
       textTransform: "uppercase",
 
@@ -30,51 +24,59 @@ export const PartnersSection = style({
   }
 });
 
-// const slide = keyframes({
-//   '0%': {marginLeft: 0},
-//   '100%': {marginLeft: "20%"},
-//   //'100%': {marginLeft: "0%"}
-// })
+
+const AnimationSpeed = "30s";
+
+const Scroll = keyframes({
+  "0%": { transform: `translateX(0)` },
+  "100%": { transform: `translateX(calc(-300px * ${trustedList.length / 2}))` }
+});
 
 export const PartnersSlider = style({
-  padding: "10px 0 20px",
-  width: "100%",
+  padding: "10px 0",
+  //width: "100%",
+
+  background: colors.white,
+  height: 100,
+  margin: "auto",
+  overflow: "hidden",
+  position: "relative",
+  width: '100%',
 
   $nest: {
+    "&::before, &::after": {
+      background: 'linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%)',
+      content: '""',
+      height: 100,
+      position: "absolute",
+      width: 200,
+      zIndex: 2
+    },
+
+    "&::before": {
+      left: 0,
+      top: 0
+    },
+
+    "&::after": {
+      right: 0,
+      top: 0,
+      transform: "rotateZ(180deg)"
+    },
+
     ".content": {
-      width: "140%",
-      margin: "0 -20%",
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-around",
-
-      // animationName: slide,
-      // animationDuration: '2s',
-      // animationIterationCount: 'infinite',
-
-      $nest: {
-        "@media screen and (max-width: 768px) ": {
-          width: "220%",
-          margin: "0 -60%",
-          //background: "red"
-        },
-
-        "@media screen and (min-width: 768px) and (max-width: 991px)": {
-          width: "160%",
-          margin: "0 -40%"
-        }
-      }
+      animation: `${Scroll} ${AnimationSpeed} linear infinite`,
+      display: `flex`,
+      width: `calc(300px * ${trustedList.length})`,
     },
 
     ".item": {
-      transition: "0.5s linear margin-left",
+      height: 100,
+      width: 300,
 
       $nest: {
         img: {
-          // width: 140,
-          //width: "20%",
-          height: 70,
+          height: 60,
           borderRadius: 6
         }
       }
@@ -87,6 +89,68 @@ export const PartnersSlider = style({
     "@media screen and (max-width: 768px)": {
       // paddingBottom: 40,
       marginBottom: 0
-    },
+    }
   }
 });
+
+
+
+// cssRaw(`
+// @keyframes slide {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(calc(-300px * ${trustedList.length / 2}));
+//   }
+// }
+
+// .slider {
+//   background: white;
+//   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+//   height: 100px;
+//   margin: auto;
+//   overflow: hidden;
+//   position: relative;
+//   width: 100%;
+// }
+
+// .slider::before, .slider::after {
+//   background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+//   content: "";
+//   height: 100px;
+//   position: absolute;
+//   width: 200px;
+//   z-index: 2;
+// }
+
+// .slider::after {
+//   right: 0;
+//   top: 0;
+//   transform: rotateZ(180deg);
+// }
+
+// .slider::before {
+//   left: 0;
+//   top: 0;
+// }
+
+// .slider .content {
+//   animation: slide 30s linear infinite;
+//   display: flex;
+//   width: calc(300px * ${trustedList.length});
+// }
+
+// .slider .item {
+//   height: 100px;
+//   width: 300px;
+// }
+
+// .slider .item img {
+//   height: 60px;
+// }
+
+// .slider .item a {
+//   display: inline-block
+// }
+// `);

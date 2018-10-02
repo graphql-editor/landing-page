@@ -6,7 +6,7 @@ import { UserContainer } from "../UserInteface";
 import { Subscribe } from "unstated";
 // import { Form } from "@slothking-online/form";
 
-class CreateAccount extends React.Component<RouteComponentProps<any>, any> {
+class SubscribeToList extends React.Component<RouteComponentProps<any>, any> {
   render() {
     return (
       <Subscribe to={[UserContainer]}>
@@ -71,4 +71,4 @@ class CreateAccount extends React.Component<RouteComponentProps<any>, any> {
     );
   }
 }
-export default withRouter(CreateAccount);
+export default withRouter(SubscribeToList);

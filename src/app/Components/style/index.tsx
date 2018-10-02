@@ -1,4 +1,4 @@
-export * from './CreateAccount'
+export * from './SubscribeToList'
 export * from './FooterWidget'
 export * from './WhyChooseUs'
 export * from './GifSection'

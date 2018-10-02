@@ -8,11 +8,11 @@ import {
   FeatureBox,
   WhyChooseUs,
   GifSection,
-  Button
+  Button,
 } from "./Components";
+import SubscribeToList from './Components/SubscribeToList'
 import { Container, Row, Col } from "reactstrap";
 import { withRouter, RouteComponentProps } from "react-router";
-import CreateAccount from "./Components/CreateAccount";
 import CompaniesUsingSlider from "./Components/CompaniesUsingSlider";
 import { SubscribeForm } from "./Components/SubscribeForm";
 import * as btnstyle from './Components/style'
@@ -138,7 +138,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
           </Container>
         </div>
         {/* <RecommendsSlider /> */}
-        <CreateAccount />
+        <SubscribeToList />
       </div>
     );
   }

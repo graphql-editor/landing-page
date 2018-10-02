@@ -145,8 +145,11 @@ export const NavContent = style({
 
     "@media screen and (max-width: 991px)": {
       flexDirection: "column !important",
-      //background: "red",
       $nest: {
+
+        '.navbar-brand': {
+          margin: '0 auto'
+        },
 
         'li, img': {
           marginBottom: 20

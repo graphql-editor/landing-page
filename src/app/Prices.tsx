@@ -5,7 +5,7 @@ import { Row, Col, Container } from "reactstrap";
 // import { RecommendsSlider } from "./Components";
 import { PriceBox } from "./Components";
 import { withRouter, RouteComponentProps } from "react-router";
-import CreateAccount from "./Components/CreateAccount";
+import SubscribeToList from "./Components/SubscribeToList";
 import CompaniesUsingSlider from "./Components/CompaniesUsingSlider";
 
 class Prices extends React.Component<RouteComponentProps<any>, any> {
@@ -102,7 +102,7 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
         <Container className={styles.PricesSlider}>
           <CompaniesUsingSlider />
         </Container>
-        <CreateAccount />
+        <SubscribeToList />
       </React.Fragment>
     );
   }

@@ -2,16 +2,15 @@ import { style } from "typestyle"
 import { colors } from "./vars"
 
 export const ErrorPage = style({
-  background: colors.main,
+  //background: colors.main,
  
   $nest: {
     '.inside': {
-      paddingTop: 264,
-      paddingBottom: 264,
+      padding: "50px 0 100px",
 
       $nest: {
         'h2, h4, p': {
-          color: colors.white,
+          color: colors.signup,
           lineHeight: "normal"
         },
 

@@ -6,7 +6,7 @@ import * as styles from "./style";
 // } from "./Components";
 import { Row, Col, Container } from "reactstrap";
 // import { ourTeam } from "./text_data";
-import CreateAccount from "./Components/CreateAccount";
+import SubscribeToList from './Components/SubscribeToList'
 
 
 class About extends React.Component {
@@ -95,7 +95,7 @@ class About extends React.Component {
         {/* <div className="user-slider">
           <RecommendsSlider />
         </div> */}
-        <CreateAccount />
+        <SubscribeToList />
       </React.Fragment>
     );
   }

@@ -8,6 +8,22 @@ export const ChoicePlan = style({
   marginBottom: 30, // 60
 
   $nest: {
+    "@media screen and (max-width: 768px)": {
+      marginBottom: 60,
+    },
+
+    "@media screen and (max-width: 991px)": {
+      padding: '20px 0 0',  //"120px 0 0"
+      $nest: {
+        li: {
+          float: "none",
+        }
+      }
+    },
+
+    "@media screen and (min-width: 992px) and (max-width: 1200px)": {
+      paddingTop: 105 //145
+    },
 
     h2: {
       fontSize: 46,
@@ -28,23 +44,6 @@ export const ChoicePlan = style({
           display: "none"
         }
       }
-    },
-    
-    "@media screen and (max-width: 768px)": {
-      marginBottom: 60
-    },
-
-    "@media screen and (max-width: 991px)": {
-      padding: '60px 0 0',  //"120px 0 0"
-      $nest: {
-        li: {
-          float: "none",
-        }
-      }
-    },
-
-    "@media screen and (min-width: 992px) and (max-width: 1200px)": {
-      paddingTop: 105 //145
     },
   }
 });
@@ -149,8 +148,21 @@ export const InfoPlan = style({
   paddingBottom: 43,
 
   $nest: {
+    "@media screen and (max-width: 768px)": {
+      $nest: {
+        img: {
+          margin: "0 auto 28px", 
+          display: "block", 
+        },
+        h5: {
+          textAlign: "center"
+        },
+        p: {textAlign: "center", marginBottom: 30}
+      }
+    },
+
     img: {
-      marginBottom: 28
+      marginBottom: 28,  
     },
 
     h5: {
@@ -191,7 +203,11 @@ export const BlockFeatures = style({
         },
 
         "@media screen and (max-width: 768px)": {
-          flexDirection: "column"
+          flexDirection: "column",
+          $nest: {
+            h3: {textAlign: "center"},
+            p: {textAlign: "center"}
+          }
         },
         "@media screen and (max-width: 991px)": {
           alignItems: "center",
