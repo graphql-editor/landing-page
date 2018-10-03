@@ -1,0 +1,5 @@
+static:
+  path: ./dist
+  host: landing.graphqleditor.com
+  cloudflare:
+    zone: graphqleditor.com
