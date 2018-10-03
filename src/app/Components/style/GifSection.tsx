@@ -26,12 +26,12 @@ export const GifBackground = style({
         },
 
         b: {
-          color: colors.signup
+          color: colors.pink
         },
 
-        "h1, h2": {
+        h1: {
           fontSize: 46,
-          color: colors.signup, //colors.textLight,
+          color: colors.pink, //colors.textLight,
           letterSpacing: "4px",
           textTransform: "uppercase",
           fontWeight: 600,
@@ -91,8 +91,12 @@ export const GifBackground = style({
               textAlign: "center",
 
               $nest: {
+                h1: {
+                  marginBottom: 30
+                },
+              
                 form: {
-                  marginBottom: 60,
+                  marginBottom: 40,
 
                   $nest: {
                     "input, button": {
@@ -114,7 +118,7 @@ export const GifBackground = style({
 
         "@media screen and (max-width: 991px)": {
           $nest: {
-            h2: { fontSize: 18 }
+            h1: { fontSize: 30 }
           }
         },
 

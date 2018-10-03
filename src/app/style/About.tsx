@@ -74,7 +74,7 @@ export const TeamBlock = style({
 
       $nest: {
         "&:last-of-type": {
-          color: colors.signup
+          color: colors.pink
         }
       }
     },
@@ -147,7 +147,6 @@ export const TeamBlock = style({
 
       $nest: {
         "&:first-of-type": {
-          //background: "red"
         },
 
         '.col-md-6': {

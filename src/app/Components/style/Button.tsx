@@ -11,7 +11,7 @@ export const Button = style({
   borderRadius: 7,
   display: "inline-block",
   textTransform: "uppercase",
-  backgroundColor: colors.signup, //colors.main,
+  backgroundColor: colors.pink, //colors.main,
   width: "100%",
   cursor: "pointer"
 })

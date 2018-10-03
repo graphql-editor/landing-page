@@ -26,7 +26,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
           <Container>
             <Row>
               <Col md={6} className="text-content">
-                <h2>GRAPHQL VISUAL EDITOR</h2>
+                <h1>GRAPHQL VISUAL EDITOR</h1>
                 {/* <img src={"assets/images/logo_medium.png"} /> */}
                 <p>
                   <b>GraphQL Editor</b> makes understanding <b>GraphQL</b>{" "}
@@ -66,7 +66,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
         </section>
         <div className={styles.RoadMap}>
           <Container>
-            <h2 className={styles.TitleHead}>ROADMAP</h2>
+            <h2 className={styles.TitleHead}>ROADMAP <i className="fa fa-floppy-o" aria-hidden="true"></i> </h2>
             <ul className={styles.FeatureList}>
               {pricingListData.map((el, i) => (
                 <FeatureBox

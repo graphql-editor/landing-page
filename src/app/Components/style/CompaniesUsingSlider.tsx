@@ -19,7 +19,7 @@ export const PartnersSection = style({
       letterSpacing: 1,
       textTransform: "uppercase",
 
-      color: colors.signup
+      color: colors.pink
     }
   }
 });
@@ -50,7 +50,17 @@ export const PartnersSlider = style({
       height: 100,
       position: "absolute",
       width: 200,
-      zIndex: 2
+      zIndex: 2,
+
+      $nest: {
+        "@media screen and (max-width: 576px)": {
+          width: 80
+        },
+
+        "@media screen and (min-width: 576px) and (max-width: 768px)": {
+          width: 100
+        }
+      }
     },
 
     "&::before": {
@@ -75,12 +85,18 @@ export const PartnersSlider = style({
       width: 300,
 
       $nest: {
+        "> a": {
+          display: "inline-block",
+          width: "auto",
+        },
+
         img: {
           height: 60,
           borderRadius: 6
         }
       }
     },
+
     "@media screen and (max-width: 480px)": {
       // paddingBottom: 20,
       marginBottom: 30

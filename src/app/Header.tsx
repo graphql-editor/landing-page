@@ -6,6 +6,7 @@ import { withRouter, RouteComponentProps } from "react-router";
 import { UserContainer } from "./UserInteface";
 import { Subscribe } from "unstated";
 
+
 class Header extends React.Component<RouteComponentProps<any>, any> {
   state = {
     isListOpen: false
@@ -33,7 +34,7 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                           <a
                             className="github-button"
                             href="https://github.com/slothking-online/graphql-editor"
-                            //data-icon="octicon-star"
+                            data-icon="octicon-star"
                             data-size="large"
                             data-show-count={true}
                             aria-label="Star slothking-online/graphql-editor on GitHub"
@@ -47,11 +48,11 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                         {/* <NavItem>
                           <Link to="/about">About</Link>
                         </NavItem> */}
+                        {/* <NavItem>
+                          <Link to="/prices">Pricing</Link>
+                        </NavItem> */}
                         <NavItem>
                           <a href="https://demo.graphqleditor.com/">Demo</a>
-                        </NavItem>
-                        <NavItem>
-                          <Link to="/prices">Pricing</Link>
                         </NavItem>
                         {/* <NavItem>
                           <a href="https://github.com/slothking-online/grqphql-editor">

@@ -47,7 +47,7 @@ export const FooterWidgetLast = classes(
         }
       },
 
-      "@media screen and (max-width: 480px)": {
+      "@media screen and (max-width: 576px)": {
         width: "100% !important",
         textAlign: "center"
       },
@@ -70,7 +70,12 @@ export const Copyright = style({
     p: {
       fontSize: 14,
       color: "rgba(185, 203, 239, 0.6)",
-      letterSpacing: "1px"
-    }
+      letterSpacing: "1px",
+      textAlign: "left",
+
+      "@media screen and (max-width: 576px)": {
+        textAlign: "center"
+      }
+    },
   }
 });

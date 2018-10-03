@@ -39,7 +39,7 @@ export const PrefooterCreateAccount = style({
           marginLeft: 16,
           border: "none",
           padding: "15px 50px",
-          background: colors.signup,
+          background: colors.pink,
           fontSize: "15px",
           color: colors.white,
           //boxShadow: "1px 1px 11px rgba(98, 129, 157, 0.4)",

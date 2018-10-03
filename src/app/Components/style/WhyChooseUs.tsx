@@ -17,12 +17,13 @@ export const WhyChooseInside = style({
   $nest: {
     img: {
       verticalAlign: "middle",
-      height: 76,
+      maxHeight: 76,
+      minHeight: 76,
       marginBottom: 35,
       // filter: `invert(0) sepia(0) saturate(1) hue-rotate(105deg)`
     },
 
-    a: {
+    h5: {
       color: colors.text,
       fontSize: 18,
       marginBottom: 12,
@@ -35,6 +36,10 @@ export const WhyChooseInside = style({
       fontSize: 14,
       lineHeight: "24px",
       marginBottom: 26
+    },
+
+    "@media screen and (max-width: 768px)": {
+      minHeight: "auto"
     },
 
     "@media screen and (max-width: 991px)": {

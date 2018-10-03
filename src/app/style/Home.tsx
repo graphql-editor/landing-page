@@ -1,6 +1,5 @@
-import { style } from "typestyle"
-import { colors } from "./vars"
-
+import { style } from "typestyle";
+import { colors } from "./vars";
 
 export const HowItWorks = style({
   marginBottom: 80,
@@ -16,13 +15,13 @@ export const HowItWorks = style({
 
     img: {
       backgroundSize: "cover",
-      height: 'auto',
+      height: "auto",
       width: "100%",
       borderRadius: 7,
-      boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.5)",
+      boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.5)"
     },
 
-    "@media screen and (max-width: 576px)": {
+    "@media screen and (max-width: 768px)": {
       display: "none"
     },
 
@@ -30,64 +29,62 @@ export const HowItWorks = style({
       $nest: {
         img: {
           width: "85%",
-          display: 'block',
-          margin: '0 auto'
+          display: "block",
+          margin: "0 auto"
         }
       }
     }
   }
-})
-
+});
 
 export const WhyUsSection = style({
-    background: colors.grey,
-    display: "flex"
-  })
+  background: colors.grey,
+  display: "flex"
+});
 
+// export const HostingSoftware = style({
+//   marginBottom: 113,
 
-export const HostingSoftware = style({
-  marginBottom: 113,
+//   $nest: {
+//     h2: {
+//       marginBottom: 71
+//     },
 
-  $nest: {
-    h2: {
-      marginBottom: 71
-    },
+//     "@media screen and (max-width: 768px)": {
+//       marginBottom: 80,
 
-    "@media screen and (max-width: 768px)": {
-      marginBottom: 80,
+//       h2: {
+//         fontSize: 24,
+//         lineHeight: "normal"
+//       },
 
-      h2: {
-        fontSize: 24,
-        lineHeight: "normal"
-      },
+//       "ul li": {
+//         width: "50%",
+//         float: "left",
+//         marginRight: "0 !important",
+//         paddingRight: "0 !important",
+//         marginBottom: 30,
 
-      "ul li": {
-        width: "50%",
-        float: "left",
-        marginRight: "0 !important",
-        paddingRight: "0 !important",
-        marginBottom: 30,
+//         "&:nth-child(2)": {
+//           border: "none"
+//         }
+//       }
+//     },
 
-        "&:nth-child(2)": {
-          border: "none"
-        }
-      }
-    },
+//     "@media screen and (max-width: 991px)": {
+//       marginBottom: 80,
 
-    "@media screen and (max-width: 991px)": {
-      marginBottom: 80,
+//       h2: {
+//         lineHeight: "normal"
+//       },
 
-      h2: {
-        lineHeight: "normal"
-      },
-
-      "ul li": {
-        marginRight: 35,
-        paddingRight: 35
-      }
-    }
-  }
-})
+//       "ul li": {
+//         marginRight: 35,
+//         paddingRight: 35
+//       }
+//     }
+//   }
+// });
 
 export const TitleHead = style({
   textAlign: "center",
@@ -95,7 +92,7 @@ export const TitleHead = style({
   color: colors.text,
   marginBottom: 60,
   letterSpacing: 3
-})
+});
 
 export const Counter = style({
   textAlign: "center",
@@ -130,12 +127,12 @@ export const Counter = style({
       }
     }
   }
-})
+});
 
 export const WhyChoose = style({
   marginBottom: 88,
   overflow: "hidden"
-})
+});
 
 // ************************ Pricing ************************
 
@@ -147,11 +144,11 @@ export const RoadMap = style({
 
   $nest: {
     ".container:last-of-type": {
-      marginTop: 0,
+      marginTop: 0
     },
 
     h2: {
-      color: colors.signup, //"white",
+      color: colors.pink, //"white",
       marginBottom: "28px"
     },
 
@@ -160,40 +157,94 @@ export const RoadMap = style({
       marginBottom: 62,
       letterSpacing: 1,
       color: "rgba(205, 220, 236, 0.8)"
+    }
+  }
+});
+
+export const FeatureList = style({
+  marginBottom: 45,
+  width: "100%",
+  clear: "both",
+  //display: "inline-block",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+
+  $nest: {
+    "@media screen and (max-width: 768px)": {
+      flexDirection: 'column',
+
+      $nest: {
+        '.feature-box': {
+          width: "100%",
+          marginRight: 0,
+          marginBottom: 25,
+          minHeight: 'auto'
+        }
+      }
     },
+
+    "@media screen and (min-width: 768px) and (max-width: 991px)": {
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+
+      $nest: {
+        '.feature-box': {
+          width: "48%",
+          marginBottom: 15,
+          minHeight: 430,
+          
+          $nest: {
+            p: { minHeight: "auto" }
+          }
+        }
+      }
+    },
+
+    "@media screen and (min-width: 992px) and (max-width: 1200px)": {
+      display: "flex",
+      flexDirection: "row",
+
+      $nest: {
+        ".feature-box": {
+          width: "24%",
+          minHeight: 450,
+
+          ".custom-btn": {
+            fontSize: 12
+          }
+        }
+      }
+    },
+
 
     ".feature-box": {
       minHeight: "401.5px",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-around",
-      alignItems: "center"
-    },
-  }
-})
+      alignItems: "center",
 
-export const FeatureList = style({
-  marginBottom: 45,
-  width: "100%",
-  clear: "both",
-  display: "inline-block",
-
-  $nest: {
-    li: {
       width: "24.3%",
-      float: "left",
+      // float: "left",
       padding: "33px 29px 33px 35px",
       textAlign: "center",
-      display: "inline-block",
-      boxShadow: '1px 1px 7px rgba(157, 184, 209, 0.27)', //"1px 1px 22px rgba(157, 184, 209, 0.19)",
+      boxShadow: "1px 1px 7px rgba(157, 184, 209, 0.27)", //"1px 1px 22px rgba(157, 184, 209, 0.19)",
       borderRadius: 3,
       backgroundColor: "white",
-      marginRight: 10,
+      //marginRight: 10,
 
       $nest: {
-        "&:last-of-type": {
-          marginRight: 0
+        "@media screen and (min-width: 992px) and (max-width: 1200px)": {
+          width: "24%",
+          minHeight: 445,
         },
+
+        // "&:last-of-type, &:nth-child(2)": {
+        //   marginRight: 0
+        // },
 
         span: {
           color: colors.text
@@ -204,7 +255,7 @@ export const FeatureList = style({
 
           $nest: {
             img: {
-              height: 50,
+              height: 50
               //filter: `invert(0) sepia(0) saturate(1) hue-rotate(105deg)`
             }
           }
@@ -225,7 +276,7 @@ export const FeatureList = style({
           minHeight: 160
         },
 
-        '.line': {
+        ".line": {
           color: colors.text,
           display: "block",
           position: "relative",
@@ -278,45 +329,10 @@ export const FeatureList = style({
         }
       }
     },
-
-    "@media screen and (max-width: 768px)": {
-      $nest: {
-        li: {
-          width: "100%",
-          marginRight: 0,
-          marginBottom: 25
-        }
-      }
-    },
-
-    "@media screen and (min-width: 768px) and (max-width: 991px)": {
-      display: "flex",
-      flexDirection: "row",
-      flexWrap: "wrap",
-
-      $nest: {
-        li: {
-          width: "48%",
-          marginBottom: 15
-        }
-      }
-    },
-
-    "@media screen and (min-width: 992px) and (max-width: 1200px)": {
-      display: "flex",
-      flexDirection: "row",
-
-      li: {
-        width: "24%",
-
-        ".custom-btn": {
-          fontSize: 12
-        }
-      }
-    }
   }
-})
+});
 
+/* box under roadmap list */
 export const RoadMapBox = style({
   padding: "50px 52px 20px 52px",
   boxShadow: `1px 1px 7px rgba(14, 21, 34, 0.07)`, //"1px 1px 30px rgba(14, 21, 34, 0.07)",
@@ -376,9 +392,9 @@ export const RoadMapBox = style({
                   $nest: {
                     div: {
                       padding: `14px 0`,
-                      width: '100%',
-                      textAlign: "center",
-                    },
+                      width: "100%",
+                      textAlign: "center"
+                    }
                   }
                 },
 
@@ -386,12 +402,12 @@ export const RoadMapBox = style({
                   width: "auto"
                 }
               }
-            },
+            }
           }
         }
       }
     },
-    "@media screen and (max-width: 480px)": {
+    "@media screen and (max-width: 568px)": {
       $nest: {
         ul: {
           width: "100%",
@@ -419,7 +435,7 @@ export const RoadMapBox = style({
       }
     }
   }
-})
+});
 
 // ************************ Recommendations Slider ************************
 
@@ -430,32 +446,6 @@ export const UserSlider = style({
   //overflow: "hidden",
 
   $nest: {
-    ".owl-stage-outer": {
-      position: "relative",
-      overflow: "hidden",
-      "-webkit-transform": "translate3d(0,0,0)"
-    },
-
-    ".owl-stage": {
-      position: "relative",
-
-      $nest: {
-        "&::after": {
-          content: `"."`,
-          display: "block",
-          clear: "both",
-          visibility: "hidden",
-          lineHeight: 0,
-          height: 0
-        }
-      }
-    },
-
-    ".owl-item": {
-      float: "left",
-      minHeight: 1
-    },
-
     ".inside": {
       width: 740,
       margin: "0 auto",
@@ -502,44 +492,8 @@ export const UserSlider = style({
         }
       }
     },
-
-    ".owl-nav": {
-      position: "static",
-
-      $nest: {
-        ".owl-prev,  .owl-next": {
-          width: 20,
-          height: 35,
-          top: "50%",
-          fontSize: 0,
-          marginTop: "-20px",
-          "-ms-transform": "translateY(-50%)",
-          transform: "translateY(-50%)",
-          position: "absolute",
-          zIndex: 99999,
-          cursor: "pointer"
-        },
-
-        ".owl-prev": {
-          background: "url(../assets/images/arrow-left-light.png) no-repeat",
-          left: 50,
-          $nest: {
-            img: { display: "none" }
-          }
-        },
-
-        ".owl-next": {
-          background: "url(../assets/images/arrow-right-light.png) no-repeat",
-          right: 50,
-          $nest: {
-            img: { display: "none" }
-          }
-        }
-      }
-    },
-
     "@media screen and (min-width: 991px) and (max-width: 1200px)": {
       paddingBottom: 100
     }
   }
-})
+});

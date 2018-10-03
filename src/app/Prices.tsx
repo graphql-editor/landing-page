@@ -62,9 +62,9 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
             </Container>
           </div>
         </div>
-        <Container fluid={true} className={styles.BlockFeatures}>
+        <Container className={styles.BlockFeatures}>
           <Row>
-            <Col md={5} className="text">
+            <Col md={6} className="text">
               <h3>MERGE ALL QUERY AND MUTATION</h3>
               <p>
                 Schema stiching is a small problem in graphql. GraphQLEditor
@@ -73,7 +73,7 @@ class Prices extends React.Component<RouteComponentProps<any>, any> {
               </p>
             </Col>
             <Col md={6} className="text-left">
-              <img
+              <img 
                 src={require("../assets/images/server-block.svg")}
                 alt="server-block"
               />

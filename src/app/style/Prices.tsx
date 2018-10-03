@@ -2,21 +2,20 @@ import { style, classes } from "typestyle";
 import { colors } from "./vars";
 import { FeatureList } from "./Home";
 
-
 export const ChoicePlan = style({
   paddingTop: 30, // 60
   marginBottom: 30, // 60
 
   $nest: {
     "@media screen and (max-width: 768px)": {
-      marginBottom: 60,
+      marginBottom: 60
     },
 
     "@media screen and (max-width: 991px)": {
-      padding: '20px 0 0',  //"120px 0 0"
+      padding: "20px 0 0", //"120px 0 0"
       $nest: {
         li: {
-          float: "none",
+          float: "none"
         }
       }
     },
@@ -27,7 +26,7 @@ export const ChoicePlan = style({
 
     h2: {
       fontSize: 46,
-      color: colors.signup,
+      color: colors.pink,
       letterSpacing: "2px",
       marginBottom: 50,
       fontWeight: 300
@@ -44,23 +43,25 @@ export const ChoicePlan = style({
           display: "none"
         }
       }
-    },
+    }
   }
 });
 
-export const ChoicePlanPrices = classes(ChoicePlan, style({
-  marginBottom: 112,
-  padding: "50px 0 0",
-  //paddingTop: 140,
-  //background: `url(${require("../../assets/images/choice-plan.png")}) no-repeat top`, //colors.gray
-}))
+export const ChoicePlanPrices = classes(
+  ChoicePlan,
+  style({
+    marginBottom: 112,
+    padding: "50px 0 0"
+    //paddingTop: 140,
+    //background: `url(${require("../../assets/images/choice-plan.png")}) no-repeat top`, //colors.gray
+  })
+);
 
 export const ServicePricingList = classes(
   FeatureList,
   style({
     $nest: {
-
-      '> li': {
+      "> li": {
         height: 615,
         overflow: "hidden"
       },
@@ -77,7 +78,7 @@ export const ServicePricingList = classes(
 
         $nest: {
           div: {
-            width: "100%",
+            width: "100%"
           }
         }
       },
@@ -97,14 +98,14 @@ export const ServicePricingList = classes(
             borderRadius: 0,
             padding: 0,
             display: "block",
-            letterSpacing: 0,
-          },
+            letterSpacing: 0
+          }
         }
       },
 
       "@media screen and (max-width: 480px)": {
         $nest: {
-          '> li': {
+          "> li": {
             width: "85% !important"
           }
         }
@@ -119,7 +120,6 @@ export const ServicePricingList = classes(
             marginRight: "auto",
             display: "block",
 
-            
             $nest: {
               "&:last-child": {
                 marginRight: "auto"
@@ -131,7 +131,7 @@ export const ServicePricingList = classes(
 
       "@media screen and (min-width: 991px) and (max-width: 1200px)": {
         display: "inline-block",
-  
+
         li: {
           width: "30.7%",
           ".custom-btn": {
@@ -151,18 +151,18 @@ export const InfoPlan = style({
     "@media screen and (max-width: 768px)": {
       $nest: {
         img: {
-          margin: "0 auto 28px", 
-          display: "block", 
+          margin: "0 auto 28px",
+          display: "block"
         },
         h5: {
           textAlign: "center"
         },
-        p: {textAlign: "center", marginBottom: 30}
+        p: { textAlign: "center", marginBottom: 30 }
       }
     },
 
     img: {
-      marginBottom: 28,  
+      marginBottom: 28
     },
 
     h5: {
@@ -195,18 +195,23 @@ export const BlockFeatures = style({
       flexDirection: "row",
 
       $nest: {
-        '.text': {
+        ".text": {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "flex-start"
         },
 
+        // '.text-left': {
+        //   display: "flex",
+        //   alignItems: 'flex-end'
+        // },
+
         "@media screen and (max-width: 768px)": {
           flexDirection: "column",
           $nest: {
-            h3: {textAlign: "center"},
-            p: {textAlign: "center"}
+            h3: { textAlign: "center" },
+            p: { textAlign: "center" }
           }
         },
         "@media screen and (max-width: 991px)": {
@@ -234,13 +239,15 @@ export const BlockFeatures = style({
       },
 
       img: {
-        marginLeft: 60,
-        maxWidth: 516,
+        //marginLeft: 60,
+        margin: "0 0 0 auto",
+        display: "block",
+        maxWidth: 450,
 
         $nest: {
           "@media screen and (min-width:991) and (max-width: 1440px)": {
             maxWidth: "100%",
-            marginLeft: 0
+            margin: 0
           }
         }
       }
@@ -249,41 +256,6 @@ export const BlockFeatures = style({
 });
 
 
-// export const BottomInfoPlans = style({
-//   marginTop: "-240px",
-//   padding: "260px 0 175px 0",
-//   marginBottom: 80,
-//   background: `url(${require(../../assets/images/bottom-info-plans.png)}) no-repeat center`,
-
-//   $nest: {
-//     ".title-head": {
-//       color: colors.white,
-//       marginTop: 100,
-//       marginBottom: 7,
-//       fontWeight: 400
-//     },
-
-//     p: {
-//       textAlign: "center",
-//       fontSize: 14,
-//       marginBottom: 25,
-//       color: "rgba(205, 220, 236, 0.8)"
-//     },
-
-//     ".custom-btn": {
-//       padding: "16px 29px",
-//       fontSize: 15,
-//       marginBottom: 60
-//     },
-
-//     ".partner-slider": {
-//       marginTop: 85,
-//       textAlign: "center",
-//       cursor: "all-scroll"
-//     }
-//   }
-// });
-
 export const PricesSlider = style({
-  marginBottom: 150
-})
+  marginBottom: 120
+});

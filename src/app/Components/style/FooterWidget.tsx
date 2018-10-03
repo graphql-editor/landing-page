@@ -40,13 +40,13 @@ export const FooterWidget = style({
       }
     },
 
-    "@media screen and (max-width: 480px)": {
+    "@media screen and (max-width: 576px)": {
       width: "100%",
       textAlign: "center",
       marginBottom: 40,
     },
 
-    "@media screen and (min-width: 480px) and (max-width: 768px)": {
+    "@media screen and (min-width: 576px) and (max-width: 768px)": {
       width: "50%",
       wordWrap: "break-word",
       marginBottom: 40,

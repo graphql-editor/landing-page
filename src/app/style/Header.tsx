@@ -6,7 +6,7 @@ export const Header = style({
   left: 0,
   width: "100%",
   zIndex: 999999,
-  padding: "40px 0",
+  padding: "20px 0",
   //position: "absolute",
   marginBottom: 0,
   backgroundColor: "transparent",
@@ -82,7 +82,7 @@ export const NavContent = style({
 
           $nest: {
             "&:hover": {
-              color: colors.signup,
+              color: colors.pink,
               transition: "0.2s linear color"
             }
           }
@@ -201,7 +201,7 @@ export const HeaderButtons = style({
       color: colors.white,
       //boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.4)",
       borderRadius: 5,
-      background: colors.signup,
+      background: colors.pink,
       letterSpacing: "1px",
       display: "inline-block",
       textAlign: "center",
