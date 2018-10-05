@@ -1,1 +1,1 @@
-deploy-toolkit static deploy --cf-zone graphqleditor.com --path ./dist landing.graphqleditor.com
+npm run build && deploy-toolkit static deploy
