@@ -2,7 +2,6 @@ import * as React from "react";
 import * as styles from "./style";
 // import { 
 //   //RecommendsSlider,
-//    GifSection 
 // } from "./Components";
 import { Row, Col, Container } from "reactstrap";
 // import { ourTeam } from "./text_data";

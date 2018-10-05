@@ -7,7 +7,7 @@ import {
 import {
   FeatureBox,
   WhyChooseUs,
-  GifSection,
+  Headline,
   Button,
 } from "./Components";
 import SubscribeToList from './Components/SubscribeToList'
@@ -22,7 +22,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
   render() {
     return (
       <div className="wrapper">
-        <GifSection>
+        <Headline>
           <Container>
             <Row>
               <Col md={6} className="text-content">
@@ -40,7 +40,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
               </Col>
             </Row>
           </Container>
-        </GifSection>
+        </Headline>
         <section className={styles.WhyUsSection}>
           <Container>
             <CompaniesUsingSlider />

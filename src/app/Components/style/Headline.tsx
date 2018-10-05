@@ -1,7 +1,7 @@
-import { style } from "typestyle";
-import { colors } from "../../style/vars";
+import { style } from "typestyle"
+import { colors } from "../../style/vars"
 
-export const GifBackground = style({
+export const HeadlineBackground = style({
   display: "block",
   margin: "60px auto 220px",
   width: "100%",
@@ -17,6 +17,17 @@ export const GifBackground = style({
       justifyContent: "center",
 
       $nest: {
+        // "&:before": {
+        //   content: "''",
+        //   position: "absolute",
+        //   top: 0,
+        //   right: 0,
+        //   bottom: 0,
+        //   left: 0,
+        //   backgroundImage: "radial-gradient(#fff, #000)",
+        //   opacity: 0.6 
+        // },
+
         ".text-content": {
           display: "flex",
           flexDirection: "column",
@@ -138,4 +149,4 @@ export const GifBackground = style({
       }
     }
   }
-});
+})

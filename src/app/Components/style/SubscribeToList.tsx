@@ -7,12 +7,16 @@ export const PrefooterCreateAccount = style({
   backgroundColor: colors.grey, //"#298bef",
 
   $nest: {
+    ".col-lg-4": {
+      display: "flex"
+    },
+
     h3: {
       fontSize: 28,
       color: colors.textLight, //colors.white,
       letterSpacing: "2px",
       paddingTop: 0,
-      marginTop: "-5px"
+      margin: "auto 0"
     },
 
     form: {
@@ -50,19 +54,20 @@ export const PrefooterCreateAccount = style({
 
         "@media screen and (max-width: 768px)": {
           $nest: {
-            "button, input": {
+            button: {
               display: "block",
               width: "100%",
               maxWidth: "100%"
             },
-            input: { width: '100%' }
+            input: { width: "100%" }
           }
         },
 
-        "@media screen and (min-width: 991px) and (max-width: 1200px)": {
+        "@media screen and (min-width: 768px) and (max-width: 1200px)": {
           $nest: {
             input: {
-              width: 340
+              width: 340,
+              marginRight: 10
             }
           }
         }
@@ -72,8 +77,11 @@ export const PrefooterCreateAccount = style({
     "@media screen and (max-width: 768px)": {
       $nest: {
         h3: {
-          textAlign: "center"
-        }
+          textAlign: "center",
+          width: "100%"
+        },
+        input: { margin: "0 0 10px" },
+        button: { width: "100%" }
       }
     },
 
@@ -89,13 +97,8 @@ export const PrefooterCreateAccount = style({
           marginLeft: 0,
 
           $nest: {
-            input: {
-              margin: `0 0 10px`,
-              //width: '100%',
-            },
-
             button: {
-              display: "block",
+              //display: "block",
               marginLeft: 0
             }
           }

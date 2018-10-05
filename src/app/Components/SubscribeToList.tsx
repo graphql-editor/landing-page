@@ -20,23 +20,6 @@ class SubscribeToList extends React.Component<RouteComponentProps<any>, any> {
                       <h3>Join NOW!</h3>
                     </Col>
                     <Col lg="8" md="12">
-                      {/* <Form
-                        submitText="JOIN BETA LIST"
-                        fields={[
-                          {
-                            name: "username",
-                            fieldType: "string",
-                            content: {
-                              placeholder: "Email Address",
-                              required: true
-                            }
-                          }
-                        ]}
-                        validate={e => {
-                          //userOps.logIn();
-                        }}
-                      /> */}
-
                       <form
                         action="https://api.producthunt.com/widgets/upcoming/v1/upcoming/graphql-visual-designer/forms"
                         method="post"
