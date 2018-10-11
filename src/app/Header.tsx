@@ -20,6 +20,7 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
               <Container>
                 <Navbar>
                   <Nav className={styles.NavContent} navbar>
+                    <li>
                     <NavbarBrand>
                       <img
                         className="logo"
@@ -28,6 +29,7 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                         onClick={() => this.props.history.push("/")}
                       />
                     </NavbarBrand>
+                    </li>
                     <li className="list">
                       <ul>
                         <li>

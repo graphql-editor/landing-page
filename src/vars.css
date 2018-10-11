@@ -24,7 +24,6 @@
 }
 
 a {
-    /* display: block; */
     transition: 0.2s linear;
     text-decoration: none !important; 
     color: #337ab7;

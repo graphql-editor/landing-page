@@ -1,28 +1,31 @@
 import * as React from "react";
-import * as styles from './style'
+import * as styles from "./style";
 
 export const SubscribeForm: React.StatelessComponent<{}> = ({}) => (
-  <form
-    action="https://api.producthunt.com/widgets/upcoming/v1/upcoming/graphql-visual-designer/forms"
-    method="post"
-    id="ph-email-form"
-    name="ph-email-form"
-    target="_blank"
-  >
-    <input
-      type="email"
-      name="email"
-      id="ph-email"
-      placeholder="Email Address"
-      required
-    />
-    <button
-      type="submit"
-      className={styles.Button}
-      name="subscribe"
-      id="ph-subscribe-button"
+  <React.Fragment>
+    <form
+      action="https://online.us18.list-manage.com/subscribe/post?u=cff73d572350c30e7c497c973&amp;id=3adcea78e1"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      className="validate"
+      target="_blank"
     >
-      JOIN BETA LIST
-    </button>
-  </form>
+      <input
+        type="email"
+        
+        name="EMAIL"
+        className="email"
+        id="mce-EMAIL"
+        placeholder="Email Address"
+        required
+      />
+      <button
+        type="submit"
+        name="subscribe"
+        id="mc-embedded-subscribe"
+        className={styles.Button}
+      >JOIN BETA LIST</button>
+    </form>
+  </React.Fragment>
 );
