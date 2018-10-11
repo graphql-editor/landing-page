@@ -3,18 +3,35 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
+import { YMInitializer } from "react-yandex-metrika";
+
 // import SignUp from "./SignUp";
 // import Login from "./Login";
 // import About from "./About";
 // import UserInteface from "./UserInteface";
 import { NotFound } from "./NotFound";
 // import Prices from './Prices';
-import { withRouter, RouteComponentProps } from 'react-router';
+import { withRouter, RouteComponentProps } from "react-router";
 
 class AppContainer extends React.Component<RouteComponentProps<any>, any> {
   render() {
+    let yandexId = 50699473;
+    let yandexOptions: {} = {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    };
+    if (process.env.NODE_ENV === "development") {
+      (yandexId = 123456789), (yandexOptions = {});
+    }
     return (
       <div className="wrapper">
+        <YMInitializer
+          version="2"
+          accounts={[yandexId]}
+          options={yandexOptions}
+        />
         <Header />
         <Switch>
           <Route component={Home} exact path="/" />

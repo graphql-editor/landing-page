@@ -136,11 +136,9 @@ export const footerData = [
     title: "Product",
     links: [
       "Main Page",
-      "Features",
-      "Pricing",
       "Demo"
     ],
-    linksTo: ["/", "/about", "/prices", "https://demo.graphqleditor.com/"]
+    linksTo: ["/", "https://demo.graphqleditor.com/"]
   },
   // {
   //   title: "Company",
@@ -149,8 +147,8 @@ export const footerData = [
   // },
   {
     title: "Contact Us",
-    links: ["robert@graphqleditor.com"],
-    linksTo: ["mailto:robert@graphqleditor.com"]
+    links: ["hello@slothking.online"],
+    linksTo: ["mailto:hello@slothking.online"]
   }
 ];
 

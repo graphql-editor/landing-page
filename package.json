@@ -50,6 +50,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
+    "react-yandex-metrika": "^2.4.2",
     "reactstrap": "^6.4.0",
     "typestyle": "^1.7.2",
     "unstated": "^2.1.1",
