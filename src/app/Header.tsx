@@ -47,6 +47,9 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                         <NavItem>
                           <Link to="/">Home</Link>
                         </NavItem>
+                        <NavItem>
+                          <Link to="//blog.graphqleditor.com">Blog</Link>
+                        </NavItem>
                         {/* <NavItem>
                           <Link to="/about">About</Link>
                         </NavItem> */}
