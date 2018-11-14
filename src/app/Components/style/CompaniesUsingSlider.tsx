@@ -4,9 +4,8 @@ import { trustedList } from "../../text_data";
 
 export const PartnersSection = style({
   textAlign: "center",
-  margin: `-75px auto 100px`, //65,
   overflow: "hidden",
-
+  margin:`40px 0`,
   background: "white",
   boxShadow: "1px 1px 22px rgba(157, 184, 209, 0.17)",
   borderRadius: 7,

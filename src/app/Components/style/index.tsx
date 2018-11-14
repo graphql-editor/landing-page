@@ -1,6 +1,5 @@
 export * from './SubscribeToList'
 export * from './FooterWidget'
 export * from './WhyChooseUs'
-export * from './Headline'
 export * from './CompaniesUsingSlider'
 export * from './Button'

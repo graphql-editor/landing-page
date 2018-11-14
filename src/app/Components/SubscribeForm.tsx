@@ -8,12 +8,10 @@ export const SubscribeForm: React.StatelessComponent<{}> = ({}) => (
       method="post"
       id="mc-embedded-subscribe-form"
       name="mc-embedded-subscribe-form"
-      className="validate"
       target="_blank"
     >
       <input
         type="email"
-        
         name="EMAIL"
         className="email"
         id="mce-EMAIL"

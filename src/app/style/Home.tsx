@@ -1,6 +1,43 @@
-import { style } from "typestyle";
+import { style, media } from "typestyle";
 import { colors } from "./vars";
 
+export const Hero = style({
+  padding:"60px 0"
+},media({maxWidth:991},{padding:"30px 0"}))
+export const H1 = style({
+  fontSize: 46,
+  color: colors.pink, //colors.textLight,
+  letterSpacing: "4px",
+  textTransform: "uppercase",
+  fontWeight: 600,
+  margin: 0,
+  marginBottom: 25
+});
+export const Description = style(
+  {
+    fontSize: 18,
+    color: colors.lightGrey,
+    lineHeight: 1.75,
+    margin: 0,
+    paddingBottom: 15,
+    letterSpacing: "1px"
+  },
+  media(
+    { maxWidth: 991 },
+    {
+      fontSize: 14,
+      lineHeight: 1.5
+    }
+  )
+);
+export const SubscribeBar = style({
+  textAlign: "center",
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "nowrap",
+  alignItems: "center",
+  justifyContent: "center"
+});
 export const HowItWorks = style({
   marginBottom: 80,
 
@@ -166,59 +203,20 @@ export const FeatureList = style({
   width: "100%",
   clear: "both",
   //display: "inline-block",
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
-
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr 1fr 1fr",
   $nest: {
     "@media screen and (max-width: 768px)": {
-      flexDirection: 'column',
-
-      $nest: {
-        '.feature-box': {
-          width: "100%",
-          marginRight: 0,
-          marginBottom: 25,
-          minHeight: 'auto'
-        }
-      }
+      gridTemplateColumns: "1fr"
     },
 
     "@media screen and (min-width: 768px) and (max-width: 991px)": {
-      display: "flex",
-      flexDirection: "row",
-      flexWrap: "wrap",
-
-      $nest: {
-        '.feature-box': {
-          width: "48%",
-          marginBottom: 15,
-          minHeight: 430,
-          
-          $nest: {
-            p: { minHeight: "auto" }
-          }
-        }
-      }
+      gridTemplateColumns: "1fr 1fr"
     },
 
     "@media screen and (min-width: 992px) and (max-width: 1200px)": {
-      display: "flex",
-      flexDirection: "row",
-
-      $nest: {
-        ".feature-box": {
-          width: "24%",
-          minHeight: 450,
-
-          ".custom-btn": {
-            fontSize: 12
-          }
-        }
-      }
+      gridTemplateColumns: "1fr 1fr 1fr"
     },
-
 
     ".feature-box": {
       minHeight: "401.5px",
@@ -226,41 +224,28 @@ export const FeatureList = style({
       flexDirection: "column",
       justifyContent: "space-around",
       alignItems: "center",
-
-      width: "24.3%",
-      // float: "left",
       padding: "33px 29px 33px 35px",
       textAlign: "center",
       boxShadow: "1px 1px 7px rgba(157, 184, 209, 0.27)", //"1px 1px 22px rgba(157, 184, 209, 0.19)",
       borderRadius: 3,
+      margin: 10,
       backgroundColor: "white",
-      //marginRight: 10,
-
       $nest: {
         "@media screen and (min-width: 992px) and (max-width: 1200px)": {
-          width: "24%",
-          minHeight: 445,
+          minHeight: 445
         },
-
-        // "&:last-of-type, &:nth-child(2)": {
-        //   marginRight: 0
-        // },
-
         span: {
           color: colors.text
         },
-
         ".images": {
           marginBottom: 17,
 
           $nest: {
             img: {
               height: 50
-              //filter: `invert(0) sepia(0) saturate(1) hue-rotate(105deg)`
             }
           }
         },
-
         h5: {
           color: colors.text,
           fontSize: 18,
@@ -328,7 +313,7 @@ export const FeatureList = style({
           }
         }
       }
-    },
+    }
   }
 });
 
@@ -458,13 +443,6 @@ export const UserSlider = style({
         img: {
           margin: "0 auto 35px",
           display: "block"
-        },
-        p: {
-          fontSize: 18,
-          color: colors.lightGrey,
-          lineHeight: "29px",
-          marginBottom: 16,
-          letterSpacing: "1px"
         },
         ".user": {
           color: "#526785",

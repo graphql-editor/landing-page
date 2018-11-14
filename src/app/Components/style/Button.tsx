@@ -12,7 +12,6 @@ export const Button = style({
   display: "inline-block",
   textTransform: "uppercase",
   backgroundColor: colors.pink, //colors.main,
-  width: "100%",
   cursor: "pointer"
 })
 

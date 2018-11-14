@@ -1,53 +1,49 @@
 import * as React from "react";
 import * as styles from "./style";
-import {
-  whyYouShouldData,
-  pricingListData
-} from "./text_data";
-import {
-  FeatureBox,
-  WhyChooseUs,
-  Headline,
-  Button,
-} from "./Components";
-import SubscribeToList from './Components/SubscribeToList'
+import { whyYouShouldData, roadmapData } from "./text_data";
+import { FeatureBox, WhyChooseUs, Button, FeatureType } from "./Components";
+import SubscribeToList from "./Components/SubscribeToList";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter, RouteComponentProps } from "react-router";
 import CompaniesUsingSlider from "./Components/CompaniesUsingSlider";
-import { SubscribeForm } from "./Components/SubscribeForm";
-import * as btnstyle from './Components/style'
-
+import * as btnstyle from "./Components/style";
+import { SubscribeFormUp } from "./Components/SubscribeFormUp";
 
 class Home extends React.Component<RouteComponentProps<any>, any> {
   render() {
     return (
       <div className="wrapper">
-        <Headline>
-          <Container>
-            <Row>
-              <Col md={6} className="text-content">
-                <h1>GRAPHQL VISUAL EDITOR</h1>
-                {/* <img src={"assets/images/logo_medium.png"} /> */}
-                <p>
-                  <b>GraphQL Editor</b> makes understanding <b>GraphQL</b>{" "}
-                  schema a lot easier. Plan it out by linking visual blocks and
-                  our editor will transform them into a code!
-                </p>
-                <SubscribeForm/>
-              </Col>
-              <Col md={6}>
-                <img src={require("../assets/images/1.png")} alt="" />
-              </Col>
-            </Row>
-          </Container>
-        </Headline>
+        <div className={styles.Hero}>
+        <Container>
+          <Row>
+            <Col md={3}>
+              <h1 className={styles.H1}>Visual graphql editor</h1>
+              <p className={styles.Description}>
+                <b>GraphQL Editor</b> makes understanding <b>GraphQL</b> schema
+                a lot easier. Plan it out by linking visual blocks and our
+                editor will transform them into a code!
+              </p>
+            </Col>
+            <Col md={9}>
+              <img
+                style={{ borderRadius: 8 }}
+                src={require("../assets/images/diagram.gif")}
+                alt=""
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+              <div className={styles.SubscribeBar}>
+                <SubscribeFormUp />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        </div>
         <section className={styles.WhyUsSection}>
           <Container>
             <CompaniesUsingSlider />
-            <div className={styles.HowItWorks}>
-              <h2>How it works</h2>
-              <img src={require("../assets/images/diagram.gif")} alt="" />
-            </div>
             <div className={styles.WhyChoose}>
               <h2 className={styles.TitleHead}>Why you should choose us</h2>
               <Row>
@@ -66,16 +62,12 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
         </section>
         <div className={styles.RoadMap}>
           <Container>
-            <h2 className={styles.TitleHead}>ROADMAP <i className="fa fa-floppy-o" aria-hidden="true"></i> </h2>
+            <h2 className={styles.TitleHead}>
+              ROADMAP <i className="fa fa-floppy-o" aria-hidden="true" />{" "}
+            </h2>
             <ul className={styles.FeatureList}>
-              {pricingListData.map((el, i) => (
-                <FeatureBox
-                  key={i}
-                  imgSrc={el.imgSrc}
-                  imgAlt={el.imgAlt}
-                  title={el.title}
-                  description={el.description}
-                />
+              {roadmapData.map((el: FeatureType, i) => (
+                <FeatureBox key={i} {...el} />
               ))}
             </ul>
           </Container>
@@ -129,7 +121,12 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
                   </p>
                 </li>
                 <li className="button right">
-                  <Button className={btnstyle.Button} onClick={()=> location.href = 'https://demo.graphqleditor.com/'}>
+                  <Button
+                    className={btnstyle.Button}
+                    onClick={() =>
+                      (location.href = "https://demo.graphqleditor.com/")
+                    }
+                  >
                     TRY DEMO
                   </Button>
                 </li>
