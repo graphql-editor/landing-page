@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Button } from "../Button";
-import * as styles from "../style";
 
 export type FeatureType = {
   imgSrc: string;
@@ -27,8 +26,8 @@ export const FeatureBox: React.StatelessComponent<FeatureType> = ({
     </div>
     <h5>{title}</h5>
     <p>{description}</p>
-    <Button className={styles.Button}>
-      {date || (q && year && `Q${q} - ${year}`) || 'soon'}
+    <Button done={date === "DONE"}>
+      {date || (q && year && `Q${q} - ${year}`) || "soon"}
     </Button>
   </li>
 );

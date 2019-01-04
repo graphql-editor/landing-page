@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Button } from "./Button";
-import * as styles from "./style";
 
 export type PriceBoxData = {
   imgSrc: string;
@@ -30,7 +29,7 @@ export const PriceBox: React.StatelessComponent<PriceBoxData> = ({
       <div className="price">
         {price}$<span>/month</span>
       </div>
-      <Button className={styles.Button}>start</Button>
+      <Button>start</Button>
     </div>
   </li>
 );

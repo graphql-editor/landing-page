@@ -5,8 +5,6 @@ import * as styles from "./style";
 // } from "./Components";
 import { Row, Col, Container } from "reactstrap";
 // import { ourTeam } from "./text_data";
-import SubscribeToList from './Components/SubscribeToList'
-
 
 class About extends React.Component {
   render() {
@@ -94,7 +92,6 @@ class About extends React.Component {
         {/* <div className="user-slider">
           <RecommendsSlider />
         </div> */}
-        <SubscribeToList />
       </React.Fragment>
     );
   }

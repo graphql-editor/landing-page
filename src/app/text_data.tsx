@@ -1,5 +1,8 @@
 import { FeatureType } from "./Components";
 
+export const SlackLink =
+  "https://join.slack.com/t/graphqleditor/shared_invite/enQtNDkwOTgyOTM5OTc1LWI4YjU3N2U5NGVkNzQ2NzY5MGUxMTJiNjFlZDM1Zjc2OWRmNTI0NDM3OWUxYTk4Yjk3MzZlY2QwOWUzZmM2NDI";
+
 // ************************ Home ************************
 
 export const whyYouShouldData = [
@@ -25,9 +28,19 @@ export const whyYouShouldData = [
 
 export const trustedList = [
   {
+    address: "https://divante.co",
+    imgSrc: require("../assets/images/divante.svg"),
+    altImg: "divante"
+  },
+  {
     address: "https://facebook.com",
     imgSrc: require("../assets/images/Facebook.png"),
     altImg: "facebook"
+  },
+  {
+    address: "https://netguru.co",
+    imgSrc: require("../assets/images/netguru.svg"),
+    altImg: "netguru"
   },
   {
     address: "https://instagram.com",
@@ -74,30 +87,7 @@ export const roadmapData: FeatureType[] = [
     imgAlt: "hosting",
     title: "ACCOUNTS & PROJECTS",
     description: "Create projects and save them on your account",
-    date: "24 XI 2018"
-  },
-  {
-    imgSrc: require("../assets/images/optimised.svg"),
-    imgAlt: "hosting",
-    title: "FIX VISUAL DIAGRAM ISSUES",
-    description:
-      "Diagram should have nice visual effects and options. First phase should be finished by then.",
-    date: "1 XII 2018"
-  },
-  {
-    imgSrc: require("../assets/images/powerfull.svg"),
-    imgAlt: "hosting",
-    title: "READY TO USE FAKE BACKEND",
-    description:
-      " If your backend is complicated and you need some backend dev to write resolvers. Don’t wait! Start your job without it.",
-    date: "1 XII 2018"
-  },
-  {
-    imgSrc: require("../assets/images/hosting2.svg"),
-    imgAlt: "hosting",
-    title: "COLLABORATION FEATURE",
-    description: "Collaborate on projects in graphql editor. Merry Christmas!",
-    date: "21 XII 2018"
+    date: "DONE"
   },
   {
     imgSrc: require("../assets/images/server.svg"),
@@ -105,8 +95,22 @@ export const roadmapData: FeatureType[] = [
     title: "GENERATE QUERIES FOR FRONTEND",
     description:
       "Generate frontend typesafe libs for javascript/typescript. So you can have autocomplete for avaialble queries to speed up development",
-    q: 1,
-    year: 2019
+    date: "DONE"
+  },
+  {
+    imgSrc: require("../assets/images/powerfull.svg"),
+    imgAlt: "hosting",
+    title: "READY TO USE FAKE BACKEND",
+    description:
+      " If your backend is complicated and you need some backend dev to write resolvers. Don’t wait! Start your job without it.",
+    date: "DONE"
+  },
+  {
+    imgSrc: require("../assets/images/hosting2.svg"),
+    imgAlt: "hosting",
+    title: "COLLABORATION FEATURE",
+    description: "Collaborate on projects in graphql editor.",
+    date: "1 II 2019"
   },
   {
     imgSrc: require("../assets/images/hosting.svg"),
@@ -120,7 +124,7 @@ export const roadmapData: FeatureType[] = [
   {
     imgSrc: require("../assets/images/website.svg"),
     imgAlt: "vps",
-    title: "BACKEND IN ONE PLACE",
+    title: "BACKEND FOR FRONTEND",
     description:
       "GraphQL schema is a mirror of your backend system. Keep it in cloud and collaborate on it. Together you can do more.",
     q: 1,
@@ -133,6 +137,15 @@ export const roadmapData: FeatureType[] = [
     description:
       "Resolvers created only from diagram recognising popular backend functions ( filter, order etc.) ",
     q: 2,
+    year: 2019
+  },
+  {
+    imgSrc: require("../assets/images/address-light.svg"),
+    imgAlt: "vps",
+    title: "INTEGRATIONS",
+    description:
+      "Integrations with popular graphql stacks like Hasura or Apollo ",
+    q: 3,
     year: 2019
   }
 ];
@@ -172,19 +185,36 @@ export const recommendationsData = [
 
 export const footerData = [
   {
-    title: "Product",
-    links: ["Main Page", "Demo"],
-    linksTo: ["/", "https://demo.graphqleditor.com/"]
+    title: "Menu",
+    links: [
+      "Services",
+      "Roadmap",
+      "Slack Community",
+      "GraphQL Blog",
+      "GraphQL Editor",
+      "Docs"
+    ],
+    linksTo: [
+      "/services",
+      "#roadmap",
+      SlackLink,
+      "https://blog.graphqleditor.com",
+      "https://app.graphqleditor.com",
+      "https://docs.graphqleditor.com"
+    ]
   },
-  // {
-  //   title: "Company",
-  //   links: ["About Us", "Career", "Blog", "Contact"],
-  //   linksTo: ["bla", "bla", "bla", "bla"]
-  // },
   {
-    title: "Contact Us",
-    links: ["hello@slothking.online"],
-    linksTo: ["mailto:hello@slothking.online"]
+    title: "Examples",
+    links: [
+      "GraphQL Example #1: Fake Twitter",
+      "GraphQL Example #2: Library of books",
+      "GraphQL Example #3: eCommerce"
+    ],
+    linksTo: [
+      "https://app.graphqleditor.com/showcase/fake-twitter",
+      "https://app.graphqleditor.com/showcase/library",
+      "https://app.graphqleditor.com/showcase/shop"
+    ]
   }
 ];
 
@@ -315,3 +345,24 @@ export const userAddress = {
   ZIP: "72214",
   Country: "USA"
 };
+
+export type ConsultingTile = {
+  name: string;
+  description: string;
+  image: string;
+  points: string[];
+};
+export const consultingTiles: ConsultingTile[] = [
+  {
+    name: "BaaS - Backend as a Service",
+    image: require("../assets/images/hosting2.svg"),
+    description:
+      "We create & deploy backend based on GraphQL Schema as a source of truth. You get frontend graphql interface and complete support package and more:",
+    points: [
+      "A customized GraphQL Visual Editor for your organization, and a handbook for onboarding new teams.",
+      "Regular, scheduled reviews of GraphQL performance, security, tailored to your team and requirements.",
+      "A Technical Account Manager understanding your business needs and makes sure you’re getting what you need.",
+      "A GraphQL Senior Expert who works with your team through every phase of development, on-site or on-line."
+    ]
+  }
+];

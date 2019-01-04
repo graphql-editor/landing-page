@@ -10,8 +10,9 @@ import { YMInitializer } from "react-yandex-metrika";
 // import About from "./About";
 // import UserInteface from "./UserInteface";
 import { NotFound } from "./NotFound";
-// import Prices from './Prices';
+import Prices from './Prices';
 import { withRouter, RouteComponentProps } from "react-router";
+import { Consulting } from "./Consulting";
 
 class AppContainer extends React.Component<RouteComponentProps<any>, any> {
   render() {
@@ -35,11 +36,12 @@ class AppContainer extends React.Component<RouteComponentProps<any>, any> {
         <Header />
         <Switch>
           <Route component={Home} exact path="/" />
-          {/* <Route component={Prices} exact path="/prices" /> */}
+          <Route component={Prices} exact path="/prices" />
           {/* <Route component={Login} exact path="/login" />
           <Route component={SignUp} exact path="/sign-up" /> 
           <Route component={About} exact path="/about" /> 
           <Route component={UserInteface} exact path ="/user" /> */}
+            <Route component={Consulting} path="/services" />
           <Route component={NotFound} exact path="*" />
         </Switch>
         <Footer />

@@ -1,12 +1,11 @@
 import { style } from "typestyle"
 import { colors } from "../../style/vars"
 
-export const FooterWidget = style({
-  width: "19%",
-  float: "left",
-  display: "inline-block",
-  marginBottom: 115,
 
+
+export const FooterWidget = style({
+  display: "flex",
+  flexFlow:'column nowrap',
   $nest: {
     h4: {
       fontSize: 16,
@@ -37,31 +36,6 @@ export const FooterWidget = style({
             }
           }
         }
-      }
-    },
-
-    "@media screen and (max-width: 576px)": {
-      width: "100%",
-      textAlign: "center",
-      marginBottom: 40,
-    },
-
-    "@media screen and (min-width: 576px) and (max-width: 768px)": {
-      width: "50%",
-      wordWrap: "break-word",
-      marginBottom: 40,
-
-      "&:nth-child(4)": {
-        clear: "initial"
-      }
-    },
-
-    "@media screen and (min-width: 768px) and (max-width: 991px)": {
-      width: "33%",
-      wordWrap: "break-word",
-
-      "&:nth-child(4)": {
-        clear: "both"
       }
     },
   }

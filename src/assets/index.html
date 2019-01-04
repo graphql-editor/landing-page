@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body,
+      #root,
+      #routing {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        font-family: "Roboto";
+        font-weight: 400;
+        line-height: 1;
+        scroll-behavior: smooth;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
 
-<head>
-  <meta charset="utf-8">
-  <style>
-    html,
-    body,
-    #root,
-    #routing {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      font-family: "Roboto";
-      font-weight: 400;
-      line-height: 1;
-      scroll-behavior: smooth
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+      }
+    </style>
+    <title>GraphQL Visual Editor</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.5"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      vertical-align: baseline;
-    }
-  </style>
-  <title>GraphQL Visual Editor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-</head>
-
-<body>
-
-  <div id="root"></div>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-</body>
-
+  <body>
+    <div id="root"></div>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
 </html>

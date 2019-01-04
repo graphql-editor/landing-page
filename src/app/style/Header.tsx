@@ -1,5 +1,18 @@
-import { style } from "typestyle"
-import { colors } from "./vars"
+import { style } from "typestyle";
+import { colors } from "./vars";
+export const BetaBadgeWrapper = style({
+  position: "relative",
+  textAlign: "right",
+  display: "block"
+});
+export const BetaBadge = style({
+  background: colors.pink,
+  color: "#fff",
+  padding: `3px 7px`,
+  fontSize: 10,
+  borderRadius:3,
+  display: "inline-block"
+});
 
 export const Header = style({
   top: 0,
@@ -15,7 +28,6 @@ export const Header = style({
   border: 0,
   fontSize: "100%",
   verticalAlign: "baseline",
-
 
   position: "relative",
 
@@ -40,9 +52,9 @@ export const Header = style({
 
     "@media screen and (min-width: 900px) and (max-width:1200px)": {
       padding: "20px 0 10px"
-    },
+    }
   }
-})
+});
 
 export const NavContent = style({
   display: "flex",
@@ -62,20 +74,15 @@ export const NavContent = style({
       justifyContent: "center",
 
       $nest: {
-        li: {margin: "auto 8px"}
+        li: { margin: "auto 8px" }
       }
     },
 
-    div: {
-      display: "flex",
-      flexDirection: "row"
-    },
-
-    '.nav-item': {
+    ".nav-item": {
       margin: "0 10px",
       fontSize: 18,
-      listStyle: 'none',
-      
+      listStyle: "none",
+
       $nest: {
         a: {
           color: colors.textLight,
@@ -91,17 +98,16 @@ export const NavContent = style({
     },
 
     "@media screen and (max-width: 480px)": {
-     //flexWrap: "wrap",
+      //flexWrap: "wrap",
 
       $nest: {
         "> li": {
           marginBottom: 20
         },
 
-        '.list ul': {
+        ".list ul": {
           flexWrap: "wrap",
           justifyContent: "center",
-          
 
           $nest: {
             li: {
@@ -114,17 +120,17 @@ export const NavContent = style({
 
     "@media screen and (max-width: 576px)": {
       $nest: {
-        'li, img': {
+        "li, img": {
           marginBottom: 30
         },
 
-        '.list ul': {
-          display: 'flex',
+        ".list ul": {
+          display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
 
-          $nest:{ 
+          $nest: {
             li: {
               marginBottom: 15
             }
@@ -146,24 +152,23 @@ export const NavContent = style({
     "@media screen and (max-width: 991px)": {
       flexDirection: "column !important",
       $nest: {
-
-        '.navbar-brand': {
-          margin: '0 auto'
+        ".navbar-brand": {
+          margin: "0 auto"
         },
 
-        'li, img': {
+        "li, img": {
           marginBottom: 20
         }
       }
-    },
+    }
   }
-})
+});
 
 export const MobileBlock = style({
   width: "100%",
 
   $nest: {
-    '.navbar-brand': {
+    ".navbar-brand": {
       top: 10,
       "-ms-transform": "translate(0)",
       transform: "translate(0)",
@@ -177,11 +182,10 @@ export const MobileBlock = style({
       display: "inline-block",
       top: 17,
       right: 30,
-      height: 30,
+      height: 30
     }
   }
-})
-
+});
 
 export const HeaderButtons = style({
   textAlign: "right",
@@ -192,12 +196,12 @@ export const HeaderButtons = style({
   alignItems: "center",
 
   $nest: {
-    'iframe,span': {
+    "iframe,span": {
       marginRight: 15
     },
 
     ".custom-btn": {
-      width: 'auto',
+      width: "auto",
       color: colors.white,
       //boxShadow: "1px 1px 22px rgba(98, 129, 157, 0.4)",
       borderRadius: 5,
@@ -230,19 +234,18 @@ export const HeaderButtons = style({
       flexDirection: "column",
 
       $nest: {
-        'iframe, .custom-btn': {
+        "iframe, .custom-btn": {
           marginBottom: 10
         }
       }
     },
 
-
     "@media screen and (min-width: 900px) and (max-width:1200px)": {
       $nest: {
-        '.custom-btn': {
+        ".custom-btn": {
           minWidth: 91
         }
       }
-    },
+    }
   }
-})
+});

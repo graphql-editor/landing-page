@@ -2,12 +2,11 @@ import * as React from "react";
 import * as styles from "./style";
 import { whyYouShouldData, roadmapData } from "./text_data";
 import { FeatureBox, WhyChooseUs, Button, FeatureType } from "./Components";
-import SubscribeToList from "./Components/SubscribeToList";
 import { Container, Row, Col } from "reactstrap";
 import { withRouter, RouteComponentProps } from "react-router";
 import CompaniesUsingSlider from "./Components/CompaniesUsingSlider";
-import * as btnstyle from "./Components/style";
-import { SubscribeFormUp } from "./Components/SubscribeFormUp";
+
+export const slackLink = `https://join.slack.com/t/graphqleditor/shared_invite/enQtNDkwOTgyOTM5OTc1LWI4YjU3N2U5NGVkNzQ2NzY5MGUxMTJiNjFlZDM1Zjc2OWRmNTI0NDM3OWUxYTk4Yjk3MzZlY2QwOWUzZmM2NDI`
 
 class Home extends React.Component<RouteComponentProps<any>, any> {
   render() {
@@ -30,13 +29,6 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
                 src={require("../assets/images/diagram.gif")}
                 alt=""
               />
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <div className={styles.SubscribeBar}>
-                <SubscribeFormUp />
-              </div>
             </Col>
           </Row>
         </Container>
@@ -62,7 +54,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
         </section>
         <div className={styles.RoadMap}>
           <Container>
-            <h2 className={styles.TitleHead}>
+            <h2 className={styles.TitleHead} id="roadmap">
               ROADMAP <i className="fa fa-floppy-o" aria-hidden="true" />{" "}
             </h2>
             <ul className={styles.FeatureList}>
@@ -71,6 +63,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
               ))}
             </ul>
           </Container>
+          
           {/* 
           <Container className={styles.ChoicePlan}>
             <h2 className="text-center">Pricing</h2>
@@ -122,12 +115,12 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
                 </li>
                 <li className="button right">
                   <Button
-                    className={btnstyle.Button}
                     onClick={() =>
-                      (location.href = "https://demo.graphqleditor.com/")
+                      (location.href = "https://app.graphqleditor.com/")
                     }
+                    done
                   >
-                    TRY DEMO
+                    TRY APP
                   </Button>
                 </li>
               </ul>
@@ -135,7 +128,6 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
           </Container>
         </div>
         {/* <RecommendsSlider /> */}
-        <SubscribeToList />
       </div>
     );
   }

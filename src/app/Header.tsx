@@ -6,7 +6,6 @@ import { withRouter, RouteComponentProps } from "react-router";
 import { UserContainer } from "./UserInteface";
 import { Subscribe } from "unstated";
 
-
 class Header extends React.Component<RouteComponentProps<any>, any> {
   state = {
     isListOpen: false
@@ -21,14 +20,14 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                 <Navbar>
                   <Nav className={styles.NavContent} navbar>
                     <li>
-                    <NavbarBrand>
-                      <img
-                        className="logo"
-                        src={require("../assets/images/logo_medium.png")}
-                        alt=""
-                        onClick={() => this.props.history.push("/")}
-                      />
-                    </NavbarBrand>
+                      <NavbarBrand>
+                        <img
+                          className="logo"
+                          src={require("../assets/images/logo_medium.png")}
+                          alt=""
+                          onClick={() => this.props.history.push("/")}
+                        />
+                      </NavbarBrand>
                     </li>
                     <li className="list">
                       <ul>
@@ -45,50 +44,42 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                           </a>
                         </li>
                         <NavItem>
-                          <Link to="/">Home</Link>
+                          <Link to="/services">Services</Link>
                         </NavItem>
                         <NavItem>
-                          <Link to="//blog.graphqleditor.com">Blog</Link>
-                        </NavItem>
-                        {/* <NavItem>
-                          <Link to="/about">About</Link>
-                        </NavItem> */}
-                        {/* <NavItem>
-                          <Link to="/prices">Pricing</Link>
-                        </NavItem> */}
-                        <NavItem>
-                          <a href="https://demo.graphqleditor.com/">Demo</a>
-                        </NavItem>
-                        {/* <NavItem>
-                          <a href="https://github.com/slothking-online/grqphql-editor">
-                            CLI
+                          <a
+                            href={
+                              this.props.location.pathname === "/"
+                                ? undefined
+                                : "/#roadmap"
+                            }
+                            onClick={() => {
+                              if (this.props.location.pathname === "/") {
+                                window.scrollTo({
+                                  behavior: "smooth",
+                                  top: document.getElementById("roadmap")
+                                    .offsetTop
+                                });
+                              }
+                            }}
+                            style={{
+                              cursor: "pointer"
+                            }}
+                          >
+                            Roadmap
                           </a>
-                        </NavItem> */}
+                        </NavItem>
+                        <NavItem>
+                          <a href="https://blog.graphqleditor.com">Blog</a>
+                        </NavItem>
+                        <NavItem>
+                          <a href="https://docs.graphqleditor.com/">Docs</a>
+                        </NavItem>
+                        <NavItem>
+                          <a href="https://app.graphqleditor.com/">Editor</a>
+                        </NavItem>
                       </ul>
                     </li>
-                    {/* <li className={styles.HeaderButtons}>
-                      {userOps.state.valid ? (
-                        <Link to="/user" className="custom-btn login">
-                          USER
-                        </Link>
-                      ) : (
-                        <Link to="/login" className="custom-btn login">
-                          LOGIN
-                        </Link>
-                      )}
-                      {userOps.state.valid ? (
-                        <button
-                          onClick={() => userOps.logOut()}
-                          className="custom-btn"
-                        >
-                          LOGOUT
-                        </button>
-                      ) : (
-                        <Link to="/sign-up" className="custom-btn">
-                          SIGNUP FREE
-                        </Link>
-                      )} 
-                    </li> */}
                   </Nav>
                 </Navbar>
               </Container>
