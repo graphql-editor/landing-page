@@ -1,9 +1,23 @@
 import { style, media } from "typestyle";
 import { colors } from "./vars";
 
-export const Hero = style({
-  padding:"60px 0"
-},media({maxWidth:991},{padding:"30px 0"}))
+export const Hero = style(
+  {
+    padding: "60px 0"
+  },
+  media({ maxWidth: 991 }, { padding: "30px 0" })
+);
+
+export const HeroHolder = style(
+  {
+    display: "grid",
+    gridTemplateColumns: "1fr 4fr"
+  },
+  media({ maxWidth: 991 }, { gridTemplateColumns: "1fr" })
+);
+export const HeroCell = style({
+  padding: 10
+});
 export const H1 = style({
   fontSize: 46,
   color: colors.pink, //colors.textLight,
@@ -30,14 +44,7 @@ export const Description = style(
     }
   )
 );
-export const SubscribeBar = style({
-  textAlign: "center",
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: "nowrap",
-  alignItems: "center",
-  justifyContent: "center"
-});
+
 export const HowItWorks = style({
   marginBottom: 80,
 
@@ -78,50 +85,6 @@ export const WhyUsSection = style({
   background: colors.grey,
   display: "flex"
 });
-
-// export const HostingSoftware = style({
-//   marginBottom: 113,
-
-//   $nest: {
-//     h2: {
-//       marginBottom: 71
-//     },
-
-//     "@media screen and (max-width: 768px)": {
-//       marginBottom: 80,
-
-//       h2: {
-//         fontSize: 24,
-//         lineHeight: "normal"
-//       },
-
-//       "ul li": {
-//         width: "50%",
-//         float: "left",
-//         marginRight: "0 !important",
-//         paddingRight: "0 !important",
-//         marginBottom: 30,
-
-//         "&:nth-child(2)": {
-//           border: "none"
-//         }
-//       }
-//     },
-
-//     "@media screen and (max-width: 991px)": {
-//       marginBottom: 80,
-
-//       h2: {
-//         lineHeight: "normal"
-//       },
-
-//       "ul li": {
-//         marginRight: 35,
-//         paddingRight: 35
-//       }
-//     }
-//   }
-// });
 
 export const TitleHead = style({
   textAlign: "center",

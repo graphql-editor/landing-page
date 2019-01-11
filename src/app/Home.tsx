@@ -2,36 +2,39 @@ import * as React from "react";
 import * as styles from "./style";
 import { whyYouShouldData, roadmapData } from "./text_data";
 import { FeatureBox, WhyChooseUs, Button, FeatureType } from "./Components";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row } from "reactstrap";
 import { withRouter, RouteComponentProps } from "react-router";
 import CompaniesUsingSlider from "./Components/CompaniesUsingSlider";
+import { auth } from "../auth";
 
-export const slackLink = `https://join.slack.com/t/graphqleditor/shared_invite/enQtNDkwOTgyOTM5OTc1LWI4YjU3N2U5NGVkNzQ2NzY5MGUxMTJiNjFlZDM1Zjc2OWRmNTI0NDM3OWUxYTk4Yjk3MzZlY2QwOWUzZmM2NDI`
+export const slackLink = `https://join.slack.com/t/graphqleditor/shared_invite/enQtNDkwOTgyOTM5OTc1LWI4YjU3N2U5NGVkNzQ2NzY5MGUxMTJiNjFlZDM1Zjc2OWRmNTI0NDM3OWUxYTk4Yjk3MzZlY2QwOWUzZmM2NDI`;
 
 class Home extends React.Component<RouteComponentProps<any>, any> {
   render() {
     return (
       <div className="wrapper">
         <div className={styles.Hero}>
-        <Container>
-          <Row>
-            <Col md={3}>
-              <h1 className={styles.H1}>Visual graphql editor</h1>
-              <p className={styles.Description}>
-                <b>GraphQL Editor</b> makes understanding <b>GraphQL</b> schema
-                a lot easier. Plan it out by linking visual blocks and our
-                editor will transform them into a code!
-              </p>
-            </Col>
-            <Col md={9}>
-              <img
-                style={{ borderRadius: 8 }}
-                src={require("../assets/images/diagram.gif")}
-                alt=""
-              />
-            </Col>
-          </Row>
-        </Container>
+          <Container>
+            <div className={styles.HeroHolder}>
+              <div className={styles.HeroCell}>
+                <h1 className={styles.H1}>Visual graphql editor</h1>
+                <p className={styles.Description}>
+                  <b>GraphQL Editor</b> makes understanding <b>GraphQL</b>{" "}
+                  schema a lot easier. Plan it out by linking visual blocks and
+                  our editor will transform them into a code!
+                </p>
+                <Button onClick={() => auth.authorize()}>Start now!</Button>
+              </div>
+              <div className={styles.HeroCell}>
+                <video
+                  style={{ borderRadius: 8, maxWidth: "100%" }}
+                  autoPlay
+                  loop
+                  src={require("../assets/videos/graphql-editor.mp4")}
+                />
+              </div>
+            </div>
+          </Container>
         </div>
         <section className={styles.WhyUsSection}>
           <Container>
@@ -63,7 +66,7 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
               ))}
             </ul>
           </Container>
-          
+
           {/* 
           <Container className={styles.ChoicePlan}>
             <h2 className="text-center">Pricing</h2>

@@ -60,7 +60,7 @@ module.exports = {
       { test: /\.png$/, use: "url-loader?limit=10000" },
       { test: /\.svg$/, use: "url-loader?limit=200000" },
       //{test: /\.(woff|woff2|eot|ttf|svg)$/,loader: 'url-loader?limit=100000'}, // url-loader?limit=100000
-      { test: /\.(jpg|gif)$/, use: "file-loader" },
+      { test: /\.(jpg|gif|mp4)$/, use: "file-loader" },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [

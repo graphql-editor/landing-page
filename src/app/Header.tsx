@@ -5,6 +5,7 @@ import { Navbar, NavbarBrand, Nav, NavItem, Container } from "reactstrap";
 import { withRouter, RouteComponentProps } from "react-router";
 import { UserContainer } from "./UserInteface";
 import { Subscribe } from "unstated";
+import { auth } from "../auth";
 
 class Header extends React.Component<RouteComponentProps<any>, any> {
   state = {
@@ -74,6 +75,11 @@ class Header extends React.Component<RouteComponentProps<any>, any> {
                         </NavItem>
                         <NavItem>
                           <a href="https://docs.graphqleditor.com/">Docs</a>
+                        </NavItem>
+                        <NavItem>
+                          <a href="#" onClick={() => auth.authorize()}>
+                            Login
+                          </a>
                         </NavItem>
                         <NavItem>
                           <a href="https://app.graphqleditor.com/">Editor</a>
