@@ -27,9 +27,10 @@ class Home extends React.Component<RouteComponentProps<any>, any> {
               </div>
               <div className={styles.HeroCell}>
                 <video
-                  style={{ borderRadius: 8, maxWidth: "100%" }}
-                  autoPlay
-                  loop
+                  className={styles.video}
+                  autoPlay={"autoplay" as any}
+                  loop={true}
+                  muted={true}
                   src={require("../assets/videos/graphql-editor.mp4")}
                 />
               </div>

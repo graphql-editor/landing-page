@@ -18,6 +18,11 @@ export const HeroHolder = style(
 export const HeroCell = style({
   padding: 10
 });
+export const video = style({
+  borderRadius: 8,
+  maxWidth: "100%",
+  boxShadow: `${colors.lightGrey} 0 2px 10px`
+});
 export const H1 = style({
   fontSize: 46,
   color: colors.pink, //colors.textLight,

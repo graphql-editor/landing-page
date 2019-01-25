@@ -55,6 +55,7 @@
     "react-dom": "^16.4.1",
     "react-ga": "^2.5.6",
     "react-helmet": "^5.2.0",
+    "react-intercom": "^1.0.15",
     "react-router-dom": "^4.3.1",
     "reactstrap": "^6.4.0",
     "typestyle": "^1.7.2",

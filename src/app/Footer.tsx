@@ -19,9 +19,8 @@ class Footer extends React.Component<RouteComponentProps<any>, FooterState> {
         return r.json();
       })
       .then(r => {
-        console.log(r);
         this.setState({
-          blog: r.items.slice(0, 3)
+          blog: r.items.slice(0, 5)
         });
       });
   }

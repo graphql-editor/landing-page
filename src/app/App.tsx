@@ -10,9 +10,11 @@ import { Consulting } from "./Consulting";
 import { Seo } from "../Seo";
 import { Beta } from "../Beta";
 import { Analytics } from "../analytics";
+import Intercom from "react-intercom";
 class AppContainer extends React.Component<RouteComponentProps<any>, any> {
   componentDidMount() {
     Analytics.init();
+    Analytics.page(this.props.location.pathname);
   }
   componentDidUpdate(prevProps: RouteComponentProps<any>) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
@@ -38,6 +40,7 @@ class AppContainer extends React.Component<RouteComponentProps<any>, any> {
           <Route component={NotFound} exact path="*" />
         </Switch>
         <Footer />
+        <Intercom appID="k0lckhv8" />
       </div>
     );
   }
